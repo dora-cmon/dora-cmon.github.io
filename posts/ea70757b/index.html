@@ -65,7 +65,7 @@ function activateLightMode(){
   medium_zoom: false,
   fancybox: true,
   Snackbar: undefined,
-  baiduPush: false,
+  baiduPush: true,
   isHome: false,
   isPost: true
   
@@ -78,35 +78,35 @@ function activateLightMode(){
 </ul>
 <h1 id="分割硬盘"><a class="markdownIt-Anchor" href="#分割硬盘"></a> 分割硬盘</h1>
 <p>在此电脑右键，打开 管理-&gt;磁盘管理</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86.png" data-fancybox="group" data-caption="磁盘管理" class="fancybox"><img alt="磁盘管理" title="磁盘管理" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86.png" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86.png" data-fancybox="group" data-caption="磁盘管理" class="fancybox"><img alt="磁盘管理" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86.png" class="lazyload" title="磁盘管理"></a></p>
 <p>磁盘0是要安装双系统的磁盘，<strong>恢复分区</strong>用于Win10还原，<strong>EFI分区</strong>为Win10引导分区，均保留。</p>
 <p>从C盘压缩128G空间，对C盘-&gt;右键-&gt;压缩卷，等待系统查询可压缩空间。这时，很有可能出现可压缩空间远小于实际空闲空间的情况，这是因为文件存储并不是连续的，而压缩空间必须是一段连续的空间。如果出现这种情况，尝试以下解决方案：</p>
 <ul>
 <li>
 <p><strong>法一</strong>：C盘右键-&gt;属性-&gt;工具-&gt;优化-&gt;选择C盘并优化(该方法针对<strong>机械硬盘</strong>)</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%B3%BB%E7%BB%9F%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png" data-fancybox="group" data-caption="系统碎片整理" class="fancybox"><img alt="系统碎片整理" title="系统碎片整理" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%B3%BB%E7%BB%9F%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%B3%BB%E7%BB%9F%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png" data-fancybox="group" data-caption="系统碎片整理" class="fancybox"><img alt="系统碎片整理" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%B3%BB%E7%BB%9F%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png" class="lazyload" title="系统碎片整理"></a></p>
 <p>若为机械硬盘，磁盘整理后应当可以压缩出接近空闲空间的大小。</p>
 </li>
 <li>
 <p><strong>法二</strong>：若磁盘为 SSD 或上述操作无效，可尝试使用 Disk Genius 软件执行压缩卷操作，进入软件后选定C盘，右键-&gt;调整分区大小-&gt;输入合适的大小-&gt;开始-&gt;调整成功后保存更改。</p>
 <p>使用该方法可能提示错误：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/DG%E5%A4%B1%E8%B4%A5.png" data-fancybox="group" data-caption="DG失败" class="fancybox"><img alt="DG失败" title="DG失败" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/DG%E5%A4%B1%E8%B4%A5.png" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/DG%E5%A4%B1%E8%B4%A5.png" data-fancybox="group" data-caption="DG失败" class="fancybox"><img alt="DG失败" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/DG%E5%A4%B1%E8%B4%A5.png" class="lazyload" title="DG失败"></a></p>
 </li>
 <li>
 <p><strong>法三</strong>：使用 Smart Defrag 整理空闲空间，选择C盘-&gt;智能磁盘整理-&gt;可用空间碎片整理。这一步操作比较耗时！</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%8F%AF%E7%94%A8%E7%A9%BA%E9%97%B4%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png" data-fancybox="group" data-caption="可用空间碎片整理" class="fancybox"><img alt="可用空间碎片整理" title="可用空间碎片整理" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%8F%AF%E7%94%A8%E7%A9%BA%E9%97%B4%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%8F%AF%E7%94%A8%E7%A9%BA%E9%97%B4%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png" data-fancybox="group" data-caption="可用空间碎片整理" class="fancybox"><img alt="可用空间碎片整理" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%8F%AF%E7%94%A8%E7%A9%BA%E9%97%B4%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86.png" class="lazyload" title="可用空间碎片整理"></a></p>
 <p>下面是整理后的磁盘文件分布：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86%E5%AE%8C%E6%88%90.png" data-fancybox="group" data-caption="碎片整理完成" class="fancybox"><img alt="碎片整理完成" title="碎片整理完成" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86%E5%AE%8C%E6%88%90.png" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86%E5%AE%8C%E6%88%90.png" data-fancybox="group" data-caption="碎片整理完成" class="fancybox"><img alt="碎片整理完成" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E7%A2%8E%E7%89%87%E6%95%B4%E7%90%86%E5%AE%8C%E6%88%90.png" class="lazyload" title="碎片整理完成"></a></p>
 <p>完成磁盘可用空间整理后，重新进入C盘-&gt;右键-&gt;压缩卷，可压缩空间基本是全部可用空间了。</p>
 <p>输入合适的大小，执行压缩卷操作：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%8E%8B%E7%BC%A9%E5%8D%B7.png" data-fancybox="group" data-caption="压缩卷" class="fancybox"><img alt="压缩卷" title="压缩卷" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%8E%8B%E7%BC%A9%E5%8D%B7.png" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%8E%8B%E7%BC%A9%E5%8D%B7.png" data-fancybox="group" data-caption="压缩卷" class="fancybox"><img alt="压缩卷" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%8E%8B%E7%BC%A9%E5%8D%B7.png" class="lazyload" title="压缩卷"></a></p>
 <p>可将最后829MB的分区格式化后合并到新压缩出来的卷中，但不推荐这钟做法。若系统磁盘管理无法删除该分区，可使用Disk Genius删除，选中该分区右键-&gt;删除当前分区-&gt;保存更改，<strong>注意别删错分区</strong>。</p>
 </li>
 </ul>
 <h1 id="安装ubuntu-180系统"><a class="markdownIt-Anchor" href="#安装ubuntu-180系统"></a> 安装Ubuntu 18.0系统</h1>
 <h2 id="制作启动u盘"><a class="markdownIt-Anchor" href="#制作启动u盘"></a> 制作启动U盘</h2>
 <p>使用<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="noopener">UltraISO</a>打开<strong>Ubuntu 18.0</strong>镜像文件，启动-&gt;写入硬盘映像-&gt;选择U盘（<strong>注意不要选错</strong>）-&gt;写入(<strong>此举会丢失U盘中所有文件，做好备份</strong>)</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%86%99%E5%85%A5%E7%A1%AC%E7%9B%98%E6%98%A0%E5%83%8F.png" data-fancybox="group" data-caption="写入硬盘映像" class="fancybox"><img alt="写入硬盘映像" title="写入硬盘映像" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%86%99%E5%85%A5%E7%A1%AC%E7%9B%98%E6%98%A0%E5%83%8F.png" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%86%99%E5%85%A5%E7%A1%AC%E7%9B%98%E6%98%A0%E5%83%8F.png" data-fancybox="group" data-caption="写入硬盘映像" class="fancybox"><img alt="写入硬盘映像" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%86%99%E5%85%A5%E7%A1%AC%E7%9B%98%E6%98%A0%E5%83%8F.png" class="lazyload" title="写入硬盘映像"></a></p>
 <h2 id="可能需要的操作"><a class="markdownIt-Anchor" href="#可能需要的操作"></a> 可能需要的操作</h2>
 <p>关闭Win10快速启动和Security Boot：</p>
 <ul>
@@ -116,28 +116,28 @@ function activateLightMode(){
 <h2 id="安装ubuntu系统"><a class="markdownIt-Anchor" href="#安装ubuntu系统"></a> 安装Ubuntu系统</h2>
 <h3 id="修改bios为uefi-only"><a class="markdownIt-Anchor" href="#修改bios为uefi-only"></a> 修改BIOS为UEFI ONLY</h3>
 <p>重新启动电脑，进入BIOS-&gt;Startup-&gt;设置UEFI Only（不同电脑BIOS可能不同）-&gt;按<code>F10</code>保存退出：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/UEFI_ONLY.jpg" data-fancybox="group" data-caption="UEFI_ONLY" class="fancybox"><img alt="UEFI_ONLY" title="UEFI_ONLY" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/UEFI_ONLY.jpg" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/UEFI_ONLY.jpg" data-fancybox="group" data-caption="UEFI_ONLY" class="fancybox"><img alt="UEFI_ONLY" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/UEFI_ONLY.jpg" class="lazyload" title="UEFI_ONLY"></a></p>
 <p>**注意：**如果有<code>Boot device List F12 Option</code>选项则设置为<code>Enabled</code>。</p>
 <h3 id="安装ubuntu"><a class="markdownIt-Anchor" href="#安装ubuntu"></a> 安装Ubuntu</h3>
 <p>在计算机启动过程中按F12，选择从U盘启动（USB HDD）：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%90%AF%E5%8A%A8%E9%80%89%E9%A1%B9.jpg" data-fancybox="group" data-caption="启动选项" class="fancybox"><img alt="启动选项" title="启动选项" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%90%AF%E5%8A%A8%E9%80%89%E9%A1%B9.jpg" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%90%AF%E5%8A%A8%E9%80%89%E9%A1%B9.jpg" data-fancybox="group" data-caption="启动选项" class="fancybox"><img alt="启动选项" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%90%AF%E5%8A%A8%E9%80%89%E9%A1%B9.jpg" class="lazyload" title="启动选项"></a></p>
 <p>**建议：**安装过程不要联网，不要选安装更新/第三方软件，因为在更换源之前更新下载速度会极慢，可在系统安装好并更改源后再更新。</p>
 <p>进入U盘后选择<code>Install Ubuntu</code>，出现选项则默认继续：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/Install_Ubuntu.jpg" data-fancybox="group" data-caption="Install_Ubuntu" class="fancybox"><img alt="Install_Ubuntu" title="Install_Ubuntu" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/Install_Ubuntu.jpg" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/Install_Ubuntu.jpg" data-fancybox="group" data-caption="Install_Ubuntu" class="fancybox"><img alt="Install_Ubuntu" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/Install_Ubuntu.jpg" class="lazyload" title="Install_Ubuntu"></a></p>
 <p>在安装类型时选<code>安装Ubunt，与Windows Boot Manager共存</code>：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B.jpg" data-fancybox="group" data-caption="安装类型" class="fancybox"><img alt="安装类型" title="安装类型" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B.jpg" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B.jpg" data-fancybox="group" data-caption="安装类型" class="fancybox"><img alt="安装类型" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B.jpg" class="lazyload" title="安装类型"></a></p>
 <p>点击现在安装后，提示将写入磁盘改动，选择继续：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%86%99%E5%85%A5%E7%A3%81%E7%9B%98%E6%94%B9%E5%8A%A8.jpg" data-fancybox="group" data-caption="写入磁盘改动" class="fancybox"><img alt="写入磁盘改动" title="写入磁盘改动" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%86%99%E5%85%A5%E7%A3%81%E7%9B%98%E6%94%B9%E5%8A%A8.jpg" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%86%99%E5%85%A5%E7%A3%81%E7%9B%98%E6%94%B9%E5%8A%A8.jpg" data-fancybox="group" data-caption="写入磁盘改动" class="fancybox"><img alt="写入磁盘改动" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%86%99%E5%85%A5%E7%A3%81%E7%9B%98%E6%94%B9%E5%8A%A8.jpg" class="lazyload" title="写入磁盘改动"></a></p>
 <p>选择时区，一般默认即可（若不为上海/北京，则手动选择）：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E9%80%89%E6%8B%A9%E6%97%B6%E5%8C%BA.jpg" data-fancybox="group" data-caption="选择时区" class="fancybox"><img alt="选择时区" title="选择时区" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E9%80%89%E6%8B%A9%E6%97%B6%E5%8C%BA.jpg" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E9%80%89%E6%8B%A9%E6%97%B6%E5%8C%BA.jpg" data-fancybox="group" data-caption="选择时区" class="fancybox"><img alt="选择时区" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E9%80%89%E6%8B%A9%E6%97%B6%E5%8C%BA.jpg" class="lazyload" title="选择时区"></a></p>
 <p>接着系统就开始自动安装，Ubuntu 18.0不需要手动设置各分区大小，旧版本可能需要。若安装旧版，可参考博客<a href="https://blog.csdn.net/jky95624/article/details/78785755/" target="_blank" rel="noopener">亲测!UEFI启动模式下，电脑安装win10和Ubuntu双系统</a>进行手动分区。</p>
 <p>安装完成后重启即可进入Ubuntu的双系统引导界面，第一个即为启动Ubuntu，第三个为启动Windows。</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%90%AF%E5%8A%A8Ubuntu.jpg" data-fancybox="group" data-caption="启动Ubuntu" class="fancybox"><img alt="启动Ubuntu" title="启动Ubuntu" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%90%AF%E5%8A%A8Ubuntu.jpg" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%90%AF%E5%8A%A8Ubuntu.jpg" data-fancybox="group" data-caption="启动Ubuntu" class="fancybox"><img alt="启动Ubuntu" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%90%AF%E5%8A%A8Ubuntu.jpg" class="lazyload" title="启动Ubuntu"></a></p>
 <h2 id="设置默认启动系统"><a class="markdownIt-Anchor" href="#设置默认启动系统"></a> 设置默认启动系统</h2>
 <p>分三种情况：①默认Ubuntu；②默认Win10；。</p>
 <h3 id="默认进入ubuntu系统"><a class="markdownIt-Anchor" href="#默认进入ubuntu系统"></a> 默认进入Ubuntu系统</h3>
 <p>进入BIOS，设置<code>ubuntu</code>为第一项，<code>Windows Boot Manager</code>为第二项即可（<strong>图片非该情况</strong>）：</p>
-<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%BC%95%E5%AF%BC%E9%A1%BA%E5%BA%8F.jpg" data-fancybox="group" data-caption="引导顺序" class="fancybox"><img alt="引导顺序" title="引导顺序" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%BC%95%E5%AF%BC%E9%A1%BA%E5%BA%8F.jpg" class="lazyload"></a></p>
+<p><a href="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%BC%95%E5%AF%BC%E9%A1%BA%E5%BA%8F.jpg" data-fancybox="group" data-caption="引导顺序" class="fancybox"><img alt="引导顺序" data-src="/images/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/%E5%BC%95%E5%AF%BC%E9%A1%BA%E5%BA%8F.jpg" class="lazyload" title="引导顺序"></a></p>
 <h3 id="默认进入win10系统"><a class="markdownIt-Anchor" href="#默认进入win10系统"></a> 默认进入Win10系统</h3>
 <p>这里有两种设置方式（个人喜欢第二种）：</p>
 <ul>
