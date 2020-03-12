@@ -106,7 +106,8 @@ hexo -v
 ## 安装插件
 
 ```bash
-cnpm install
+cnpm install --save
+
 ```
 
 # 部署博客

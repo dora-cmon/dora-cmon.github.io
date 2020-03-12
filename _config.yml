@@ -99,7 +99,7 @@ theme: Butterfly
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://gitee.com/dora_cmon/dora_cmon.git
+  repo: git@gitee.com:dora_cmon/dora_cmon.git
   branch: master # 部署分支
 
 # abbrlink config
