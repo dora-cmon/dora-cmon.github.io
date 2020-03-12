@@ -1,14 +1,15 @@
 ---
-layout: draft
 title: Hexo跨平台同步
-date: 2020-03-12 12:59:42
-cover: /images/cover/Hexo.jpg
 categories:
   - 环境搭建 - Hexo
 tags:
   - Hexo
   - 博客
+cover: /images/cover/Hexo.jpg
+date: 2020-03-12 14:45:34
 ---
+
+
 
 由于使用 Windows 和 Linux 双系统，在加上想令办公电脑和家用电脑均可维护博客，因此需要在不同电脑、不同平台之间同步 Hexo。尝试过直接使用 Onedrive, Dropbox 等云同步平台，但是文件夹中的插件（`npm 下载的包`）在不同电脑、不同平台并不兼容，因此考虑使用 Git 实现多端同步。
 
