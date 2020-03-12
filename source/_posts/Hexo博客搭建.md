@@ -51,10 +51,9 @@ git --version
 * Linux
 
   ```bash
-	sudo apt-get install nodejs
+  sudo apt-get install nodejs
   sudo apt-get install npm
   ```
-    
 
 检查是否安装成功：
 
@@ -68,7 +67,7 @@ npm -v
 cnpm是淘宝团队做的国内镜像，因为npm的服务器位于国外可能会影响安装。淘宝镜像与官方同步频率目前为 10分钟 一次以保证尽量与官方服务同步。
 
 ```bash
-npm install cnpm -g --registry=https://registry.npm.taobao.org
+sudo npm install cnpm -g --registry=https://registry.npm.taobao.org
 ```
 
 ## 安装Hexo

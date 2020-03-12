@@ -117,8 +117,8 @@ CNME验证的方法适用于博客已绑定域名的情况下，将 c4z6ZbMZ8I.d
 安装sitemap生成器插件：
 
 ```bash
-npm install hexo-generator-sitemap --save
-npm install hexo-generator-baidu-sitemap --save
+cnpm install hexo-generator-sitemap --save
+cnpm install hexo-generator-baidu-sitemap --save
 ```
 
 然后修改站点配置文件 `_config.yml`，将 `url` 改成博客的地址：

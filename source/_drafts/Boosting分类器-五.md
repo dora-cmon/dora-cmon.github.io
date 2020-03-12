@@ -8,6 +8,7 @@ tags:
   - 数据聚类
 cover: /images/cover/线性分类器.jpg
 katex: true
+abbrlink: d3271583
 ---
 
 [toc]
