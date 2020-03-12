@@ -120,7 +120,8 @@ hexo clean && hexo g && hexo d
 - 拉取远程分支
 
     ```bash
-    git pull
+    git fetch
+    git merge
     ```
 
 - 编辑博客后，推送分支
