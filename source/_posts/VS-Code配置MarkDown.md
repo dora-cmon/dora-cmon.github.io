@@ -30,6 +30,7 @@ date: 2020-02-19 01:27:27
 
 该插件可以直接将剪贴板中的图片插入Markdown文件，并自动创建文件夹保存该图片，非常方便。
 
+- 若为 Linux 系统，安装 `sudo apt-get install xclip`
 - 安装插件 Paste Image
 - 默认按下 `Ctrl + Alt + v`或按`Ctrl + Shift + P`输入`Paste Image`即可将截图添加到md文档中
 

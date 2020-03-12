@@ -6,6 +6,7 @@ tags:
   - Hexo
   - 博客
 cover: /images/cover/Hexo.jpg
+abbrlink: 454ba26
 date: 2020-03-12 14:45:34
 ---
 
@@ -133,6 +134,10 @@ hexo clean && hexo g && hexo d
     git commit –m "your commit"
     git push 
     ```
+
+# 更多
+
+参考[环境搭建-Hexo](/categories/环境搭建-Hexo/)
 
 # 参考资料
 

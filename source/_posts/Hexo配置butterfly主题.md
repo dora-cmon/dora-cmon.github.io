@@ -11,7 +11,7 @@ date: 2020-02-16 15:00:57
 
 # 准备工作
 
-完成Hexo环境搭建，参考{% post_link 搭建Hexo博客 %}。
+完成Hexo环境搭建，参考{% post_link Hexo博客搭建 %}。
 
 # 安装Butterfly主题
 

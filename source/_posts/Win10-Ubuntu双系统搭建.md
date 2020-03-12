@@ -1,12 +1,12 @@
 ---
 title: Win10+Ubuntu双系统搭建
 categories:
-  - 环境搭建 - Linux
+  - 环境搭建 - Ubuntu
 tags:
   - 双系统
   - Ubuntu
   - Linux
-cover: /images/cover/ubuntu.jfif
+cover: /images/cover/双系统.jpg
 abbrlink: ea70757b
 date: 2020-02-23 22:50:13
 ---
@@ -156,7 +156,7 @@ date: 2020-02-23 22:50:13
 
 # 更多
 
-更多VS Code相关配置见[环境搭建 - Linux](/categories/环境搭建-Linux/)
+更多 Ubuntu 相关见[环境搭建 - Ubuntu](/categories/环境搭建-Ubuntu/)
 
 # 参考资料
 
