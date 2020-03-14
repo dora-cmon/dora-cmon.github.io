@@ -1,12 +1,12 @@
 ---
-title: 2.Spring Boot配置
+title: Spring Boot配置(二)
 categories:
   - 教程笔记 - Spring Boot
 tags:
   - 教程
   - Spring Boot
-abbrlink: 2847a771
 cover: /images/cover/springboot.jpg
+abbrlink: f3bda73a
 date: 2020-02-29 20:02:11
 ---
 
@@ -133,11 +133,11 @@ public class Person {
 
 | |`@ConfigurationProperties`|`@Value`|
 |----|----|----|
-|功能|批量注入配置文件中的属性|逐个指定|
-|松散语法|支持|不支持|
-|SpEL|不支持|支持|
-|JSR303数据校验|支持|不支持|
-|复杂类型封装|支持|不支持|
+|功能          |批量注入配置文件中的属性|逐个指定|
+|松散语法       |支持                 |不支持|
+|SpEL         |不支持                |支持|
+|JSR303数据校验|支持                  |不支持|
+|复杂类型封装   |支持                  |不支持|
 
 - 如果只在某个业务逻辑中需要获取一下配置文件中的某项值，则用 `@Value`；
 

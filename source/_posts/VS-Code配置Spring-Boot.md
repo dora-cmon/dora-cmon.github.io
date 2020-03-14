@@ -25,10 +25,10 @@ date: 2020-02-27 13:02:57
 
 右键计算机 - &gt  属性 - &gt  高级系统设置 - &gt  高级 - &gt  环境变量，设置`Path` 和 `JAVA_HOME` 环境变量：
 
-![path](/images/1-Spring-Boot入门/2020-02-26-16-45-47.png)
+![path](/images/Spring-Boot入门-一/2020-02-26-16-45-47.png)
 
 
-![java_home](/images/1-Spring-Boot入门/2020-02-26-16-47-54.png)
+![java_home](/images/Spring-Boot入门-一/2020-02-26-16-47-54.png)
 
 然后在命令行输入`java --version`检测是否成功：
 
@@ -43,9 +43,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 13.0.2+8, mixed mode, sharing)
 
 右键计算机 - &gt  属性 - &gt  高级系统设置 - &gt  高级 - &gt  环境变量，设置`Path` 和 `MAVEN_HOME` 环境变量：
 
-![Path](/images/1-Spring-Boot入门/2020-02-26-16-59-00.png)
+![Path](/images/Spring-Boot入门-一/2020-02-26-16-59-00.png)
 
-![MAVEN_HOME](/images/1-Spring-Boot入门/2020-02-26-17-01-26.png)
+![MAVEN_HOME](/images/Spring-Boot入门-一/2020-02-26-17-01-26.png)
 
 然后在命令行输入`mvn -v`检测是否成功：
 
@@ -63,7 +63,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
  &lt localRepository &gt C:\Program Files\apache-maven-3.6.3\maven-repository &lt /localRepository &gt 
 ```
 
-![仓库地址](/images/1-Spring-Boot入门/2020-02-26-17-14-04.png)
+![仓库地址](/images/Spring-Boot入门-一/2020-02-26-17-14-04.png)
 
 然后配置阿里云仓库
 
@@ -76,7 +76,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
  &lt /mirrors &gt 
 ```
 
-![ali](/images/1-Spring-Boot入门/2020-02-26-17-31-04.png)
+![ali](/images/Spring-Boot入门-一/2020-02-26-17-31-04.png)
 
 # VS Code
 
@@ -111,32 +111,32 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 
 按`Ctrl+Shift+P`，输入`Spring`，选择 `Spring Initializer: Generate a Maven Project`：
 
-![generate](/images/1-Spring-Boot入门/2020-02-26-20-05-16.png)
+![generate](/images/Spring-Boot入门-一/2020-02-26-20-05-16.png)
 
 然后选择 `java`：
 
-![java](/images/1-Spring-Boot入门/2020-02-26-20-06-12.png)
+![java](/images/Spring-Boot入门-一/2020-02-26-20-06-12.png)
 
 `Group Id` 默认，`Artifact Id` 输入`spring-boot-helloworld`默认，`Spring Boot version` 选择 `2.2.4`：
 
-![2.2.4](/images/1-Spring-Boot入门/2020-02-26-20-08-17.png)
+![2.2.4](/images/Spring-Boot入门-一/2020-02-26-20-08-17.png)
 
 搜索添加需要的依赖库，鼠标单击可勾选，这里添加以下几个：
 - Spring Boot DevTools（代码修改热更新，无需重启）
 - Spring Web（集成tomcat、SpringMVC）
 - Lombok（智能生成setter、getter、toString等接口，无需手动生成，代码更简介）
 
-![依赖库](/images/1-Spring-Boot入门/2020-02-26-20-09-58.png)
+![依赖库](/images/Spring-Boot入门-一/2020-02-26-20-09-58.png)
 
 然后弹出目录选择框，创建`helloworld`目录并在该目录下生成项目。生成结束后会在右下角弹出提示，点击`open`。
 
 打开 `src/main/java/com/example/demo/DemoApplication.java`文件，并点击右下角加载按钮，等待下载依赖：
 
-![加载](/images/1-Spring-Boot入门/2020-02-26-20-26-49.png)
+![加载](/images/Spring-Boot入门-一/2020-02-26-20-26-49.png)
 
 下载可能很慢，完成后如下图：
 
-![下载完成](/images/1-Spring-Boot入门/2020-02-26-20-17-29.png)
+![下载完成](/images/Spring-Boot入门-一/2020-02-26-20-17-29.png)
 
 ## 编写主程序
 
@@ -146,7 +146,7 @@ VS Code 已经自动写好主程序，`DemoApplication.java`就是程序入口�
 
 在同级目录下创建 `controller` 目录，在其下创建 `helloworldController.java`文件（注意将`Group Id` 和`Artifact Id`换成自己的）：
 
-![创建文件](/images/1-Spring-Boot入门/2020-02-26-20-34-26.png)
+![创建文件](/images/Spring-Boot入门-一/2020-02-26-20-34-26.png)
 
 ```java
 package com.doracmon.springboothelloworld.controller;
@@ -170,33 +170,33 @@ public class helloworldController {
 
 回到 `DemoApplication.java`，点击左侧Debug按钮，然后点击 `create a launch.json file`：
 
-![launch](/images/1-Spring-Boot入门/2020-02-26-20-47-43.png)
+![launch](/images/Spring-Boot入门-一/2020-02-26-20-47-43.png)
 
 自动生成的文件如下，不用修改。
 
-![生成文件](/images/1-Spring-Boot入门/2020-02-26-20-48-47.png)
+![生成文件](/images/Spring-Boot入门-一/2020-02-26-20-48-47.png)
 
 回到主程序，然后按下`F5`即可运行程序：
 
-![运行程序](/images/1-Spring-Boot入门/2020-02-26-20-50-53.png)
+![运行程序](/images/Spring-Boot入门-一/2020-02-26-20-50-53.png)
 
 浏览器进入`127.0.0.1:8080/hello`，看到返回 Hello World：
 
-![hello](/images/1-Spring-Boot入门/2020-02-26-20-52-56.png)
+![hello](/images/Spring-Boot入门-一/2020-02-26-20-52-56.png)
 
 ## 简化部署
 
 点击左侧 `MAVEN PROJECTS` 右键 `spring-boot-helloworld`，选择 `package` 进行打包：
 
-![package](/images/1-Spring-Boot入门/2020-02-26-21-00-57.png)
+![package](/images/Spring-Boot入门-一/2020-02-26-21-00-57.png)
 
 打包后在 `target` 文件夹中：
 
-![包](/images/1-Spring-Boot入门/2020-02-26-21-12-50.png)
+![包](/images/Spring-Boot入门-一/2020-02-26-21-12-50.png)
 
 进入 `target` 目录的命令行，输入 `java -jar spring-boot-helloworld-0.0.1-SNAPSHOT.jar`，即可直接运行该包：
 
-![直接运行](/images/1-Spring-Boot入门/2020-02-26-21-14-58.png)
+![直接运行](/images/Spring-Boot入门-一/2020-02-26-21-14-58.png)
 
 # 更多
 

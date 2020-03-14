@@ -47,6 +47,10 @@ date: 2020-03-12 17:31:54
 
 [官网下载](https://pan.baidu.com/download) `deb` 格式安装包，双击安装即可
 
+### Teamviewer
+
+[官网下载](https://www.teamviewer.cn/cn/download/linux/) `deb` 格式安装包，双击安装即可
+
 ## 办公/开发
 
 ### WPS
@@ -56,6 +60,18 @@ WPS 对 Linux 的支持很好，[官网下载](https://wps.cn/product/wpslinux/)
 ### VS Code
 
 [官网下载](https://code.visualstudio.com/Donload)`deb` 格式安装包，双击安装即可
+
+### Virtual Box
+
+[官网下载](https://www.virtualbox.org/wiki/Linux_Downloads)`deb` 格式安装包，双击安装即可
+
+### JetBrains 系列
+
+官网下载[JetBrains Toolbox](https://www.jetbrains.com/zh-cn/toolbox-app/)`tar.gz`压缩包，解压后双击安装即可
+
+![](/images/Ubuntu软件推荐/2020-03-13-15-38-42.png)
+
+然后在 TOOLBOX 中安装旗下软件即可。
 
 # Linux 软件
 
@@ -82,6 +98,10 @@ proxychains /usr/bin/dropbox start -i
 ![](/images/Ubuntu软件推荐/2020-03-12-17-07-15.png)
 
 关闭命令行，重启软件即可。
+
+## DBeaver 数据库管理系统
+
+[官网下载](https://dbeaver.io/download/)`deb` 格式安装包，双击安装即可
 
 # 未完代续
 
