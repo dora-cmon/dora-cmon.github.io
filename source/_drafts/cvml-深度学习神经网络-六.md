@@ -8,6 +8,7 @@ tags:
   - 数据聚类
 cover: /images/cover/线性分类器.jpg
 katex: true
+abbrlink: a150702c
 ---
 
 # 神经网络发展历史
