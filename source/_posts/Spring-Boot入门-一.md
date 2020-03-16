@@ -44,16 +44,26 @@ Spring Boot 是由 Pivotal 团队在2013年开始研发、2014年4月发布第�
 
 ## JDK
 
-[官方网站](https://www.oracle.com/java/technologies/javase-downloads.html)下载JDK并安装。
+[官方网站](https://www.oracle.com/java/technologies/javase-downloads.html)下载 JDK 并安装([华为镜像站](https://repo.huaweicloud.com/java/jdk/))。
 
-右键计算机 - &gt  属性 - &gt  高级系统设置 - &gt  高级 - &gt  环境变量，设置`Path` 和 `JAVA_HOME` 环境变量：
+**Windows**：
 
-![path](../images/Spring-Boot入门-一/2020-02-26-16-45-47.png)
+  右键计算机 -> 属性 -> 高级系统设置 -> 高级 -> 环境变量，设置`Path` 和 `JAVA_HOME` 环境变量：
+
+  ![path](/images/Spring-Boot入门-一/2020-02-26-16-45-47.png)
 
 
-![java_home](/images/Spring-Boot入门-一/2020-02-26-16-47-54.png)
+  ![java_home](/images/Spring-Boot入门-一/2020-02-26-16-47-54.png)
 
-然后在命令行输入`java --version`检测是否成功：
+**Ubuntu**:
+
+  ```bash
+  sudo add-apt-repository ppa:linuxuprising/java
+  sudo apt-get update
+  sudo apt-get install oracle-java13-installer
+  ```
+
+然后在命令行输入`java -version`检测是否成功：
 
 ```bash
 java 13.0.2 2020-01-14
@@ -62,13 +72,35 @@ Java HotSpot(TM) 64-Bit Server VM (build 13.0.2+8, mixed mode, sharing)
 ```
 ## Maven
 
-[官方网站](https://maven.apache.org/download.cgi)下载maven并解压。
+**Windows**：
 
-右键计算机 - &gt  属性 - &gt  高级系统设置 - &gt  高级 - &gt  环境变量，设置`Path` 和 `MAVEN_HOME` 环境变量：
+  [官方网站](https://maven.apache.org/download.cgi)下载二进制 `zip` 文件并解压([清华镜像站](https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/))。
 
-![Path](/images/Spring-Boot入门-一/2020-02-26-16-59-00.png)
+  配置环境变量：
 
-![MAVEN_HOME](/images/Spring-Boot入门-一/2020-02-26-17-01-26.png)
+  右键计算机 -> 属性 -> 高级系统设置 -> 高级 -> 环境变量，设置`Path` 和 `MAVEN_HOME` 环境变量：
+
+  ![Path](/images/Spring-Boot入门-一/2020-02-26-16-59-00.png)
+
+  ![MAVEN_HOME](/images/Spring-Boot入门-一/2020-02-26-17-01-26.png)
+
+**Ubuntu**:
+
+  [官方网站](https://maven.apache.org/download.cgi)下载二进制 `tar.gz` 文件([清华镜像站](https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/))并解压至 `/usr/local/maven`。
+
+  ```bash
+  sudo tar zxvf apache-maven-3.6.3-bin.tar.gz -C /usr/local
+  ```
+
+  配置环境变量：
+
+  ```bash
+  echo "MAVEN_HOME=/usr/local/apache-maven-3.6.3" >> ~/.bashrc
+  echo "PATH=\${PATH}:\${MAVEN_HOME}/bin" >> ~/.bashrc
+  echo "export PATH" >> ~/.bashrc
+  source ~/.bashrc
+  ```
+
 
 然后在命令行输入`mvn -v`检测是否成功：
 
@@ -82,21 +114,21 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 
 创建仓库文件夹`C:\Program Files\apache-maven-3.6.3\maven-repository`并在`C:\Program Files\apache-maven-3.6.3\conf\settings.xml`中添加仓库地址：
 
-```html
- &lt localRepository &gt C:\Program Files\apache-maven-3.6.3\maven-repository &lt /localRepository &gt 
+```xml
+<localRepository> C:\Program Files\apache-maven-3.6.3\maven-repository</localRepository>
 ```
 
 ![仓库地址](/images/Spring-Boot入门-一/2020-02-26-17-14-04.png)
 
 然后配置阿里云仓库
 
-```html
- &lt mirrors &gt 
-     &lt id &gt nexus-aliyun &lt /id &gt 
-     &lt mirrorOf &gt * &lt /mirrorOf &gt 
-     &lt name &gt nexus aliyun &lt /name &gt 
-     &lt url &gt http://maven.aliyun.com/nexus/content/groups/public &lt /url &gt 
- &lt /mirrors &gt 
+```xml
+<mirrors>
+    <id>nexus-aliyun</id>
+    <mirrorOf>*</mirrorOf>
+    <name>nexus aliyun</name>
+    <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+</mirrors>
 ```
 
 ![ali](/images/Spring-Boot入门-一/2020-02-26-17-31-04.png)
@@ -230,12 +262,12 @@ public class helloworldController {
 `pom.xml` 中的 `parent` 标签：
 
 ```xml
- &lt parent &gt 
-     &lt groupId &gt org.springframework.boot &lt /groupId &gt 
-     &lt artifactId &gt spring-boot-starter-parent &lt /artifactId &gt 
-     &lt version &gt 2.2.4.RELEASE &lt /version &gt 
-     &lt relativePath/ &gt   &lt !-- lookup parent from repository -- &gt 
- &lt /parent &gt 
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.4.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+</parent>
 ```
 
 管理 Spring Boot 应用里的所有依赖版本，是 Spring Boot 的版本仲裁中心。以后导入依赖默认不需要显示版本，没有在 dependencies 里面管理的依赖需要声明版本号。
@@ -243,10 +275,10 @@ public class helloworldController {
 ### 导入的依赖
 
 ```xml
- &lt dependency &gt 
-     &lt groupId &gt org.springframework.boot &lt /groupId &gt 
-     &lt artifactId &gt spring-boot-starter-web &lt /artifactId &gt 
- &lt /dependency &gt 
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
 ```
 
 **spring-boot-starter**：场景启动器，导入 web 模块正常运行所依赖的组件；
@@ -329,3 +361,6 @@ public @interface SpringBootApplication {
 
 [vs code 安装与配置 springboot](https://www.jianshu.com/p/ef859019603d)
 
+[Ubuntu安装maven](https://blog.csdn.net/qq_29695701/article/details/90705181)
+
+[Ubuntu 安装java 13](https://www.jianshu.com/p/9eab518e9814)

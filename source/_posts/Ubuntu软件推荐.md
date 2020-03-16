@@ -39,7 +39,7 @@ date: 2020-03-12 17:31:54
 
 [官网下载](https://im.qq.com/linuxqq/download.html) `deb` 格式安装包，双击安装即可
 
-### 搜狗拼音输入法
+### 搜狗拼音输入法 Linux 版
 
 参考文章 {% post_link Ubuntu-18-04-安装中文输入法 %}
 
@@ -47,9 +47,9 @@ date: 2020-03-12 17:31:54
 
 [官网下载](https://pan.baidu.com/download) `deb` 格式安装包，双击安装即可
 
-### Teamviewer
+### 网易云音乐 Linux 版
 
-[官网下载](https://www.teamviewer.cn/cn/download/linux/) `deb` 格式安装包，双击安装即可
+[官网下载](https://music.163.com/#/download) `deb` 格式安装包，双击安装即可
 
 ## 办公/开发
 
@@ -64,6 +64,10 @@ WPS 对 Linux 的支持很好，[官网下载](https://wps.cn/product/wpslinux/)
 ### Virtual Box
 
 [官网下载](https://www.virtualbox.org/wiki/Linux_Downloads)`deb` 格式安装包，双击安装即可
+
+### Teamviewer Linux 版
+
+[官网下载](https://www.teamviewer.cn/cn/download/linux/) `deb` 格式安装包，双击安装即可
 
 ### JetBrains 系列
 

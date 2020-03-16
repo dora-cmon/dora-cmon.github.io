@@ -23,7 +23,7 @@ date: 2020-02-27 13:02:57
 
 [官方网站](https://www.oracle.com/java/technologies/javase-downloads.html)下载JDK并安装。
 
-右键计算机 - &gt  属性 - &gt  高级系统设置 - &gt  高级 - &gt  环境变量，设置`Path` 和 `JAVA_HOME` 环境变量：
+右键计算机 -> 属性 -> 高级系统设置 -> 高级 -> 环境变量，设置`Path` 和 `JAVA_HOME` 环境变量：
 
 ![path](/images/Spring-Boot入门-一/2020-02-26-16-45-47.png)
 
@@ -41,7 +41,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 13.0.2+8, mixed mode, sharing)
 
 [官方网站](https://maven.apache.org/download.cgi)下载maven并解压。
 
-右键计算机 - &gt  属性 - &gt  高级系统设置 - &gt  高级 - &gt  环境变量，设置`Path` 和 `MAVEN_HOME` 环境变量：
+右键计算机 -> 属性 -> 高级系统设置 -> 高级 -> 环境变量，设置`Path` 和 `MAVEN_HOME` 环境变量：
 
 ![Path](/images/Spring-Boot入门-一/2020-02-26-16-59-00.png)
 
@@ -60,7 +60,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 创建仓库文件夹`C:\Program Files\apache-maven-3.6.3\maven-repository`并在`C:\Program Files\apache-maven-3.6.3\conf\settings.xml`中添加仓库地址：
 
 ```html
- &lt localRepository &gt C:\Program Files\apache-maven-3.6.3\maven-repository &lt /localRepository &gt 
+<localRepository>C:\Program Files\apache-maven-3.6.3\maven-repository</localRepository>
 ```
 
 ![仓库地址](/images/Spring-Boot入门-一/2020-02-26-17-14-04.png)
@@ -68,12 +68,12 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 然后配置阿里云仓库
 
 ```html
- &lt mirrors &gt 
-     &lt id &gt nexus-aliyun &lt /id &gt 
-     &lt mirrorOf &gt * &lt /mirrorOf &gt 
-     &lt name &gt nexus aliyun &lt /name &gt 
-     &lt url &gt http://maven.aliyun.com/nexus/content/groups/public &lt /url &gt 
- &lt /mirrors &gt 
+<mirrors>
+    <id>nexus-aliyun</id>
+    <mirrorOf>*</mirrorOf>
+    <name>nexus aliyun</name>
+    <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+</mirrors>
 ```
 
 ![ali](/images/Spring-Boot入门-一/2020-02-26-17-31-04.png)

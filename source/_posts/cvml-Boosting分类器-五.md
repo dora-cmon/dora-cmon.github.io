@@ -9,9 +9,9 @@ tags:
 cover: /images/cover/线性分类器.jpg
 katex: true
 abbrlink: d3271583
+date: 2020-03-14 13:13:27
 ---
 
-[toc]
 
 # 概览: Boosting Methods
 
@@ -165,7 +165,7 @@ $$
 
 ## 加法模型
 
-**Structural Model**:
+**架构模型**:
 
 - 采用基函数的展开形式
   
@@ -181,11 +181,11 @@ $$
   f_m(x) = b(x; \gamma_m)
   $$
 
-**Loss Function**:
+**损失函数**:
 
 可以是任何损失函数，指数损失和对数似然函数是最常用的函数。
 
-**Optimization Method**: Forward stage-wise
+**优化方法**: Forward stage-wise
 
 最小化以下损失函数是计算密集型的：
 
@@ -222,19 +222,19 @@ $$
 
 ## AdaBoost的本质
 
-**Structural Model: Additive model**
+**架构模型: 加法模型**
 
   $$
   F_M(x) =  \sum_{m=1}^M \beta_m b(x; \gamma_m),\ where\ \Theta = \{\beta_m. \gamma_m\}_{m=1}^M
   $$
 
-**Error Model: Exponential loss**
+**误差函数: 指数损失**
 
 $$
 L(y, F_M(x; \Theta)) = e^{-y F_m(x; \Theta)}
 $$
 
-**Optimization: Forward stagewise algorithm**
+**优化器: Forward stage-wise 算法**
 
 $$\begin{aligned}
 &F_m(x; \Theta) = F_{m-1}(x; \Theta_{m-1}) + \beta_m b(x;\gamma_m),
@@ -329,10 +329,104 @@ $$
 
 3. 分类器输出 $sign[\sum_{m=1}^M f_m(x)]$
 
+# LogitBoost(二分类)
 
+**架构模型: 加法模型**
 
+  $$
+  F_M(x) =  \sum_{m=1}^M f_m b(x; \gamma_m)
+  $$
 
+**误差函数: 对数似然**
 
+$$\begin{aligned}
+&l(y, p(x)) = y \log{p(x)} + (1-y) \log{(1 - p(x))} = - \log{1 + e^{-2 y^* F(x)}} \\
+&where\ P(x) = \frac{e^{F(x)}}{e^{-F(x) + e^{F(x)}}}
+\end{aligned}$$
+
+**优化器: Forward stage-wise 算法**
+
+## 推导
+
+更新 $F(x) + f(x)$ 并且使用对数似然：
+
+$$\begin{aligned}
+E\big(L(F+f)\big) &= E\big(y \log{p(x)} + (1-y) \log{(1- p(x))}\big) \\
+                  &= E\big(2y \cdot (F(x) + f(x)) - \log{(1+e^{2(F(x) + f(x))})} \big) \\
+where\ P(x) &= \frac{e^{F(x)+f(x)}}{e^{-F(x)-f(x)} + e^{F(x)+f(x)}}
+\end{aligned}$$
+
+计算 $f(x)$ 的一阶导和二阶导：
+
+$$\begin{aligned}
+&s(x) = \frac{\partial El(F(x) + f(x))}{\partial f(x)}
+     = 2 E(y^* - p(x)|x), \\
+&H(x) = \frac{\partial^2 E l(F(x) + f(x))}{\partial f(x)^2}
+      = -4 E(p(x)(1-p(x))|x)
+\end{aligned}$$
+
+进行 Newton update:
+
+$$\begin{aligned}
+&F(x) \leftarrow F(x)-H(x)^{-1} s(x)
+  = F(x) + \frac{1}{2} \frac{E(y^* -p(x)|x)}{E(p(x)(1-p(x))|x)}
+  = F(x) + \frac{1}{2} E_w\Big(\frac{y^* -p(x)}{p(x)(1-p(x))}|x \Big) \\
+&Where\ w(x) = p(x)(1-p(x)),and\ 
+E_w[g(x,y)|x] = \frac{E[w(x,y) g(x,y)|x]}{E[w(x,y)|x]}
+\end{aligned}$$
+
+## 算法步骤
+
+1. 开始时 $w_i = \frac{1}{N},\ i = 1,2,...,N$， $F(x) = 0$ 且可能性估计为 $p(x_i) = \frac{1}{2}$
+   
+2. 重复以下操作 $m = 1,2,...,M$
+
+    a) 计算结果和权重
+
+    $$\begin{aligned}
+    z_i = \frac{y_i^* - p(x_i)}{p(x_i)(1- p(x_i))}, \\
+    w_i = p(x_i)(1- p(x_i)).
+    \end{aligned}$$
+    
+    b) 使用 $w_i$ 对有关 $x_i$ 的 $z_i$ 的加权最小二乘回归来拟合 $f_m(x)$
+
+    c) 更新 $ F(x) \leftarrow $
+
+    b) 令 $f_m(x) \leftarrow \frac{1}{2} \log{\frac{p_m(x)}{1-p_m(x)}} \in R$</br></br>
+    
+    c) 更新 $F(x) \leftarrow F(x) + \frac{1}{2} f_m(x),and\ p(x) \leftarrow \frac{e^{F(x)}}{e^{F(x)} + e^{-F(x)}}$</br></br>
+
+3. 分类器输出 $sign[F(x)] = sign\big[\sum_{m=1}^M f_m(x)\big]$
+
+# 总结
+
+## AdaBoost 与 Boosting 算法的本质
+
+![](/images/cvml-Boosting分类器-五/2020-03-16-15-57-32.png)
+
+## Boosting 算法比较
+
+|           | 离散 AdaBoost       | 连续 AdaBoost       | LogitBoost    |
+|---        | ---                | ---        | ---       |
+|损失函数    | $e^{-yf}$          | $e^{-yf}$     | $-\log{(1+ e^{-2yf})}$     |
+|权重$w_i$  | $w_i \leftarrow w_i e^{\beta_i I(y_i \ne f_m(x_i))}$</br>$\beta_i = \log{\frac{1-err_m}{err_m}}$    |$w_i \leftarrow w_i e^{-y_i f_m(x_i)}$  | $w_i = p(x_i)(1-p(x_i))$</br>$p(x)=\frac{e^{F(x)}}{e^{F(x)} + e^{-F(x)}}$ |
+|弱分类器    | $sign\big[\sum\limits_{m=1}^M \beta_m f_m(x)\big]$</br>$f_m(x) \in \{-1,1\}$</br>利用加权训练样本训练获得 | $sign\big[\sum\limits_{m=1}^M f_m(x)\big]$</br>$f_m(x) = \frac{1}{2} \log{\frac{p_m(x)}{1-p_m(x)}}$</br>$p_m(x) = p(y=1\vert x) \in [0,1]$</br>利用加权训练样本训练获得 | $sign\big[\sum\limits_{m=1}^M f_m(x)\big]$</br>$f_m(x)$</br>利用加权训练样本训练获得 | 
+
+## 不同Boosting算法的性能比较
+
+![](/images/cvml-Boosting分类器-五/2020-03-16-16-38-19.png)
+
+## 总结
+
+- SVM 是线性分类器。应用 kernel 技巧，SVM 可转变成非线性分类器，但 kernel SVM 计算量很大。
+
+- AdaBoost 与其它 Boosting 分类器是当今最强大的分类器之一:
+
+  - 能描述非常复杂的非线性分类边界
+  - 具有线性 SVM 的速度，及 kernel SVM 的强大分类能力
+
+- LogitBoost性能比AdaBoost更优越,因为后者不断加大错分训练样本的权重,导致训练后续弱分类器时正负训练样本发生不平衡。
+  
 # 更多
 
 参考[科研学习-计算机视觉与机器学习](/categories/科研学习-计算机视觉与机器学习/)

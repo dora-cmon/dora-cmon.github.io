@@ -9,6 +9,8 @@ cover: /images/cover/flameshot.png
 abbrlink: 11d2fdcd
 ---
 
+本文转载自[Ubuntu 18.04 截图工具-flameshot](https://www.jianshu.com/p/c37a3483a415)
+
 今天发现了一款Ubuntu下很好看的截图工具，功能也很强大，名字叫flameshot
 具体安装命令如下：
 

@@ -38,23 +38,24 @@ date: 2020-03-05 13:56:57
 
 ### HTML标签验证
 
-将以下代码添加到您的网站首页HTML代码的 &lt head &gt 标签与 &lt /head &gt 标签之间，完成操作后请点击“验证”按钮。
+将以下代码添加到您的网站首页HTML代码的 `<head>` 标签与 `</head>` 标签之间，完成操作后请点击“验证”按钮。
 
- &lt meta name="baidu-site-verification" content="c4z6ZbMZ8I" / &gt 
+'''
+<meta name="baidu-site-verification" content="c4z6ZbMZ8I" />
+'''
 
 **注意**：content这个值每个网站都是不一样的，要替换成你自己网站的值
 
 ```html
-
- &lt html &gt 
-   &lt head &gt 
-     &lt meta name="baidu-site-verification" content="c4z6ZbMZ8I" / &gt 
-     &lt title &gt My title &lt /title &gt 
-   &lt /head &gt 
-   &lt body &gt 
+<html>
+  <head>
+    <meta name="baidu-site-verification" content="c4z6ZbMZ8I" />
+    <title>My title</title>
+  </head>
+  <body>
     page contents
-   &lt /body &gt 
- &lt /html &gt 
+  </body>
+</html>
 ```
 
 **为保持验证通过的状态,成功验证后请不要删除该标签**
