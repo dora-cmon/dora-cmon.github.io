@@ -242,7 +242,9 @@ VS Code 已经自动写好主程序，`DemoApplication.java`就是程序入口�
 
 ## 编写相关的Controller, Service
 
-在同级目录下创建 `controller` 目录，在其下创建 `helloworldController.java`文件（注意将`Group Id` 和`Artifact Id`换成自己的）：
+在同级目录下创建 `controller` 目录，在其下创建 `helloworldController.java`文件(新建文件后输入 `class` 并选择第二个可自动补全，`import` 文件在编辑文本时也会自动补全):
+
+![](/images/Sping-Boot与Web开发-三/autofill.gif)）：
 
 ![创建文件](/images/Spring-Boot入门-一/2020-02-26-20-34-26.png)
 

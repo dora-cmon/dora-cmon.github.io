@@ -15,11 +15,11 @@ date: 2020-02-17 12:05:23
 
 打开菜单`Tools -> MobaKeyGen(SSH key generator)  `：
 
-![菜单选项](/images/MobaXterm生成ssh-key并导出/菜单选项.png)
+![菜单选项](/images/Problem-MobaXterm生成ssh-key并导出/菜单选项.png)
 
 选择`RSA`和`2048`参数：
 
-![参数选择](/images/MobaXterm生成ssh-key并导出/参数选择.png)
+![参数选择](/images/Problem-MobaXterm生成ssh-key并导出/参数选择.png)
 
 # 导出密钥
 
@@ -29,11 +29,11 @@ date: 2020-02-17 12:05:23
 
   点击菜单栏的`Conversions -> Export OpenSSH key`：
 
-  ![导出私钥](/images/MobaXterm生成ssh-key并导出/导出私钥.png)
+  ![导出私钥](/images/Problem-MobaXterm生成ssh-key并导出/导出私钥.png)
 
 * 导出公钥
 
   手动复制公钥部分保存至`ssh-key.pub`文件：
 
-  ![公钥部分](/images/MobaXterm生成ssh-key并导出/公钥部分.png)
+  ![公钥部分](/images/Problem-MobaXterm生成ssh-key并导出/公钥部分.png)
 
