@@ -112,10 +112,22 @@ Default locale: zh_CN, platform encoding: GBK
 OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 ```
 
-创建仓库文件夹`C:\Program Files\apache-maven-3.6.3\maven-repository`并在`C:\Program Files\apache-maven-3.6.3\conf\settings.xml`中添加仓库地址：
+创建 `maven-repository` 仓库文件夹目录并添加仓库地址：
+```bash
+# Windows 
 
-```xml
-<localRepository> C:\Program Files\apache-maven-3.6.3\maven-repository</localRepository>
+# 新建 C:\Program Files\apache-maven-3.6.3\maven-repository
+
+# 在 C:\Program Files\apache-maven-3.6.3\conf\settings.xml 中添加仓库地址
+
+<localRepository>C:\Program Files\apache-maven-3.6.3\maven-repository</localRepository>
+
+# Ubuntu
+mkdir /usr/local/apache-maven-3.6.3/maven-repository
+sudo gedit /usr/local/apache-maven-3.6.3/conf/settings.xml
+
+# 添加仓库地址
+<localRepository>/usr/local/apache-maven-3.6.3/maven-repository</localRepository>
 ```
 
 ![仓库地址](/images/Spring-Boot入门-一/2020-02-26-17-14-04.png)
@@ -138,12 +150,12 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 安装插件：
 
 - Java Extension Pack
-- Maven for Java
 - Spring Boot Extension Pack
 
 在配置文件中添加(修改成自己的地址）：
 
 ```json
+// Windows
 "java.home": "C:\\Program Files\\Java\\jdk-13.0.2",   //java jdk地址
 "java.configuration.maven.userSettings": "C:\\Program Files\\apache-maven-3.6.3\\conf\\settings.xml",    //mvaen配置文件路径
 "maven.executable.path": "C:\\Program Files\\apache-maven-3.6.3\\bin\\mvn.cmd",  //maven命令执行路径
@@ -152,6 +164,18 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
     {
         "environmentVariable": "JAVA_HOME",
         "value": "C:\\Program Files\\Java\\jdk-13.0.2"
+    }
+],
+
+// Ubuntu
+"java.home": "/usr/lib/jvm/jdk-13/",   //java jdk地址
+"java.configuration.maven.userSettings": "/usr/local/apache-maven-3.6.3/confsettings.xml",    //mvaen配置文件路径
+"maven.executable.path": "/usr/local/apache-maven-3.6.3/bin/mvn",  //maven命令执行路径
+"maven.terminal.useJavaHome": true,
+"maven.terminal.customEnv": [
+    {
+        "environmentVariable": "JAVA_HOME",
+        "value": "/usr/lib/jvm/jdk-13/"
     }
 ],
 ```
@@ -189,7 +213,26 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 
 ![加载](/images/Spring-Boot入门-一/2020-02-26-20-26-49.png)
 
-下载可能很慢，完成后如下图：
+**注意**：此时可能下载地址并不是阿里云镜像，依旧极其缓慢，原因参考{% post_link 配置了maven的国内镜像后，项目未通过镜像下载 %}。按照该文章修改 `pom.xml` 后速度起飞。
+
+```xml
+<!-- pom.xml 添加内容如下 -->
+<repositories>
+  <repository>
+    <id>central</id>
+    <url>http://maven.aliyun.com/nexus/content/repositories/central</url>
+  </repository>
+</repositories>
+
+<pluginRepositories>
+  <pluginRepository>
+    <id>central</id>
+    <url>http://maven.aliyun.com/nexus/content/repositories/central</url>
+  </pluginRepository>
+</pluginRepositories>
+```
+
+完成后如下图：
 
 ![下载完成](/images/Spring-Boot入门-一/2020-02-26-20-17-29.png)
 
