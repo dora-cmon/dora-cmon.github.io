@@ -7,6 +7,7 @@ tags:
   - Linux
 cover: /images/cover/flameshot.png
 abbrlink: 11d2fdcd
+date: 2020-03-12 15:33:34
 ---
 
 本文转载自[Ubuntu 18.04 截图工具-flameshot](https://www.jianshu.com/p/c37a3483a415)
