@@ -5,15 +5,15 @@ categories:
 tags:
   - Ubuntu
   - Linux
-cover: /images/cover/ubuntu.jfif
+cover: /images/Ubuntu-18-04-使用Komorebi实现动态桌面/2020-03-18-23-36-23.png
 abbrlink: c3b0ff28
 ---
 
-![](../images/Ubuntu-18-04-使用Komorebi实现动态桌面/2020-03-18-23-36-23.png)
+![](/images/Ubuntu-18-04-使用Komorebi实现动态桌面/2020-03-18-23-36-23.png)
 
-![](../images/Ubuntu-18-04-使用Komorebi实现动态桌面/2020-03-18-23-47-04.png)
+![](/images/Ubuntu-18-04-使用Komorebi实现动态桌面/2020-03-18-23-47-04.png)
 
-![](../images/Ubuntu-18-04-使用Komorebi实现动态桌面/2020-03-18-23-47-32.png)
+![](/images/Ubuntu-18-04-使用Komorebi实现动态桌面/2020-03-18-23-47-32.png)
 
 # 安装 Komorebi
 
