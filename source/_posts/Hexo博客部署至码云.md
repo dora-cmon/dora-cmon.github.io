@@ -29,7 +29,7 @@ date: 2020-02-22 14:46:50
 安装部署插件包，在博客根目录打开`Git Bash`，输入以下命令：
 
 ```bash
-npm install hexo-deployer-git --save
+sudo cnpm install hexo-deployer-git --save
 ```
 
 ## 站点配置文件

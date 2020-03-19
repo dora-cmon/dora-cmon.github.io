@@ -76,11 +76,43 @@ CNME验证的方法适用于博客已绑定域名的情况下，将 c4z6ZbMZ8I.d
 
 自动提交分为三种：
 
-- 主动推送：通过主动调用百度提供的接口提交链接
+- **主动推送**：通过主动调用百度提供的接口提交链接
   
 - **自动推送**：在页面被访问时，页面URL将立即被推送给百度
   
 - **sitemap**：sitemap文件里包含站点的所有页面地址，提供给搜索引擎的爬虫爬取
+
+**主动推送**
+
+安装插件 `sudo cnpm install hexo-baidu-url-submit --save` 
+
+然后在根目录的配置文件 `_config.yml` 中新增字段：
+
+```yaml
+#设置百度主动推送
+baidu_url_submit:
+  count: 100  #比如200，代表提交最新的200个链接
+  host: dora_cmon.gitee.io # 在百度站长平台中注册的域名，这个改为你自己的域名
+  token: your_token # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里，这个默认
+```
+
+token 从站长平台获取：
+
+![](/images/Hexo博客百度谷歌收录/2020-03-19-16-11-42.png)
+
+再配置 `deploy` 项：
+
+```yaml
+deploy:
+- type: git
+  repo: git@gitee.com:dora_cmon/dora_cmon.git
+  branch: master
+- type: baidu_url_submitter
+```
+在执行 `hexo d` 时，新的连接会自动向百度推送。
+
+![](../images/Hexo博客百度谷歌收录/2020-03-19-16-12-55.png)
 
 **自动推送**
 
@@ -118,8 +150,8 @@ CNME验证的方法适用于博客已绑定域名的情况下，将 c4z6ZbMZ8I.d
 安装sitemap生成器插件：
 
 ```bash
-cnpm install hexo-generator-sitemap --save
-cnpm install hexo-generator-baidu-sitemap --save
+sudo cnpm install hexo-generator-sitemap --save
+sudo cnpm install hexo-generator-baidu-sitemap --save
 ```
 
 然后修改站点配置文件 `_config.yml`，将 `url` 改成博客的地址：

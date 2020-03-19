@@ -16,7 +16,7 @@ Hexo默认根据配置文件`_config.yml`里的`permalink: :year/:month/:day/:ti
 使用 Hexo-abbrlink 插件解决该问题：
 
 ```bash
-cnpm install hexo-abbrlink --save
+sudo cnpm install hexo-abbrlink --save
 ```
 
 修改`_config.yml`中的`permalink`字段：

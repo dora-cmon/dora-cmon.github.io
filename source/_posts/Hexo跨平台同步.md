@@ -108,7 +108,7 @@ hexo -v
 ## 安装插件
 
 ```bash
-cnpm install --save
+sudo cnpm install --save
 
 ```
 

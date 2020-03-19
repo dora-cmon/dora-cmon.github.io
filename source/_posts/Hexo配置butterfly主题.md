@@ -27,7 +27,7 @@ git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes
 如果你没有 pug 以及 stylus 的渲染器（默认是没有的），请下载安装： 
 
 ```bash
-npm install hexo-renderer-pug hexo-renderer-stylus --save
+sudo cnpm install hexo-renderer-pug hexo-renderer-stylus --save
 ```
 
 ## 启用主题
@@ -67,7 +67,7 @@ Error: Cannot find module 'cheerio'
 则运行以下命令安装`cheerio`：
 
 ```bash
-npm install cheerio
+sudo cnpm install cheerio
 ```
 
 # 主题配置

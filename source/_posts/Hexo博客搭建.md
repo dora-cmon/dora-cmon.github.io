@@ -91,7 +91,7 @@ hexo -v
 ```bash
 hexo init folder
 cd folder
-cnpm install --save
+sudo cnpm install --save
 ```
 
 启动服务：
