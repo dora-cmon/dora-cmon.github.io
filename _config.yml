@@ -98,9 +98,10 @@ theme: Butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: git@gitee.com:dora_cmon/dora_cmon.git
   branch: master # 部署分支
+- type: baidu_url_submitter
 
 # abbrlink config
 abbrlink:
@@ -112,3 +113,10 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+# 百度主动推送
+baidu_url_submit:
+  count: 100
+  host: dora_cmon.gitee.io
+  token: 6PZpc19JlTqo6JIZ
+  path: baidu_urls.txt

@@ -10,14 +10,13 @@ cover: /images/cover/ubuntu.jfif
 date: 2020-03-12 17:31:54
 ---
 
-
 # Windows 常用软件 Linux 版
 
 ## 工具/娱乐
 
 ### 微信网页版
 
-因为不想安装 `Wine` 或 `electronic-wechat` 等，因此使用网页版微信，虽然不是最好的解决办法，但还是比较优雅的。该方法需要 `Chrome` 的配合。
+因为不想安装 `Wine` 或 `electronic-wechat` 等，因此使用网页版微信，虽然不是最好的解决办法，但还是比较优雅的。该方法需要 [Chrome](#chrome) 的配合。
 
 使用 Chrome 打开[微信网页版](https://wx.qq.com)，点击右上角菜单，选择 `More tools -> Create Shortcut...`
 
@@ -52,6 +51,57 @@ date: 2020-03-12 17:31:54
 [官网下载](https://music.163.com/#/download) `deb` 格式安装包，双击安装即可
 
 ## 办公/开发
+
+### V2rayL
+
+参考文章 {% post_link Ubuntu-18-04-使用V2ray图形化软件V2rayL加速上网 %}
+
+### Chrome
+
+安装 V2rayL 并加速上网成功后：
+
+**Proxychains**
+
+```bash
+sudo apt install proxychains
+```
+
+修改配置 `sudo vi /etc/proxychains.conf`，注释掉 `socks4` 行，添加 `socks5` 行：
+
+```bash
+#socks4   127.0.0.1 9050
+socks5    127.0.0.1 1080
+```
+在终端执行 `proxychains curl www.google.com`，查看是否加速成功。
+
+**安装 Chrome**：
+
+```bash
+proxychains firefox www.google.com
+```
+
+进入浏览器后根据提示下载 `chrome` 的`deb`安装包，双击安装即可。
+
+**安装插件 Proxy SwitchyOmega**
+
+用同样的方式启动 `Chrome`：
+
+```bash
+proxychains google-chrome
+```
+打开扩展市场：
+
+![](/images/Ubuntu-18-04-使用V2ray图形化软件V2rayL加速上网/2020-03-18-22-02-34.png)
+
+搜索并安装 `Proxy SwitchyOmega`，扩展添加完成后，根据提示打开配置页，修改 `proxy` 配置：
+
+![](/images/Ubuntu-18-04-使用V2ray图形化软件V2rayL加速上网/2020-03-18-22-07-11.png)
+
+以后使用时按右上角插件切换代理模式即可。
+
+**将网页固定位 APP**
+
+Chrome 可以将任意网页生成为 APP，并固定至 dock，以微信网页版为例，参考小节 [微信网页版](#微信网页版)。
 
 ### WPS
 
