@@ -6,7 +6,9 @@ tags:
   - 教程
   - Spring Boot
 cover: /images/cover/springboot.jpg
+date: 2020-03-25 21:08:31
 ---
+
 
 功能：浏览器发送 hello 请求，服务器接受请求并处理，响应 Hello World 字符串。
 

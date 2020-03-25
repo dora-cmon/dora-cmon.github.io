@@ -6,7 +6,9 @@ tags:
   - 教程
   - Spring Boot
 cover: /images/cover/springboot.jpg
+date: 2020-03-25 21:08:02
 ---
+
 
 Spring Boot 是由 Pivotal 团队在2013年开始研发、2014年4月发布第一个版本的全新开源的轻量级框架。它基于 Spring4.0 设计，不仅继承了 Spring 框架原有的优秀特性，而且还通过简化配置来进一步**简化了 Spring 应用的整个搭建和开发过程**。另外 Spring Boot 通过集成大量的框架使得依赖包的版本冲突，以及引用的不稳定性等问题得到了很好的解决。
 
