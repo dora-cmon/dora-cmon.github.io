@@ -127,6 +127,12 @@ WPS 对 Linux 的支持很好，[官网下载](https://wps.cn/product/wpslinux/)
 
 然后在 TOOLBOX 中安装旗下软件即可。
 
+### Postman
+
+postman是一款功能强大的网页调试和模拟发送HTTP请求的Chrome插件，支持几乎所有类型的HTTP请求，操作简单且方便。
+
+安装方式参考 {% post_link Ubuntu-18-04-安装Postman %}
+
 # Linux 软件
 
 ## 截图编辑软件 flameshot
@@ -152,6 +158,36 @@ proxychains /usr/bin/dropbox start -i
 ![](/images/Ubuntu软件推荐/2020-03-12-17-07-15.png)
 
 关闭命令行，重启软件即可。
+
+## MySQL
+
+```bash
+sudo apt install mysql-server
+sudo apt install mysql-client
+sudo apt install libmysqlclient-dev
+```
+
+执行命令 `sudo netstat -tap |grep mysql`，检查是否安装成功：
+
+```
+tcp     0   0   localhost:mysql     0.0.0.0:*   LISTEN  10165/mysqld
+```
+出现以上行，则代表安装成功。
+
+登录数据库：
+
+```bash
+# 若 root 账户无密码
+mysql -uroot
+# 若 root 账户有密码
+mysql -uroot -p<your_passwd>
+```
+
+修改数据库账户密码（给 `root` 本地用户设置密码）
+
+```sql
+mysql> set password for root@localhost=password("111111");
+```
 
 ## DBeaver 数据库管理系统
 

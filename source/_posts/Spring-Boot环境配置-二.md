@@ -6,6 +6,7 @@ tags:
   - 教程
   - Spring Boot
 cover: /images/cover/springboot.jpg
+abbrlink: 552685ae
 date: 2020-03-25 21:08:16
 ---
 
@@ -123,7 +124,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 
 在配置文件中添加(修改成自己的地址）：
 
-```json
+```yaml
 // Java Config
 "java.home": "/usr/lib/jvm/java-1.8.0-openjdk-amd64/",   //java jdk地址
 "java.configuration.maven.userSettings": "/usr/local/apache-maven-3.6.3/confsettings.xml",    //mvaen配置文件路径
