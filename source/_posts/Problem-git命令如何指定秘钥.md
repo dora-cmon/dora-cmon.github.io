@@ -10,10 +10,9 @@ abbrlink: bfc06ff2
 date: 2020-04-03 22:33:08
 ---
 
-
 # 保存秘钥文件
 
-将秘钥移动到 `~/.ssh/` 目录(Window路径为 `%HOMEPATH/.ssh/%`)下，若已有秘钥，注意修改秘钥名称，如 `id_rsa_proj`
+将秘钥移动到 `~/.ssh/` 目录(Window路径为 `%HOMEPATH%/.ssh/`)下，若已有秘钥，注意修改秘钥名称，如 `id_rsa_proj`
 
 # 添加配置文件
 
