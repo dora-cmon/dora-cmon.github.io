@@ -7,7 +7,9 @@ tags:
   - Linux
 cover: /images/cover/ubuntu.jfif
 abbrlink: b22b8242
+date: 2020-04-22 16:53:00
 ---
+
 
 安装方法 Ubuntu 18.04 请直接跳转到第四节 [安装](#安装)；其他 Ubuntu 版本请跳转到第三节[使用](#使用)
 

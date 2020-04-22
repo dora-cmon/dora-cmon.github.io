@@ -7,7 +7,9 @@ tags:
   - Linux
 cover: /images/Ubuntu-18-04-美化完全攻略/2020-03-19-19-16-41.png
 abbrlink: 42e35e2a
+date: 2020-04-22 16:52:37
 ---
+
 
 ![](/images/Ubuntu-18-04-美化完全攻略/screenshot.png)
 
@@ -214,6 +216,10 @@ Plymouth 主题也就是开机动画，可以在 [Plymouth Themes](https://www.g
 - [Dynamic Panel Transparency](https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/) 将顶栏变透明
 
 - [Resource Monitor](https://extensions.gnome.org/extension/1634/resource-monitor/) 在顶栏显示资源使用情况
+
+- [Scroll Workspace](https://extensions.gnome.org/extension/1438/scroll-workspace/) 在屏幕右侧边缘滚轮切换工作区
+
+- [Workspace Wraparound](https://extensions.gnome.org/extension/971/workspace-wraparound/) 工作区循环切换(第一个工作区向上切换至最后一个工作区)
 
 # Ubuntu 18.04 软件推荐
 

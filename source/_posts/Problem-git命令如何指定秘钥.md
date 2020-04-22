@@ -56,9 +56,9 @@ Host project
 |显示当前分支的版本历史  |`git log`|
 |把文件添加到缓冲区     |`git add filename`|
 |添加所有文件到缓冲区   | `git add .`|
+|提交缓冲区的所有修改   |`git commit -m  "commit"`|
 |删除文件             |`git rm filename`|
 |显示文件变更          |`git diff filename`|
-|提交缓冲区的所有修改   |`git commit -m  "commit"`|
 
 # 参考资料
 
