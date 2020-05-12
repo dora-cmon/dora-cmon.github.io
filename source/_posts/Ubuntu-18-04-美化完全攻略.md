@@ -61,7 +61,7 @@ sudo apt-get install gnome-shell-extensions
 
 安装完成后刷新，右上角可以看到该插件图标。
 
-刷新页面并进入 `User Themes`，开启该查件：
+刷新页面并进入 `User Themes`，开启该插件：
 
 ![](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-00-12-21.png)
 
@@ -71,9 +71,9 @@ sudo apt-get install gnome-shell-extensions
 
 在 [gnome主题官方网站](https://www.gnome-look.org/)选择自己心仪的主题，**注意需要选择 GTK3 分类下的主题**，其他分类的主题不适合 Ubuntu 18.04
 
-以 [material-black COLORS Complete Desktop](https://www.gnome-look.org/p/1316887/) 为例：
+以 [Layan gtk theme](https://www.gnome-look.org/p/1309214/) 为例：
 
-- 下载 `Material-Black-Pistachio_1.7.5.zip` 并解压至 `~/.themes/`目录下(注意直接解压是内层的目录 `Material-Black-Pistachio`)
+- 下载 `Layan-dark-solid.tar.xz` 并解压至 `~/.themes/`目录下
 
 - 重启 `Tweaks` 并在 `Themes -> Applications` 中选择该主题：
 
