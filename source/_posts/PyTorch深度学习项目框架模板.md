@@ -5,7 +5,7 @@ categories:
 tags:
   - Pytorch
   - 目录结构
-cover: /image/cover/pytorch.png
+cover: /images/cover/pytorch.png
 abbrlink: c64e04ad
 date: 2020-05-12 21:20:15
 ---
