@@ -6,6 +6,7 @@ tags:
   - Ubuntu
   - Linux
 cover: /images/cover/ubuntu.jfif
+abbrlink: 6ff9e8ef
 ---
 
 本文转载自[Ubuntu18.04通过网线共享网络](https://www.cnblogs.com/jiading/p/11989966.html)
