@@ -1,5 +1,5 @@
 ---
-title: 'Notepad++, Everything, FreeFileSync提高工作效率的三个免费软件神器（转载）'
+title: 'Notepad++, Everything, FreeFileSync提高工作效率的三个免费软件神器(转载)'
 categories:
   - 软件工具
 tags:
@@ -7,7 +7,6 @@ tags:
   - Everything
   - FreeFileSync
   - 转载
-abbrlink: 3bb670f1
 cover: /images/cover/办公.jpg
 date: 2020-02-20 10:35:56
 ---

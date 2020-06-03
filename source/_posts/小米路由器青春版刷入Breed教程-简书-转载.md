@@ -1,18 +1,17 @@
 ---
-title: 小米路由器青春版刷入Breed教程 - 简书（转载）
+title: 小米路由器青春版刷入Breed教程(转载)
 categories:
   - 折腾造作 - 刷机
 tags:
   - 小米
   - 路由器
   - 刷机
-abbrlink: b5628462
 cover: /images/cover/电路板.jpg
 date: 2020-02-20 22:13:59
 ---
 
 
-本文转载自[小米路由器青春版刷入Breed教程 - 简书](https://www.jianshu.com/p/e4e0a5818c3d)。工具打包在[百度网盘](https://pan.baidu.com/s/1zo_7w3DD1nXRpv9S0ATsJA)
+本文转载自[小米路由器青春版刷入Breed教程](https://www.jianshu.com/p/e4e0a5818c3d)。工具打包在[百度网盘](https://pan.baidu.com/s/1zo_7w3DD1nXRpv9S0ATsJA)
 
 # 刷回旧版固件，开启SSH
 

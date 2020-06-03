@@ -23,30 +23,25 @@ date: 2020-05-12 21:20:15
 PyTorch_project
 ├── config
 │   └── defaults.py             # config file.
-├──  configs  
-│   └── train_mnist_softmax.yml # specific config file for specific model or dataset.
 ├── data  
 │   ├── dataset     # datasets folder that is responsible for all data handling.
 │   ├── transforms  # data preprocess folder that is responsible for all data augmentation.
 │   ├── build.py            # file to make dataloader.
 │   └── collate_batch.py    # file that is responsible for merges a list of samples to form a mini#batch.
-├──  engine
-│   ├── trainer.py      # train loops.
-│   └── inference.py    # inference process.
 ├── layers              # customed layers.
 │   └── conv_layer.py
-├── modeling            # model.
+├── models              # model.
 │   └── example_model.py
-├── solver              # optimizer.
-│   └── build.py
-│   └── lr_scheduler.py
-├── tools               # train/test model.
-│   └── train_net.py    # an example of train model that is responsible for the whole pipeline.
+├── optimizer           # optimizer.
+│   └── default.py
 └── utils
 │   ├── logger.py
 │   └── any_other_utils_you_need
-└── tests               # unit test.
-    └── test_data_sampler.py
+├── tests               # unit test.
+│   └── test_data_sampler.py
+├── requirements.txt  # package required
+├── trainer.py        # train loops.
+└── inference.py      # inference process.
 ```
 
 
