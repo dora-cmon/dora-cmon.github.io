@@ -7,7 +7,9 @@ tags:
   - Linux
 cover: /images/cover/ubuntu.jfif
 abbrlink: 6ff9e8ef
+date: 2020-06-03 19:12:07
 ---
+
 
 本文转载自[Ubuntu18.04通过网线共享网络](https://www.cnblogs.com/jiading/p/11989966.html)
 
