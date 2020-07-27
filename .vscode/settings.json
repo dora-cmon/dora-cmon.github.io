@@ -1,7 +1,0 @@
-{
-    /* Paste Image Config */
-    "pasteImage.path": "${projectRoot}/source/images/${currentFileNameWithoutExt}",
-    "pasteImage.basePath": "${projectRoot}/source",
-    "pasteImage.forceUnixStyleSeparator": true,
-    "pasteImage.prefix": "/",
-}
