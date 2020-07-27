@@ -1,5 +1,5 @@
 ---
-title: Ubuntu18.04通过网线共享网络(转载)
+title: Ubuntu 18.04 通过网线共享网络(转载)
 categories:
   - 环境搭建 - Ubuntu
 tags:
@@ -7,7 +7,9 @@ tags:
   - Linux
 cover: /images/cover/ubuntu.jfif
 abbrlink: 6ff9e8ef
+date: 2020-07-28 01:03:17
 ---
+
 
 本文转载自[Ubuntu18.04通过网线共享网络](https://www.cnblogs.com/jiading/p/11989966.html)
 
