@@ -10,5 +10,7 @@
 		"pasteImage.basePath": "${projectRoot}",
 		"pasteImage.forceUnixStyleSeparator": true,
 		"pasteImage.prefix": "/",
+		/* Current Working Directory */
+		"terminal.integrated.cwd": "../"
 	}
 }
