@@ -6,6 +6,7 @@ tags:
   - Ubuntu
   - Linux
 cover: /images/cover/ubuntu2004.png
+abbrlink: 685eebef
 date: 2020-07-29 02:27:05
 ---
 
