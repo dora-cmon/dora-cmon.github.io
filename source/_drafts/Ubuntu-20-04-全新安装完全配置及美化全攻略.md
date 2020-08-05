@@ -138,4 +138,4 @@ sudo apt upgrade
 
 ## Virtual Box
 
-[官方下载页面](https:///www.virtualbox.org)
+从[官方下载页面](https://www.virtualbox.org/wiki/Linux_Downloads)下载  [Ubuntu 19.10 / 20.04](https://download.virtualbox.org/virtualbox/6.1.12/virtualbox-6.1_6.1.12-139181~Ubuntu~eoan_amd64.deb) deb 包，并安装。
