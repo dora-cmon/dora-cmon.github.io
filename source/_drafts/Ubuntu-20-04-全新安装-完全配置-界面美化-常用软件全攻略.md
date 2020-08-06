@@ -59,8 +59,6 @@ cover: /images/cover/ubuntu2004.png
 
       ![安装界面语言](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-05-10-30-20.png)
 
-      点击 `安装 Ubuntu`
-
     - 选择键盘布局：
 
       ![键盘布局](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-05-10-33-13.png)
@@ -145,15 +143,57 @@ your-user-name ALL=(ALL) NOPASSWD:ALL
 sudo chmod -w /etc/sudoers
 ```
 
-# 界面美化
+如果编辑 `/etc/sudoers` 文件时，手抖写错，导致无法使用 `sudo` 命令，可以重启电脑，在出现 `Ubuntu logo` 时按 `ESC` 键，选择 `Advanced` 高级启动，以 `root` 身份进入终端，修改正确后重启进入系统。
+
+# 界面主题美化
 
 ## 安装 tweaks
 
-1. apt安装
+1. apt 安装
 
-1. chrome extension
+    ```bash
+    sudo apt update
+    # 安装 gnome-tweak 优化软件
+    sudo apt install gnome-tweak-tool
+    # 使支持浏览器安装 gnome 插件
+    sudo apt install chrome-gnome-shell
+    # 开启 gnome 插件
+    # sudo apt install gnome-shell-extensions
+    ```
 
-1. 插件推荐
+1. Firfox/Chrome(二选一即可) extension
+
+    - firfox 安装 GNOME Shell integration 插件
+
+        ![gnome shell integration firfox](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-06-29.png)
+
+    - chrome 安装 GNOME Shell integration 插件
+
+        ![gnome shell integration chrome](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-09-08.png)
+
+    如果无法打开网页则需要加速上网，参eg文 [V2rayL](#推荐安装) 小节。
+
+## 更换 GNOME 主题
+
+在 [gnome主题官方网站](https://www.gnome-look.org/)选择自己心仪的主题，**注意需要选择 GTK3 分类下的主题**，其他分类的主题可能不适合 Ubuntu 20.04。以 [Sweet](https://www.gnome-look.org/p/1253385/) 为例：
+
+- 下载 `Sweet-Dark.tar.xz` 并解压至 `~/.themes/` 下。如果没有则创建该目录。
+
+- 重启 `Tweaks` 并在 `外观 -> 应用程序` 中选择该主题：
+
+  ![Sweet-Dark](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-34-27.png)
+
+## 更换软件图标
+
+在 `Full Icon Themes` 类目下选择自己心仪的软件图标主题。以 [Sweet folders](https://www.opendesktop.org/p/1284047/) 为例：
+
+
+- 下载 `Sweet-Rainbow.tar.xz` 并解压至 `~/.icons/` 下。如果没有则创建该目录。
+  
+- 重启 `Tweaks` 并在 `Themes -> Icons` 中选择该主题：
+
+  ![Sweet-Rainbow](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-42-44.png)
+
 
 # 软件安装推荐
 
@@ -177,12 +217,15 @@ sudo chmod -w /etc/sudoers
 
         ```bash
         cd v2rayL
+        # 安装
         ./install
+        # 卸载
+        ./uninstall
         ```
 
     - 添加订阅
 
-        这里提供免费订阅地址：https://jiang.netlify.com
+        免费订阅地址（可能会失效，各凭本事）：https://jiang.netlify.com
 
     - 设置全局代理
 
@@ -209,7 +252,7 @@ sudo chmod -w /etc/sudoers
 
     在终端执行 `curl www.google.com`，查看是否加速成功。
 
-2. chrome 浏览器
+1. chrome 浏览器
 
     从[官方下载网页](https://www.google.com/intl/zh-CN/chrome/)下载 deb 包并安装。
 
@@ -231,20 +274,32 @@ sudo chmod -w /etc/sudoers
 
     完成后点击插件选择 `直连模式` 或 `proxy` 即可切换是否加速。
 
-3. WPS
+1. WPS
 
-从[官方下载网页]()
+    从[官方下载网页]()
 
+1. flameshot 截图软件
 
+    ```bash
+    sudo apt install flameshot
+    ```
+
+    安装完成后在 `设置 -> 键盘快捷键` 中添加快捷键：
+
+    ![flameshot 快捷键](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-04-30.png)
+
+    效果如图：
+
+    ![flameshot 效果图](/images/Ubuntu-18-04-截图工具-flameshot-转载/2020-03-12-15-49-30.png)
 
 ## 根据需求选择安装
 
 1. VS Code
 
-**注意：** 不要从 Ubuntu 自带的商店安装，可能出现无法输入中文的 bug。
+    **注意：** 不要从 Ubuntu 自带的商店安装，可能出现无法输入中文的 bug。
 
-从[官方下载页面](https://code.visualstudio.com/)下载 deb 包并安装。
+    从[官方下载页面](https://code.visualstudio.com/)下载 deb 包并安装。
 
 1. Virtual Box
 
-从[官方下载页面](https://www.virtualbox.org/wiki/Linux_Downloads)下载  `Ubuntu 19.10 / 20.04`的 deb 包，并安装。
+    从[官方下载页面](https://www.virtualbox.org/wiki/Linux_Downloads)下载  `Ubuntu 19.10 / 20.04`的 deb 包，并安装。
