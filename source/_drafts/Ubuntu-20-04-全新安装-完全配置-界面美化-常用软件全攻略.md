@@ -157,8 +157,8 @@ sudo chmod -w /etc/sudoers
     sudo apt install gnome-tweak-tool
     # 使支持浏览器安装 gnome 插件
     sudo apt install chrome-gnome-shell
-    # 开启 gnome 插件
-    # sudo apt install gnome-shell-extensions
+    # 开启 gnome shell 扩展
+    sudo apt install gnome-shell-extensions
     ```
 
 1. Firfox/Chrome(二选一即可) extension
@@ -173,46 +173,104 @@ sudo chmod -w /etc/sudoers
 
     如果无法打开网页则需要加速上网，参eg文 [V2rayL](#推荐安装) 小节。
 
+    开启 `User Themes` :
+
+    ![user themes](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-07-15-43-15.png)
+
 ## 更换 GNOME 主题
 
 在 [gnome主题官方网站](https://www.gnome-look.org/)选择自己心仪的主题，**注意需要选择 GTK3 分类下的主题**，其他分类的主题可能不适合 Ubuntu 20.04。以 [Sweet](https://www.gnome-look.org/p/1253385/) 为例：
 
 - 下载 `Sweet-Dark.tar.xz` 并解压至 `~/.themes/` 下。如果没有则创建该目录。
 
-- 重启 `Tweaks` 并在 `外观 -> 应用程序` 中选择该主题：
+- 重启 `Tweaks` 并在 `外观 -> 应用程序 和 Shell` 中选择该主题：
 
-  ![Sweet-Dark](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-34-27.png)
+  ![](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-34-27.png)
+
+  ![Sweet-Dark](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-07-15-51-04.png)
 
 ## 更换软件图标
 
-在 `Full Icon Themes` 类目下选择自己心仪的软件图标主题。以 [Sweet folders](https://www.opendesktop.org/p/1284047/) 为例：
+在 `Full Icon Themes` 类目下选择自己心仪的软件图标主题。以 [Sweet folders](https://www.opendesktop.org/p/1284047/) 和 [Candy icons](https://www.pling.com/p/1305251/) 为例：
 
 
-- 下载 `Sweet-Rainbow.tar.xz` 并解压至 `~/.icons/` 下。如果没有则创建该目录。
+- 下载 `Sweet-Rainbow.tar.xz` 和 `candy-icons.tar.xz` 并解压至 `~/.icons/` 下。如果没有则创建该目录。
   
 - 重启 `Tweaks` 并在 `Themes -> Icons` 中选择该主题：
 
   ![Sweet-Rainbow](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-42-44.png)
 
+`Sweet folders` 仅包含文件夹图标，`Candy icons` 仅包含应用程序图标，`Sweet-Rainbow` 继承了 `Candy icons` 因此下载两个图标主题后，选择 `Sweet-Rainbow` 即可同时应用文件夹和程序图标。
+
+然而，其他文件依旧是系统默认图标，再安装一个项目 [suru-plus](suru-plus) :
+
+```bash
+wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh | env DESTDIR="$HOME/.icons" sh
+# 如果失败，单独运行每个命令
+wget https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh
+env DESTDIR="$HOME/.icons" sh install.sh
+rm install.sh
+```
+
+在 `~/.icons` 目录会增加三个主题：
+
+- Suru++
+- eSuru++
+- Suru++-Light
+
+修改 `Candy icons` 的继承关系 `vi ~/.icons/candy-icons/index.theme` ：
+
+```bash
+Inherits=Suru++
+```
+
+这样，文件夹图标(Sweet-Rainbow)，应用程序图标(candy-icons)，其他应用图标(Suru++)都将被应用。
+
+![三合一](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-07-15-28-34.png)
+
 ## 更换鼠标图标
 
 在 `Cursors` 类目下选择自己心仪的鼠标主题。以 [Bibata](https://www.gnome-look.org/s/Gnome/p/1197198/) 为例：
 
-![](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-17-37-02.png)
+![Bibata Classic](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-17-37-02.png)
 
 - 下载 `Bibata_Classic.zip` 并解压至 `~/.icons/`目录下
   
-- 重启 `Tweaks` 并在 `Themes -> Cursor` 中选择该主题：
+- 重启 `Tweaks` 并在 `外观 -> 光标` 中选择该主题：
 
-  ![](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-17-39-17.png)
+  ![Cursor](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-07-14-54-44.png)
 
 ## 更换 dock
 
 安装 gnome 扩展 [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
-我的配置如下：
+配置如下：
 
-![dash to dock 配置](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-18-21-14.png)
+![dash to dock 配置](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-07-14-26-01.png)
+
+## GDM主题设置(登录/锁定界面)
+
+GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形用户登录的程序，使用 [High Ubunterra](https://www.gnome-look.org/p/1207015/)主题进行美化，这个主题可以锁屏录界面几乎看起来像 macOS 锁屏，运行其脚本可以为桌面设置壁纸，同时在锁定屏幕和登录屏幕上设置相同的壁纸，且带有模糊效果。
+
+- 下载 `High_Ubunterra_DD-2.4(noPass).tar.xz` 注意不同版本针对不同 Ubuntu 版本，具体参考主题首页。
+
+- 解压后，运行其中的安装脚本 `sh ./install.sh`，运行结束按照提示，先按 `ALT + F2`，再按 `r` 回车，让其生效。
+
+- 右键你的壁纸文件，选择 `脚本 -> SetAsWallpaper` 即可。(**注意**：右键一级目录的`设为壁纸`不会设置登录/锁定界面，必须是 `Script` 中的该选项)
+
+## gnome 插件推荐
+
+1. [Hide Top Bar](https://extensions.gnome.org/extension/545/hide-top-bar/) 自动隐藏顶栏
+
+1. [Dynamic Panel Transparency](https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/) 将顶栏变透明
+
+1. [Resource Monitor](https://extensions.gnome.org/extension/1634/resource-monitor/) 在顶栏显示资源使用情况
+
+1. [Scroll Workspace](https://extensions.gnome.org/extension/1438/scroll-workspace/) 在屏幕右侧边缘滚轮切换工作区
+
+1. [Status Area Horizontal Spacing](https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/) 调整顶栏右上角图标间距
+
+1. [Workspace Wraparound](https://extensions.gnome.org/extension/971/workspace-wraparound/) 工作区循环切换(第一个工作区向上切换至最后一个工作区)
 
 # 软件安装推荐
 
@@ -271,9 +329,9 @@ sudo chmod -w /etc/sudoers
 
     在终端执行 `curl www.google.com`，查看是否加速成功。
 
-1. chrome 浏览器
+2. chrome 浏览器
 
-    从[官方下载网页](https://www.google.com/intl/zh-CN/chrome/)下载 deb 包并安装。
+    从 [官方下载网页](https://www.google.com/intl/zh-CN/chrome/) 下载 deb 包并安装。
 
     若无法实现全局加速，使用终端加速打开 `firefox` 并下载安装 Chrome：
 
@@ -293,11 +351,195 @@ sudo chmod -w /etc/sudoers
 
     完成后点击插件选择 `直连模式` 或 `proxy` 即可切换是否加速。
 
-1. WPS
+3. WPS
 
-    从[官方下载网页]()
+    从[官方下载网页](https://linux.wps.cn/) 下载 deb 包进行安装。
 
-1. flameshot 截图软件
+    安装完成后打开 WPS，提示 `系统缺失字体`：
+
+    ![系统缺失字体](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-07-14-12-23.png)
+
+    寻找一台 Windows 电脑，将 `C:\Windows\Fonts` 中对应的字体复制到 Ubuntu 的 `/usr/share/fonts/wps-office/` 目录下，重新启动 WPS 即可。
+
+4. TIM & 微信
+
+    - 安装 deepin-wine
+
+      ```bash
+      git clone "https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git"
+      cd deepin-wine-for-ubuntu && sh ./install_2.8.22.sh
+      rm -rf deepin-wine-for-ubuntu
+      ```
+      在 https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu 下载所需软件的 deb 包。
+
+    - 安装 TIM
+
+      1. 安装
+  
+          在 deb 安装包所在路径下运行：
+
+          ```bash
+          # 根据下载的版本修改文件名
+          sudo dpkg -i deepin.com.qq.office_2.0.0deepin4_i386.deb
+          ```
+
+          安装完成后，启动一次 TIM 并退出。
+
+      2. 更新
+
+          在 [TIM 官方下载页](https://office.qq.com/download.html) 下载最新 `Tim.exe` 安装包，并在该安装包所在目录下运行：
+
+          ```bash
+          # 根据下载的版本修改文件名
+          env WINEPREFIX=~/.deepinwine/Deepin-TIM deepin-wine TIM3.1.0.21789.exe
+          ```
+
+          然后会弹出安装界面，此时的安装界面可能会出现字体乱码、色块变色等问题，请根据自己的经验猜测各个按钮的所在位置，安装完成后退出。
+        
+      3. 设置 DPI
+
+          如果电脑分辨率较高，可能 TIM 的界面非常小，执行命令：
+
+          ```bash
+          env WINEPREFIX="$HOME/.deepinwine/Deepin-TIM" /usr/bin/deepin-wine winecfg
+          ```
+
+          修改 `显示 -> 屏幕分辨率`，设置合适的 dpi，然后重启 TIM。
+
+      4. 处理字体缺失
+
+          将 Windows 系统 `C:\Windows\Fonts` 中的 `微软雅黑, 宋体` 字体拷贝至 `~/.deepinwine/Deepin-TIM/drive_c/windows/Fonts/`
+
+      5. 修改桌面图标
+
+          Deepin-Wine 启动 TIM 后，在 dock 中会打开另一个图标，这不符合习惯，修改 `/usr/share/applications/deepin.com.qq.office.desktop` 文件：
+
+          ```bash
+          # 将 TIM.exe 改为小写 tim.exe
+          StartupWMClass=tim.exe
+          ```
+
+          Deepin-Wine 启动 TIM 后，在关闭程序界面后，虽然程序在后台运行，但如果再次点击程序图标，会关闭后台程序，重新运行一个程序实例，这不符合习惯，
+
+          - 安装 xdotool
+
+              ```bash
+              sudo apt install xdotool
+              ```
+          
+          - 修改 `/opt/deepinwine/apps/Deepin-TIM/run.sh` 文件：
+
+            ```bash
+            # 原脚本如下
+            # BOTTLENAME="Deepin-TIM"
+            # APPVER="2.0.0deepin4"
+            # 
+            # /opt/deepinwine/tools/run.sh $BOTTLENAME $APPVER "$1" "$2" "$3"
+
+            # 修改为
+            BOTTLENAME="Deepin-TIM"
+            APPVER="2.0.0deepin4"
+
+            TIM_PID=$(pgrep QQExternal.exe)
+
+            if [ ! $TIM_PID ]; then
+                /opt/deepinwine/tools/run.sh $BOTTLENAME $APPVER "$1" "$2" "$3"
+            else
+                xdotool key --window $(xdotool search --limit 1 --all --pid $(pgrep TIM.exe)) "ctrl+alt+z"
+            fi
+            ```
+
+    - 安装 微信
+
+      1. 安装
+  
+          在 deb 安装包所在路径下运行：
+
+          ```bash
+          # 根据下载的版本修改文件名
+          sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb
+          ```
+
+          安装完成后，启动一次 微信 并退出。
+
+      2. 更新
+
+          在 [微信 官方下载页](hhttps://pc.weixin.qq.com/) 下载最新 `WeChatSetup.exe` 安装包，并在该安装包所在目录下运行：
+
+          ```bash
+          # 根据下载的版本修改文件名
+          env WINEPREFIX=~/.deepinwine/Deepin-WeChat/ deepin-wine WeChatSetup.exe
+          ```
+
+          然后会弹出安装界面，此时的安装界面可能会出现字体乱码、色块变色等问题，请根据自己的经验猜测各个按钮的所在位置，安装完成后退出。
+        
+      3. 设置 DPI
+
+          如果电脑分辨率较高，可能 微信 的界面非常小，执行命令：
+
+          ```bash
+          env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg
+          ```
+
+          修改 `显示 -> 屏幕分辨率`，设置合适的 dpi，然后重启 TIM。
+
+      4. 处理字体缺失
+
+          将 Windows 系统 `C:\Windows\Fonts` 中的 `微软雅黑, 宋体` 字体拷贝至 `~/.deepinwine/Deepin-WeChat/drive_c/windows/Fonts/`
+
+      5. 修改桌面图标
+
+          Deepin-Wine 启动 微信 后，在 dock 中会打开另一个图标，这不符合习惯，修改 `/usr/share/applications/deepin.com.wechat.desktop` 文件：
+
+          ```bash
+          # 将 WeChat.exe 改为小写 wechat.exe
+          StartupWMClass=wechat.exe
+          ```
+          Deepin-Wine 启动 微信 后，在关闭程序界面后，虽然程序在后台运行，但如果再次点击程序图标，会关闭后台程序，重新运行一个程序实例，这不符合习惯，
+
+          - 安装 xdotool
+
+              ```bash
+              sudo apt install xdotool
+              ```
+          
+          - 修改 `/opt/deepinwine/apps/Deepin-WeChat/run.sh` 文件：
+
+            ```bash
+            # 原脚本如下
+            # BOTTLENAME="Deepin-WeChat"
+            # APPVER="2.6.8.65deepin0"
+            # EXEC_PATH="c:/Program Files/Tencent/WeChat/WeChat.exe"
+            # 
+            # WeChat_PID=$(pgrep WeChat.exe)
+            # 
+            # if [ -n "$EXEC_PATH" ];then
+            #     /opt/deepinwine/tools/run_v2.sh $BOTTLENAME $APPVER "$EXEC_PATH" "$@"
+            # else
+            #     /opt/deepinwine/tools/run_v2.sh $BOTTLENAME $APPVER "uninstaller.exe" "$@"
+            # fi
+
+            # 修改为
+            BOTTLENAME="Deepin-WeChat"
+            APPVER="2.6.8.65deepin0"
+            EXEC_PATH="c:/Program Files/Tencent/WeChat/WeChat.exe"
+
+            WeChat_PID=$(pgrep WeChat.exe)
+
+            if [ ! $WeChat_PID ]; then
+                if [ -n "$EXEC_PATH" ];then
+                    /opt/deepinwine/tools/run_v2.sh $BOTTLENAME $APPVER "$EXEC_PATH" "$@"
+                else
+                    /opt/deepinwine/tools/run_v2.sh $BOTTLENAME $APPVER "uninstaller.exe" "$@"
+                fi
+            else
+                xdotool key --window $(xdotool search --limit 1 --all --pid $(pgrep WeChat.exe)) "ctrl+alt+W"
+            fi
+            ```
+
+    - 其他 deepin-wine 支持的软件同理
+    
+5. flameshot 截图工具
 
     ```bash
     sudo apt install flameshot
@@ -313,12 +555,28 @@ sudo chmod -w /etc/sudoers
 
 ## 根据需求选择安装
 
-1. VS Code
+1. VS Code 代码编辑器
 
     **注意：** 不要从 Ubuntu 自带的商店安装，可能出现无法输入中文的 bug。
 
-    从[官方下载页面](https://code.visualstudio.com/)下载 deb 包并安装。
+    从 [官方下载页面](https://code.visualstudio.com/) 下载 deb 包并安装。
 
-1. Virtual Box
+1. 坚果云同步网盘
 
-    从[官方下载页面](https://www.virtualbox.org/wiki/Linux_Downloads)下载  `Ubuntu 19.10 / 20.04`的 deb 包，并安装。
+    使用过 Onedrive， Dropbox， Goole Drive，但各有弊端，当然最重要的问题还是网络问题。
+
+    - Onedrive 即使网络加速后同步还是很慢，无 Linux 客户端
+    - Google Drive 网盘与相册的逻辑不喜欢，无 Linux 客户端
+    - Drobox 有 Linux 客户端，但免费账户只允许两个设备绑定
+
+    综上，还是考虑使用国内的坚果云，虽然免费版每月只提供 1G 上传流量和 3G 下载流量，但作为同步盘也勉强够用。
+
+    从 [官方下载页面](https://www.jianguoyun.com/s/downloads/linux) 下载 deb 包，并安装。
+
+1. Virtual Box 开源虚拟机软件
+
+    从 [官方下载页面](https://www.virtualbox.org/wiki/Linux_Downloads) 下载  `Ubuntu 19.10 / 20.04`的 deb 包，并安装。
+
+1. DBeaver 数据库管理软件
+
+    从 [官方下载页面](https://dbeaver.io/download/) 下载 `DBeaver Community Edition` 的 deb 包，并安装。
