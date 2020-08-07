@@ -194,6 +194,25 @@ sudo chmod -w /etc/sudoers
 
   ![Sweet-Rainbow](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-42-44.png)
 
+## 更换鼠标图标
+
+在 `Cursors` 类目下选择自己心仪的鼠标主题。以 [Bibata](https://www.gnome-look.org/s/Gnome/p/1197198/) 为例：
+
+![](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-17-37-02.png)
+
+- 下载 `Bibata_Classic.zip` 并解压至 `~/.icons/`目录下
+  
+- 重启 `Tweaks` 并在 `Themes -> Cursor` 中选择该主题：
+
+  ![](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-17-39-17.png)
+
+## 更换 dock
+
+安装 gnome 扩展 [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
+
+我的配置如下：
+
+![dash to dock 配置](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-18-21-14.png)
 
 # 软件安装推荐
 
