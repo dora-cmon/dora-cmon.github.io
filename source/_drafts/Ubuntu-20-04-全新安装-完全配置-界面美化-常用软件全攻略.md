@@ -16,11 +16,11 @@ cover: /images/cover/ubuntu2004.png
 
     从 [ubuntu 官方网站](https://releases.ubuntu.com/20.04/) 下载 [ubuntu-20.04.desktop-amd64.iso](https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso) ISO 镜像文件。
 
-1.  下载 Rufus 镜像制作工具
+2.  下载 Rufus 镜像制作工具
 
     从 [Rufus 官方网站](https://rufus.ie/) 下载并安装 [rufus-3.11exe](https://github.com/pbatard/rufus/releases/download/v3.11/rufus-3.11.exe)。
 
-1. 制作 Ubuntu 20.04 系统启动 U盘
+3. 制作 Ubuntu 20.04 系统启动 U盘
 
     使用 Rufus 制作系统启动U盘，注意 `分区类型` 选择 `GPT`，`目标系统类型` 选择 `UEFI(非 CSM)。制作系统启动 U盘会清除 U盘数据，注意备份。
 
@@ -51,7 +51,7 @@ cover: /images/cover/ubuntu2004.png
 
     ![Secure Boot](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-05-10-25-26.png)
 
-1. 从 U盘启动安装程序
+2. 从 U盘启动安装程序
 
     开机后狂按 `F12` 选择 `USB` 启动，进入安装引导程序。
 
@@ -149,7 +149,7 @@ sudo chmod -w /etc/sudoers
 
 ## 安装 tweaks
 
-1. apt 安装
+1. 安装美化软件
 
     ```bash
     sudo apt update
@@ -161,7 +161,9 @@ sudo chmod -w /etc/sudoers
     sudo apt install gnome-shell-extensions
     ```
 
-1. Firfox/Chrome(二选一即可) extension
+2. Firfox/Chrome(二选一即可) extension
+
+    安装 GNOME Shell Integration 插件
 
     - firfox 安装 GNOME Shell integration 插件
 
@@ -171,11 +173,12 @@ sudo chmod -w /etc/sudoers
 
         ![gnome shell integration chrome](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-06-21-09-08.png)
 
-    如果无法打开网页则需要加速上网，参eg文 [V2rayL](#推荐安装) 小节。
 
     开启 `User Themes` :
 
     ![user themes](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-07-15-43-15.png)
+
+    如果无法打开网页则需要加速上网，参考本文 [V2rayL](#推荐安装) 小节。
 
 ## 更换 GNOME 主题
 
@@ -262,15 +265,15 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
 1. [Hide Top Bar](https://extensions.gnome.org/extension/545/hide-top-bar/) 自动隐藏顶栏
 
-1. [Dynamic Panel Transparency](https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/) 将顶栏变透明
+2. [Dynamic Panel Transparency](https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/) 将顶栏变透明
 
-1. [Resource Monitor](https://extensions.gnome.org/extension/1634/resource-monitor/) 在顶栏显示资源使用情况
+3. [Resource Monitor](https://extensions.gnome.org/extension/1634/resource-monitor/) 在顶栏显示资源使用情况
 
-1. [Scroll Workspace](https://extensions.gnome.org/extension/1438/scroll-workspace/) 在屏幕右侧边缘滚轮切换工作区
+4. [Scroll Workspace](https://extensions.gnome.org/extension/1438/scroll-workspace/) 在屏幕右侧边缘滚轮切换工作区
 
-1. [Status Area Horizontal Spacing](https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/) 调整顶栏右上角图标间距
+5. [Status Area Horizontal Spacing](https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/) 调整顶栏右上角图标间距
 
-1. [Workspace Wraparound](https://extensions.gnome.org/extension/971/workspace-wraparound/) 工作区循环切换(第一个工作区向上切换至最后一个工作区)
+6. [Workspace Wraparound](https://extensions.gnome.org/extension/971/workspace-wraparound/) 工作区循环切换(第一个工作区向上切换至最后一个工作区)
 
 # 软件安装推荐
 
@@ -304,7 +307,7 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
         免费订阅地址（可能会失效，各凭本事）：https://jiang.netlify.com
 
-    - 设置全局代理
+    - 设置全局模式
 
         在 `系统设置 -> 网络 -> 网络代理` 中设置 `Socks 主机` 为 `127.0.0.1:1080`：
 
@@ -327,7 +330,7 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
     socks5    127.0.0.1 1080
     ```
 
-    在终端执行 `curl www.google.com`，查看是否加速成功。
+    在终端执行 `proxychains curl www.google.com`，查看是否加速成功。
 
 2. chrome 浏览器
 
@@ -561,9 +564,9 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
     从 [官方下载页面](https://code.visualstudio.com/) 下载 deb 包并安装。
 
-1. 坚果云同步网盘
+2. 坚果云同步网盘
 
-    使用过 Onedrive， Dropbox， Goole Drive，但各有弊端，当然最重要的问题还是网络问题。
+    使用过 Onedrive， Dropbox， Goole Drive，但各有弊端，当然最重要的还是网络问题。
 
     - Onedrive 即使网络加速后同步还是很慢，无 Linux 客户端
     - Google Drive 网盘与相册的逻辑不喜欢，无 Linux 客户端
@@ -573,10 +576,10 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
     从 [官方下载页面](https://www.jianguoyun.com/s/downloads/linux) 下载 deb 包，并安装。
 
-1. Virtual Box 开源虚拟机软件
+3. Virtual Box 开源虚拟机软件
 
     从 [官方下载页面](https://www.virtualbox.org/wiki/Linux_Downloads) 下载  `Ubuntu 19.10 / 20.04`的 deb 包，并安装。
 
-1. DBeaver 数据库管理软件
+4. DBeaver 数据库管理软件
 
     从 [官方下载页面](https://dbeaver.io/download/) 下载 `DBeaver Community Edition` 的 deb 包，并安装。
