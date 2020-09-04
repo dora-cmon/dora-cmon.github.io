@@ -71,6 +71,16 @@ cover: /images/cover/ubuntu2004.png
 
       ![安装类型](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-05-10-37-05.png)
 
+      也可选择其他选项，自己创建分区表，参考方案：
+
+        |||
+        |---|---|
+        |efi|512M|
+        |/home|50% of free space|
+        |/|50% of free space|
+
+      选择 `efi` 分区进行安装。
+
     - 确认分区表
 
       ![确认分区表](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-05-20-14-28.png)
@@ -106,13 +116,19 @@ sudo apt upgrade
 
 在设置中打开 `区域与语言` 删除 `汉语` 输入法，只保留 `中文(智能拼音)`：
 
-![区域与语言](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-05-21-07-52.png)
+![区域与语言](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-08-21-20-41.png)
 
-对 `中文(只能拼音)` 进行设置，默认初始状态改为 `英文`：
+在输入源中可以设置 `所有窗口使用相同的输入源` 或 `每个窗口使用不同的输入源`。
 
-![输入法设置](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-05-21-09-42.png)
+对 `中文(智能拼音)` 进行设置，默认初始状态改为 `英文`：
+
+![输入法设置](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-08-21-23-25.png)
 
 使用时按 `Shift` 切换中英文。
+
+关闭 ibus 表情快捷键，避免冲突：
+
+![ibus快捷键](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-11-09-31-15.png)
 
 ## 设置 sudo 免密码（慎重）
 
@@ -146,6 +162,10 @@ sudo chmod -w /etc/sudoers
 如果编辑 `/etc/sudoers` 文件时，手抖写错，导致无法使用 `sudo` 命令，可以重启电脑，在出现 `Ubuntu logo` 时按 `ESC` 键，选择 `Advanced` 高级启动，以 `root` 身份进入终端，修改正确后重启进入系统。
 
 # 界面主题美化
+
+## 设置暗色主题
+
+在 `设置 -> 外观` 中选择 `Dark` 主题。
 
 ## 安装 tweaks
 
@@ -205,29 +225,25 @@ sudo chmod -w /etc/sudoers
 
 `Sweet folders` 仅包含文件夹图标，`Candy icons` 仅包含应用程序图标，`Sweet-Rainbow` 继承了 `Candy icons` 因此下载两个图标主题后，选择 `Sweet-Rainbow` 即可同时应用文件夹和程序图标。
 
-然而，其他文件依旧是系统默认图标，再安装一个项目 [suru-plus](suru-plus) :
+然而，其他文件依旧是系统默认图标，再安装一个项目 [suru-plus-dark](https://github.com/gusbemacbe/suru-plus-dark)：
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh | env DESTDIR="$HOME/.icons" sh
+wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus-dark/master/install.sh | env DESTDIR="$HOME/.icons" sh
 # 如果失败，单独运行每个命令
-wget https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh
+wget https://raw.githubusercontent.com/gusbemacbe/suru-plus-dark/master/install.sh
 env DESTDIR="$HOME/.icons" sh install.sh
 rm install.sh
 ```
 
-在 `~/.icons` 目录会增加三个主题：
-
-- Suru++
-- eSuru++
-- Suru++-Light
+在 `~/.icons` 目录会增加 `Suru++-Dark` 主题：
 
 修改 `Candy icons` 的继承关系 `vi ~/.icons/candy-icons/index.theme` ：
 
 ```bash
-Inherits=Suru++
+Inherits=Suru++-Dark
 ```
 
-这样，文件夹图标(Sweet-Rainbow)，应用程序图标(candy-icons)，其他应用图标(Suru++)都将被应用。
+这样，文件夹图标(Sweet-Rainbow)，应用程序图标(candy-icons)，其他应用图标(Suru++-Dark)都将被应用。
 
 ![三合一](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-07-15-28-34.png)
 
@@ -261,11 +277,23 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
 - 右键你的壁纸文件，选择 `脚本 -> SetAsWallpaper` 即可。(**注意**：右键一级目录的`设为壁纸`不会设置登录/锁定界面，必须是 `Script` 中的该选项)
 
+## 修改 Terminal 配色
+
+打开 Terminal 的配置文件首选项：
+
+![配置文件首选项](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-08-23-17-40.png)
+
+新建配色方案，设置为内置方案 `Tango 暗色`，设置 `Use transparent backgroud` 调整透明度。
+
+![配色方案](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-09-00-38-55.png)
+
 ## gnome 插件推荐
 
 1. [Hide Top Bar](https://extensions.gnome.org/extension/545/hide-top-bar/) 自动隐藏顶栏
 
 2. [Dynamic Panel Transparency](https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/) 将顶栏变透明
+
+3. [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) 将后台应用托盘置于顶栏
 
 3. [Resource Monitor](https://extensions.gnome.org/extension/1634/resource-monitor/) 在顶栏显示资源使用情况
 
@@ -366,6 +394,8 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
 4. TIM & 微信
 
+    **提示：** 后台托盘可通过 Gnome 插件 `Topicon Plus` 置于顶栏。
+
     - 安装 deepin-wine
 
       ```bash
@@ -449,8 +479,11 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
                 /opt/deepinwine/tools/run.sh $BOTTLENAME $APPVER "$1" "$2" "$3"
             else
                 xdotool key --window $(xdotool search --limit 1 --all --pid $(pgrep TIM.exe)) "ctrl+alt+z"
+                xdotool key --window $(xdotool search --limit 1 --all --pid $(pgrep TIM.exe)) "ctrl+alt+z"
             fi
             ```
+
+            注意，不同于微信，TIM 需要发送两次 `ctrl+alt+z` 指令。
 
     - 安装 微信
 
@@ -467,7 +500,7 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
       2. 更新
 
-          在 [微信 官方下载页](hhttps://pc.weixin.qq.com/) 下载最新 `WeChatSetup.exe` 安装包，并在该安装包所在目录下运行：
+          在 [微信 官方下载页](https://pc.weixin.qq.com/) 下载最新 `WeChatSetup.exe` 安装包，并在该安装包所在目录下运行：
 
           ```bash
           # 根据下载的版本修改文件名
@@ -556,6 +589,8 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
     ![flameshot 效果图](/images/Ubuntu-18-04-截图工具-flameshot-转载/2020-03-12-15-49-30.png)
 
+    该工具在非 `100%, 200%` 屏幕缩放下会出现 Bug 暂无解决方案（2020.08.09）。
+
 ## 根据需求选择安装
 
 1. VS Code 代码编辑器
@@ -574,12 +609,88 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
     综上，还是考虑使用国内的坚果云，虽然免费版每月只提供 1G 上传流量和 3G 下载流量，但作为同步盘也勉强够用。
 
-    从 [官方下载页面](https://www.jianguoyun.com/s/downloads/linux) 下载 deb 包，并安装。
+    由于 [官方网站](https://www.jianguoyun.com/s/downloads/linux) 提供的 deb 包安装后无法打开坚果云客户端，因此通过官网提供的源码编译方式进行安装：
 
-3. Virtual Box 开源虚拟机软件
+    ```bash
+    # 安装相关依赖
+    sudo apt-get install libglib2.0-dev libgtk2.0-dev libnautilus-extension-dev gvfs-bin python-gi gir1.2-appindicator3-0.1
+    # 下载Nautilus插件源代码包
+    wget https://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
+    # 解压缩，编译和安装Nautilus插件
+    tar zxf nutstore_linux_src_installer.tar.gz
+    cd nutstore_linux_src_installer && ./configure && make
+    sudo make install
+    # 重启Nautilus
+    nautilus -q
+    # 自动下载和安装坚果云其他二进制组件
+    ./runtime_bootstrap
+    ```
+
+3. AnyDesk 远程桌面控制软件
+
+    从 [官方下载页面](https://anydesk.com/zhs/downloads/linux) 下载 `DBeaver Community Edition` 的 deb 包，并安装。
+
+    AnyDesk 的别名全局唯一且不可修改，一旦配置文件丢失则只能重新设置其他别名。可以备份 `/etc/anydesk/` 下的文件，更换设备后用备份的文件覆盖新文件，可以找回设置。
+
+    启动系统，停留在登陆页时，AnyDesk 远程连接无法建立，通过设置自动登陆可以解决，修改 `/etc/gdm3/custom.conf` 文件：
+
+    ```bash
+    # Enabling automatic login
+    AutomaticLoginEnable=true
+    AutomaticLogin=$USERNAME
+    ```
+
+4. Virtual Box 开源虚拟机软件
 
     从 [官方下载页面](https://www.virtualbox.org/wiki/Linux_Downloads) 下载  `Ubuntu 19.10 / 20.04`的 deb 包，并安装。
 
-4. DBeaver 数据库管理软件
+5. DBeaver 数据库管理软件
 
     从 [官方下载页面](https://dbeaver.io/download/) 下载 `DBeaver Community Edition` 的 deb 包，并安装。
+
+6. Postman 测试工具
+
+    从 [官方下载页面](https://www.postman.com/downloads/) 下载 tar.gz 文件，解压到 `/opt/` 目录下并运行：
+
+    ```bash
+    # 解压
+    sudo tar -xzf Postman-linux-x64-7.29.1.tar.gz -C /opt/
+    # 运行
+    /opt/Postman/Postman
+    ```
+
+    添加快捷访问方式：
+
+    ```bash
+    sudo ln -s /opt/Postman/Postman /usr/bin/postman
+    # 创建 postman.desktop 文件
+    sudo vi ~/.local/share/applications/postman.desktop
+    # 添加以下内容
+    [Desktop Entry]
+    Encoding=UTF-8
+    Name=Postman
+    Exec=postman
+    Icon=/opt/Postman/app/resources/app/assets/icon.png
+    Terminal=false
+    Type=Application
+    Categories=Development;
+    ```
+
+    即可从程序目录中启动 Postman。
+
+7. miniconda 环境管理工具
+
+从 [官方下载页面](https://docs.conda.io/en/latest/miniconda.html) 下载 sh 文件，在文件目录下运行：
+
+```bash
+sh ./Miniconda3-latest-Linux-x86_64.sh
+```
+
+按提示操作即可。
+
+通过以下命令设置是否默认激活终端的 conda 环境：
+
+```bash
+# true/false
+conda config --set auto_activate_base false
+```

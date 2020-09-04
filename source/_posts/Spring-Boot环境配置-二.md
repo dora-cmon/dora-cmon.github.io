@@ -84,7 +84,6 @@ sudo tar zxvf apache-maven-3.6.3-bin.tar.gz -C /usr/local
 ```bash
 echo "MAVEN_HOME=/usr/local/apache-maven-3.6.3" >> ~/.bashrc
 echo "PATH=\${PATH}:\${MAVEN_HOME}/bin" >> ~/.bashrc
-echo "export PATH" >> ~/.bashrc
 source ~/.bashrc
 ```
 
