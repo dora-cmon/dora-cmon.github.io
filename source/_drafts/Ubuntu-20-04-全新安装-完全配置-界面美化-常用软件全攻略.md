@@ -401,7 +401,7 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
       ```bash
       git clone "https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git"
       cd deepin-wine-for-ubuntu && sh ./install_2.8.22.sh
-      rm -rf deepin-wine-for-ubuntu
+      cd .. && rm -rf deepin-wine-for-ubuntu
       ```
       在 https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu 下载所需软件的 deb 包。
 
@@ -417,6 +417,13 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
           ```
 
           安装完成后，启动一次 TIM 并退出。
+
+          若中文显示为方块，修改 `/opt/deepinwine/tools/run.sh` 文件：
+
+        ```bash
+        # 将 WINE_CMD 修改为如下
+        WINE_CMD="LC_ALL=zh_CN.UTF-8 deepin-wine"
+        ```
 
       2. 更新
 
@@ -479,11 +486,8 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
                 /opt/deepinwine/tools/run.sh $BOTTLENAME $APPVER "$1" "$2" "$3"
             else
                 xdotool key --window $(xdotool search --limit 1 --all --pid $(pgrep TIM.exe)) "ctrl+alt+z"
-                xdotool key --window $(xdotool search --limit 1 --all --pid $(pgrep TIM.exe)) "ctrl+alt+z"
             fi
             ```
-
-            注意，不同于微信，TIM 需要发送两次 `ctrl+alt+z` 指令。
 
     - 安装 微信
 
@@ -517,11 +521,38 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
           env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" /usr/bin/deepin-wine winecfg
           ```
 
-          修改 `显示 -> 屏幕分辨率`，设置合适的 dpi，然后重启 TIM。
+          修改 `显示 -> 屏幕分辨率`，设置合适的 dpi，然后重启 微信。
 
       4. 处理字体缺失
 
           将 Windows 系统 `C:\Windows\Fonts` 中的 `微软雅黑, 宋体` 字体拷贝至 `~/.deepinwine/Deepin-WeChat/drive_c/windows/Fonts/`
+
+          创建文件 `vi ~/.deepinwine/Deepin-WeChat/font.reg`:
+        
+          ```bash
+            REGEDIT4
+            [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
+            "MS Shell Dlg"="msyh"
+            "MS Shell Dlg 2"="msyh"
+
+            [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
+            "Lucida Sans Unicode"="msyh.ttc"
+            "Microsoft Sans Serif"="msyh.ttc"
+            "MS Sans Serif"="msyh.ttc"
+            "Tahoma"="msyh.ttc"
+            "Tahoma Bold"="msyhbd.ttc"
+            "msyh"="msyh.ttc"
+            "Arial"="msyh.ttc"
+            "Arial Black"="msyh.ttc"
+          ```
+
+          注册 font.reg :
+
+          ```bash
+          WINEPREFIX=~/.deepinwine/Deepin-WeChat/ deepin-wine regedit ~/.deepinwine/Deepin-WeChat/font.reg
+          ```
+
+          重新运行微信。
 
       5. 修改桌面图标
 
@@ -680,17 +711,17 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 
 7. miniconda 环境管理工具
 
-从 [官方下载页面](https://docs.conda.io/en/latest/miniconda.html) 下载 sh 文件，在文件目录下运行：
+    从 [官方下载页面](https://docs.conda.io/en/latest/miniconda.html) 下载 sh 文件，在文件目录下运行：
 
-```bash
-sh ./Miniconda3-latest-Linux-x86_64.sh
-```
+    ```bash
+    sh ./Miniconda3-latest-Linux-x86_64.sh
+    ```
 
-按提示操作即可。
+    按提示操作即可。
 
-通过以下命令设置是否默认激活终端的 conda 环境：
+    通过以下命令设置是否默认激活终端的 conda 环境：
 
-```bash
-# true/false
-conda config --set auto_activate_base false
-```
+    ```bash
+    # true/false
+    conda config --set auto_activate_base false
+    ```
