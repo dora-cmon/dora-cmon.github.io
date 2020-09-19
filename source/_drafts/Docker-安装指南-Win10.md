@@ -5,7 +5,7 @@ categories:
 tags:
   - Docker
   - 换源
-cover: /images/cover/docker.jfif:
+cover: /images/cover/docker.jfif
 ---
 
 # 安装 Docker

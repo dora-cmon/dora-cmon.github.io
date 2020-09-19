@@ -126,7 +126,7 @@ sudo apt upgrade
 
 使用时按 `Shift` 切换中英文。
 
-关闭 ibus 表情快捷键，避免冲突：
+关闭 ibus 表情快捷键，避免冲突，执行命令 `ibus-setup`：
 
 ![ibus快捷键](/images/Ubuntu-20-04-全新安装-完全配置-界面美化-常用软件全攻略/2020-08-11-09-31-15.png)
 
