@@ -1,7 +1,7 @@
 ---
 title: Multi-Task Learning as Multi-Objective Optimization
 categories:
-- 科研学习
+- 科研学习 - 多任务学习
 tags:
 - Multi-task learning
 - katex: true
