@@ -1,12 +1,11 @@
 ---
-title: Multitask Learning - caruana
+title: 1997(Caruana) Multitask Learning
 categories: 科研学习 - 多任务学习
 tags:
   - 多任务学习
   - Multi task learning
 katex: true
 cover: /images/cover/scholar_logo.png
-abbrlink: 1ff5441
 date: 2020-10-15 16:48:18
 ---
 
