@@ -6,6 +6,7 @@ tags:
   - Multi task learning
 katex: true
 cover: /images/cover/scholar_logo.pn
+abbrlink: a478f58d
 date: 2020-10-15 22:16:30
 ---
 
