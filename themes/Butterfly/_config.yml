@@ -52,8 +52,8 @@ copy:
 #   icon: link
 # ---------------
 social:
-  fa fa-github: https://github.com/dora-cmon
-  fa fa-envelope: mailto:dora-cmon@outlokk.com
+  fa fa-github: https://github.com
+  fa fa-envelope: mailto:mail@mail.com
   fa fa-rss: /atom.xml
 
 ####    search    ####
@@ -263,7 +263,7 @@ google_adsense:
 ####    站長驗證    ####
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-google_site_verification: GTb6ciSDhSgwGJb3ScvlBs5fV_cwOtW2bDVz5IRfI1s
+google_site_verification: 
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/

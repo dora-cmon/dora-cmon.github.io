@@ -52,8 +52,8 @@ copy:
 #   icon: link
 # ---------------
 social:
-  fa fa-github: https://github.com/
-  fa fa-envelope: mailto:dora_cmon@163.com
+  fa fa-github: https://github.com/dora-cmon
+  fa fa-envelope: mailto:dora-cmon@outlook.com
 #  fa fa-rss: /atom.xml
 
 ####    search    ####
@@ -271,7 +271,7 @@ bing_site_verification:
 
 # Baidu Webmaster tools verification setting
 # See: https://ziyuan.baidu.com/site/
-baidu_site_verification: c4z6ZbMZ8I
+baidu_site_verification: 
 
 # 360 Webmaster tools verification setting
 # see http://zhanzhang.so.com/
