@@ -101,7 +101,7 @@ deploy:
 - type: git
   repo:
     gitee: git@gitee.com:dora-cmon/dora-cmon.git
-    # github: git@github.com:dora-cmon/dora-cmon.github.io.git
+    github: git@github.com:dora-cmon/dora-cmon.github.io.git
   branch: master # 部署分支
 # - type: baidu_url_submitter
 

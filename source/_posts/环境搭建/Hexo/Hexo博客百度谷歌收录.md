@@ -40,13 +40,13 @@ date: 2020-03-05 13:56:57
 
 将以下代码添加到您的网站首页HTML代码的 `<head>` 标签与 `</head>` 标签之间，完成操作后请点击“验证”按钮。
 
-'''
+'''xml
 <meta name="baidu-site-verification" content="c4z6ZbMZ8I" />
 '''
 
 **注意**：content这个值每个网站都是不一样的，要替换成你自己网站的值
 
-```html
+```xml
 <html>
   <head>
     <meta name="baidu-site-verification" content="c4z6ZbMZ8I" />
@@ -120,7 +120,7 @@ deploy:
 
 在其他主题中，除以上设置外，还需要进入站点根目录 `\themes\next\layout\_scripts` 目录，修改 `baidu_push.swig` 文件为以下内容，若无该文件直接创建一个：
 
-```javascript
+```xml
 {% if theme.baidu_push %}
 <script>
 (function(){
