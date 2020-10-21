@@ -190,7 +190,7 @@ $$
 最小化以下损失函数是计算密集型的：
 
 $$
-\min_{\{\beta_m, \gamma_m\}_l^M}{\sum_{i=1}^N L \big(y_i, \sum_{m=1}^M \beta_m b(x_i; \gamma_m) \big)}
+\min _{\left\{\beta_{m}, \gamma_{m}\right\}_{l} } \sum_{i=1}^{N} L\left(y_{i}, \sum_{m=1}^{M} \beta_{m} b\left(x_{i} ; \gamma_{m}\right)\right)
 $$
 
 可以通过解决子问题或拟合单个偏置函数的方式来简化计算：
@@ -244,7 +244,7 @@ where\ F_{m-1}(x_i;\Theta_{m-1}) = \sum_{i=1}^{m-1} \beta_i b(x; \gamma_i) \\
 
 **精准算法需对下述函数求解，复杂度极高**
 $$
-\min_{\{\beta_m, \gamma_m\}_l^M} \sum_{i=1}^N \exp{\Big\{-y_i \sum_{m=1}^M \beta_m b(x_i; \gamma_m)\Big\}}
+\min_{ \{\beta_m, \gamma_m\}_l^M} \sum_{i=1}^N \exp{\Big\{-y_i \sum_{m=1}^M \beta_m b(x_i; \gamma_m)\Big\} }
 $$
 
 ## 离散 AdaBoost

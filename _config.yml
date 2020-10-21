@@ -7,13 +7,13 @@ title: 哆啦C梦
 subtitle: '技术博客小站'
 description: '一条没有梦想的咸鱼'
 keywords:
-author: dora_cmon
+author: dora-cmon
 language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://dora_cmon.gitee.io
+url: https://dora-cmon.github.io
 root: /
 permalink: posts/:abbrlink/
 permalink_defaults:
@@ -86,9 +86,9 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
-ignore:
+# include:
+# exclude:
+# ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -99,9 +99,11 @@ theme: Butterfly
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
 - type: git
-  repo: git@gitee.com:dora_cmon/dora_cmon.git
+  repo:
+    gitee: git@gitee.com:dora-cmon/dora-cmon.git
+    github: git@github.com:dora-cmon/dora-cmon.github.io.git
   branch: master # 部署分支
-- type: baidu_url_submitter
+# - type: baidu_url_submitter
 
 # abbrlink config
 abbrlink:
@@ -111,12 +113,12 @@ abbrlink:
 # 自动生成sitemap
 sitemap:
   path: sitemap.xml
-baidusitemap:
-  path: baidusitemap.xml
+# baidusitemap:
+#   path: baidusitemap.xml
 
 # 百度主动推送
-baidu_url_submit:
-  count: 100
-  host: dora_cmon.gitee.io
-  token: 6PZpc19JlTqo6JIZ
-  path: baidu_urls.txt
+# baidu_url_submit:
+#   count: 100
+#   host: dora_cmon.gitee.io
+#   token: 6PZpc19JlTqo6JIZ
+#   path: baidu_urls.txt

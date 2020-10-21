@@ -10,5 +10,8 @@
 		"pasteImage.basePath": "${projectRoot}",
 		"pasteImage.forceUnixStyleSeparator": true,
 		"pasteImage.prefix": "/",
+
+		/* CWD Config */
+		"terminal.integrated.cwd": "../",
 	}
 }

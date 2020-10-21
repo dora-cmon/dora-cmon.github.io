@@ -6,7 +6,10 @@ tags:
   - Multi task learning
 katex: true
 cover: /images/cover/scholar_logo.png
+abbrlink: 5bba0c0d
+date: 2020-10-21 11:50:59
 ---
+
 
 # MTL 算法公式
 
@@ -18,11 +21,11 @@ $$
 
 其中，
 
-- $\mathbf{X}^{m} \in \R^{N_m \times D}$ 表示第 $m$ 个任务的输入矩阵，
-- $\mathbf{y}^{m} \in \R^{N_m \times 1}$ 表示第 $m$ 个任务对应的输出向量，
-- $\mathbf{w}^{m} \in \R^{D \times 1}$ 表示第 $m$ 个任务的权重向量，
-- $N_m$ 表示第 $m$ 个任务的样本数，
-- $D$ 表示输入矩阵的特征数，
+- $\mathbf{X}^{m} \in \R^{N_m \times D}$ 表示第 $m$ 个任务的输入矩阵
+- $\mathbf{y}^{m} \in \R^{N_m \times 1}$ 表示第 $m$ 个任务对应的输出向量
+- $\mathbf{w}^{m} \in \R^{D \times 1}$ 表示第 $m$ 个任务的权重向量
+- $N_m$ 表示第 $m$ 个任务的样本数
+- $D$ 表示输入矩阵的特征数
 - $m$ 表示任务数。
 
 上式由两项组成，
@@ -56,7 +59,7 @@ L(\mathbf{X}, \mathbf{y}, \mathbf{W})=\sum_{s}^{S}\left\|\mathbf{X}^{s} \mathbf{
 $$
 
 其中，
-- $\mathbf{X} = \{\mathbf{X}^1，\mathbf{X}^2，...，\mathbf{X}^S\}$ 表示多源（视图或多模态）数据集
+- $\mathbf{X} = \{\mathbf{X}^1, \mathbf{X}^2,...,\mathbf{X}^S\}$ 表示多源（视图或多模态）数据集
 - $\mathbf{X}^s \in \R^{N \times D}$ 表示第 $s$ 个数据源
 - $\mathbf{y} \in \R^{N \times 1}$ 表示输出特征向量
 - $\mathbf{W} = [\mathbf{w}^1 \mathbf{w}^2 ··· \mathbf{w}^S] \in \R^{D \times S}$ 表示权重矩阵
@@ -75,7 +78,7 @@ $$
 
 其中，
 - $\hat{y}_{j}^{s} = \mathbf{x}^S_j \mathbf{w}^s$ 表示对第 $s$ 个数据源的第 $j$ 个样本的预测（$\mathbf{x}^s_j$）
-- $y_j \in \{-1，1\}$ 表示对应的 ground truth 标签
+- $y_j \in \{-1,1\}$ 表示对应的 ground truth 标签
 
 ### 单输入多输出（SIMO）
 
@@ -105,7 +108,7 @@ L(\mathbf{X}, \mathbf{Y}, \mathbf{W})=\sum_{s}^{S}\sum_{c}^{C}\left\|\mathbf{X}^
 $$
 
 其中，
-- $\mathbf{X} = \{\mathbf{X}^1，\mathbf{X}^2，...，\mathbf{X}^S\}$ 表示多源（视图或多模态）数据集
+- $\mathbf{X} = \{\mathbf{X}^1,\mathbf{X}^2,...,\mathbf{X}^S\}$ 表示多源（视图或多模态）数据集
 - $\mathbf{Y} = \{\mathbf{y}^1...\mathbf{y}^S\}$ 表示输出目标矩阵
 - $\mathbf{W} = [\mathbf{w}^1 \mathbf{w}^2 ··· \mathbf{w}^{C}] \in \R^{D \times C}$ 表示所有权重矩阵的集合
 - $\mathbf{W}^{s} = [\mathbf{w}^{s, 1} \mathbf{w}^{s, 2} ··· \mathbf{w}^{s,C}] \in \R^{D \times C}$ 表示第 $s$ 个模态数据 $\mathbf{X}^{s}$ 的权重矩阵
@@ -153,7 +156,7 @@ $$
     - 若 $ p > 1, q \ge 1$ 则为凸函数
 
 3. **有上界的 $\mathcal{l}_{p,1}\text{-norm}$**
-    $\mathbf{w}_i$ 的 $\mathcal{l}_{p，1} \text{-norm}$ 上界：
+    $\mathbf{w}_i$ 的 $\mathcal{l}_{p,1} \text{-norm}$ 上界：
 
     $$
     \min _{\mathbf{W}} \sum_{m=1}^{M} L\left(\mathbf{X}^{m}, \mathbf{y}^{m}, \mathbf{w}^{m}\right)+\lambda \sum_{i=1}^{D} \min(\|\mathbf{w}_i\|_p, \theta)

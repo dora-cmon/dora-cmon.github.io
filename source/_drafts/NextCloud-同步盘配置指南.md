@@ -1,11 +1,12 @@
 ---
 title: NextCloud 同步盘配置指南
-categories: 
-  - 折腾造作 - NextCloud 
+categories:
+  - 折腾造作 - NextCloud
 tags:
   - 个人云盘
   - 同步盘
   - NextCloud
+abbrlink: 20feb0e5
 ---
 
 # 安装配置 Docker
