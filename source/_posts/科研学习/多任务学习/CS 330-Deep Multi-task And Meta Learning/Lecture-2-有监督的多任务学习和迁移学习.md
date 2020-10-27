@@ -6,11 +6,12 @@ tags:
   - Multi task learning
   - 元学习
   - Meta learning
-  - 监督学习
   - 迁移学习
 katex: true
 cover: /images/cover/CS330.jpg
+date: 2020-10-26 21:52:56
 ---
+
 
 # 多任务学习
 
@@ -150,6 +151,38 @@ $$
 
 # 迁移学习
 
-## 预训练和微调
+## 多任务学习 VS 迁移学习
 
-# 
+|多任务学习|迁移学习|
+|---|---|
+|同时解决多个任务 $\mathcal{T}_1, \cdots, \mathcal{T}_T$|在解决源任务 $\mathcal{T}_a$ 后，将从任务 $\mathcal{T}_a$ 所学的知识迁移，从而解决目标任务 $\mathcal{T}_b$|
+
+关键假设：迁移过程中不能访问数据 $\mathcal{D}_a$
+注：任务 $\mathcal{T}_a$ 本身可能包含多个任务
+
+迁移学习是多任务学习的一个有效解决方案，但反之则不然。
+
+## 通过微调进行迁移学习
+
+$$
+\phi \leftarrow \theta - \alpha \Delta_\theta{\mathcal{L}(\theta, \mathcal{D}^\text{tr})}
+$$
+
+其中，
+- $\mathcal{D}^\text{tr}$ 是新任务的训练数据
+- $\theta$ 是预训练参数
+
+**如何获取预训练参数**
+
+- ImageNet 分类
+- 在大型语料库（如BERT，LMs）上训练的模型
+- 其他无监督学习技术
+- 任何大型的多样化数据集
+
+**通用实践方法**
+- 以较小的学习速率进行微调
+- 为靠前的层赋予较小的学习速率
+- 冻结较靠前的层，并逐渐解冻
+- 重新初始化最后一层
+- 通过交叉值搜索超参数
+- 架构选择（如，ResNets）
