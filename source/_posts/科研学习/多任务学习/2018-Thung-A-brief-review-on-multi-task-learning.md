@@ -1,6 +1,7 @@
 ---
 title: 2018(Thung) A brief review on multi-task learning
-categories: 科研学习 - 多任务学习
+categories: 
+  - 科研学习 - 多任务学习
 tags:
   - 多任务学习
   - Multi task learning

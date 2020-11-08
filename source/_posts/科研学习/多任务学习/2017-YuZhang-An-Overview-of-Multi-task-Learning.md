@@ -1,6 +1,7 @@
 ---
 title: 2017(YuZhang) An Overview of Multi-task Learning
-categories: 科研学习 - 多任务学习
+categories: 
+  - 科研学习 - 多任务学习
 tags:
   - 多任务学习
   - Multi task learning
