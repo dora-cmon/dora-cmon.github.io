@@ -1,6 +1,7 @@
 ---
 title: 'Lecture 2: 有监督的多任务学习和迁移学习'
-categories: 科研学习 - 多任务学习
+categories: 
+  - 科研学习 - 多任务学习
 tags:
   - 多任务学习
   - Multi task learning
