@@ -10,7 +10,7 @@ tags:
   - 黑盒
   - Black-Box
 katex: true
-cover: /images/cover/CS330.jpg  :
+cover: /images/cover/CS330.jpg
 ---
 
 # 元学习基础
