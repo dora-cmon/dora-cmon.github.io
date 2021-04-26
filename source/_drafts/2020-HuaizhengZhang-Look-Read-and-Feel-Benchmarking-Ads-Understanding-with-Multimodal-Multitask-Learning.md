@@ -8,7 +8,7 @@ tags:
   - 多任务学习
   - Multi task learning
 katex: true
-cover: /images/cover/scholar_logo.png:
+cover: /images/cover/scholar_logo.png
 ---
 
 深度多模态多任务框架，该框架集成了多种模式，可以有效地同时实现主题和情感的预测，以实现广告理解。
@@ -51,7 +51,7 @@ $$
 
 **对象检测识别**
 
-使用预训练对象检测模型（例如，faster-rcnn）从第 $i$ 个广告图像的 bounding box proposals 中提取对象级特征 $\{x_{i1}^O, x_ {i2} ^ O，\cdots, x_ {iL} ^ O\}$：
+使用预训练对象检测模型（例如，faster-rcnn）从第 $i$ 个广告图像的 bounding box proposals 中提取对象级特征 $\{x_{i1}^O, x_ {i2} ^ O,\cdots, x_ {iL} ^ O\}$：
 
 $$
 \left\{x_{i j}^{O}\right\}_{j=1}^{L}=f_{o b j}\left(\mathrm{e}_{i} ; \theta_{f i x}\right)
@@ -97,8 +97,8 @@ $$
 提取和理解广告图像中包含的文字
 
 首先，使用 OCR 模型从广告中检测和识别 $M$ 个单词 $\{w_{i1}, w_{i2}, \cdots, w_{iM}\}$。
-然后，使用 FastText 将这些单词嵌入到连续的单词向量 $\{x_{i1}^W, x_{i2}^W，\cdots, x_{iM}^W\}$中。
-最终，将获得的单词嵌入输入到序列处理模型（例如，BLSTM）中，以学习紧凑的单词表示$\{z_{i1}^O, z_{i1}^O，\cdots, z_{i1}^O\}$：
+然后，使用 FastText 将这些单词嵌入到连续的单词向量 $\{x_{i1}^W, x_{i2}^W,\cdots, x_{iM}^W\}$中。
+最终，将获得的单词嵌入输入到序列处理模型（例如，BLSTM）中，以学习紧凑的单词表示$\{z_{i1}^O, z_{i1}^O,\cdots, z_{i1}^O\}$：
 
 $$
 \begin{aligned}
@@ -117,6 +117,10 @@ $$
 所有特征都通过分层多模态注意（HMA）模块集成为特定于任务的特征向量。该模块由两个部分组成：
   - 模态内注意
   - 模态间注意
+
+以分层方式处理多种模态的特征向量。 
+  - 在第一级注意中，每个模态内的特征向量都经过加权汇总。
+  - 在第二级注意中，对三种模态的获得表示进行评分，然后将其连接为最终的特定于任务的表示。
 
 **模态内注意力**
 
@@ -142,4 +146,74 @@ $$
 可以使用标准的反向传播和梯度法同时训练两种模态的核矢量 $q$。 
 
 **模态间注意**
-                                                                   
+
+初始化注意力向量 $\{a_i\}_{i=1}^3$。对于每种模态的特征，为其分配权重，并得到最终的特定于任务的表示：
+
+$$
+\boldsymbol{r}_{i}=\left[\begin{array}{l}
+a_{1} \\
+a_{2} \\
+a_{3}
+\end{array}\right] \cdot\left[\begin{array}{lll}
+z_{i}^{V} & m_{i}^{O} & m_{i}^{W}
+\end{array}\right]
+$$
+
+注意力分数向量 $\{a_i\}_{i=1}^3$ 也可以通过反向传播和梯度下降来训练。
+同时，不使用softmax函数来强制注意权重为正。 原因是广告的许多设计技巧可能对最终预测没有任何贡献甚至产生负面影响（不同注释者为同一广告图像标记不同）。
+
+## 多任务预测模块
+
+$$
+\text { Input: }\left\{r_{i}^{T}, r_{i}^{S}\right\} \rightarrow \text { Output: }\left\{\left(y_{i}^{T}, y_{i}^{S}\right)\right\}
+$$
+
+两个预测组件，分别应用于从 HMA 模块获得的主题和情感特征。 首先，将特征表示转换为低维空间：
+
+$$
+r_{i}^{0}=f_{\text {trans}}\left(r_{i} ; \theta\right)
+$$
+
+其中，
+  - $f$ 是非线性激活函数 RELU
+  - $\theta$ 是要训练的参数集
+
+将 $r_i^0$ 送入具有 sigmoid 激活函数的输出层，从而处理样本不互斥的多个标签，即：
+
+$$
+\begin{array}{c}
+\boldsymbol{y}_{i}^{\prime}=\boldsymbol{w}^{\top} \boldsymbol{r}_{i}^{0}+\boldsymbol{b} \\
+\boldsymbol{y}_{i}=\left[\begin{array}{c}
+\frac{1}{1+\exp \left(-y_{i}^{\prime 0}\right)} \\
+\frac{1}{1+\exp \left(-y_{i}^{1}\right)} \\
+\vdots \\
+\frac{1}{1+\exp \left(-y_{i}^{P}\right)}
+\end{array}\right]
+\end{array}
+$$
+
+其中，
+  - $P$ 是一项任务中的总标签数
+
+## 训练方法
+
+总损失函数：
+
+$$
+\mathcal{L}_{\text {multitask}}=\mathcal{L}_{\text {rec}}+\alpha \mathcal{L}_{\text {topic}}+\beta \mathcal{L}_{\text {sentiment}},
+$$
+
+其中，$\alpha$ 和 $\beta$ 是权重的超参数。
+
+损失组成：
+  - 修辞损失（$\mathcal{L}_{\text{rec}}$ 识别广告中对象的潜在真实含义或隐喻含义，以无监督的方式训练）
+  - 主题损失（$\mathcal{L}_{\text{topic}}$）
+  - 情感损失（$\mathcal{L}_{\text{sentiment}}$）
+
+主题损失 $\mathcal{L}_{\text{topic}}$ 和情感损失 $\mathcal{L}_{\text{sentiment}}$ 具有相同形式的多标签损失 $\mathcal{L}_{\text{ml}}$：
+
+$$
+\mathcal{L}_{m l}=-\sum_{i=1}^{B} \sum_{j=1}^{P} y_{i}^{j} \log \hat{y}_{i}^{j}+\left(1-y_{i}^{j}\right) \log \left(1-\hat{y}_{i}^{j}\right)
+$$
+
+

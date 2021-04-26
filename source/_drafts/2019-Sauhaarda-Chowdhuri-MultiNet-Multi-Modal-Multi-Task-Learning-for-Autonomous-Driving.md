@@ -8,7 +8,7 @@ tags:
   - Multimodal
   - E-learning
 cover: /images/cover/scholar_logo.png
-katex: true:
+katex: true
 ---
 
 使用多模态多任务学习，在单个深度神经网络中预测多种不同行为模式。 
