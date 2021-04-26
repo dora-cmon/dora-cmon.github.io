@@ -128,7 +128,7 @@ UI界面设计来源：https://zmister.com/archives/477.html
 
   按年购买平均 5 元/月。
 
-- VC喵 [注册地址](https://kt.kkkktttt.tk/auth/register?code=h1Uz)
+- VC喵 [注册地址](https://cccc.xxxxpppp.cyou/auth/register?code=h1Uz)
 
   可免费使用，免费节点速度还不错，但流量仅 1G，每天签到可获得 $< 100M$ 的流量。
   

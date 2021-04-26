@@ -1,6 +1,6 @@
 ---
 title: 'Lecture 2: 有监督的多任务学习和迁移学习'
-categories: 
+categories:
   - 科研学习 - 多任务学习
 tags:
   - 多任务学习
@@ -10,6 +10,7 @@ tags:
   - 迁移学习
 katex: true
 cover: /images/cover/CS330.jpg
+abbrlink: 1d726a1c
 date: 2020-10-26 21:52:56
 ---
 
