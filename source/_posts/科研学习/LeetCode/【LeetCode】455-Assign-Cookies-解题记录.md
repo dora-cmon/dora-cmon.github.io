@@ -7,6 +7,8 @@ tags:
   - Easy
   - 贪心
   - 算法
+cover: /images/cover/leetcode.jpeg
+abbrlink: 19a161a
 date: 2021-04-23 17:54:05
 ---
 
