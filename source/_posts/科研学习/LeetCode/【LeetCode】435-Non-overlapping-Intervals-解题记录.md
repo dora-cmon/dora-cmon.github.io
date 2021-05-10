@@ -12,8 +12,6 @@ abbrlink: 1ab92857
 date: 2021-04-23 17:54:22
 ---
 
-
-
 # 问题描述
 
 Given an array of intervals intervals where intervals[i] = [starti, endi], return the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.

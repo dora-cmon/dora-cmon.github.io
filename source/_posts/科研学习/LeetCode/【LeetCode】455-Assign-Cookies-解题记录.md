@@ -12,7 +12,6 @@ abbrlink: 19a161a
 date: 2021-04-23 17:54:05
 ---
 
-
 # 问题描述
 
 Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie.

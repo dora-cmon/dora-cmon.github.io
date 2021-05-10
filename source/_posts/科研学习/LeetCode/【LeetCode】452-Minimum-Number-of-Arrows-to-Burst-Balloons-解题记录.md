@@ -12,8 +12,6 @@ abbrlink: 71cefafc
 date: 2021-05-07 16:55:35
 ---
 
-
-
 # 问题描述
 
 There are some spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it's horizontal, y-coordinates don't matter, and hence the x-coordinates of start and end of the diameter suffice. The start is always smaller than the end.

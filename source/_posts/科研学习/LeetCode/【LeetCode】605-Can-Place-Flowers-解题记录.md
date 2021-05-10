@@ -11,8 +11,6 @@ abbrlink: ef5a23d
 date: 2021-04-23 17:54:45
 ---
 
-
-
 # 问题描述
 
 You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.

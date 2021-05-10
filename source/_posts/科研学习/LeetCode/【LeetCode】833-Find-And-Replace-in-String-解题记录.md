@@ -12,7 +12,6 @@ abbrlink: 8bc10515
 date: 2021-04-23 17:54:45
 ---
 
-
 # 问题描述
 
 To some string S, we will perform some replacement operations that replace groups of letters with new ones (not necessarily the same size).
