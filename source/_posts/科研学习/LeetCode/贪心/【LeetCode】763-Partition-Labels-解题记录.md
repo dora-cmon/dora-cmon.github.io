@@ -41,13 +41,13 @@ S will consist of lowercase English letters ('a' to 'z') only.
 字符串 S 中相同的字母只能在同一个子串中，
 
 1. 首先记录每个字母最后出现的位置，
-2. 用 `sub_str_begin` 和 `sub_str_end` 分别表示当前子串的起始位置和结束位置，每遍历一个字母，将 `sub_str_end` 更新为当前字母最后位置，和原结束位置中的较大值（一旦当前子串包含一个字母，则必须包含所有的该字母），
-3. 当 `i == sub_str_end` 时，表示该字串已结束，计算 `sub_str_end - sub_str_begin` 子串长度加入结果列表，并更新 `sub_str_begin` 和 `sub_str_end` 至后续位置，继续步骤 2
+1. 用 `sub_str_begin` 和 `sub_str_end` 分别表示当前子串的起始位置和结束位置，每遍历一个字母，将 `sub_str_end` 更新为当前字母最后位置，和原结束位置中的较大值（一旦当前子串包含一个字母，则必须包含所有的该字母），
+1. 当 `i == sub_str_end` 时，表示该字串已结束，计算 `sub_str_end - sub_str_begin` 子串长度加入结果列表，并更新 `sub_str_begin` 和 `sub_str_end` 至后续位置，继续步骤 2
 
 **补充：**
 
 1. 贪心算法
-2. 时间复杂度 `O(n)`
+1. 时间复杂度 `O(n)`
 
 ## 代码
 

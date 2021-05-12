@@ -56,14 +56,14 @@ Only one valid answer exists.
 数组已经排好序，可以采用双指针来求解。两个指针分别指向首、尾元素，并沿反方向遍历，可能出现三种情况：
 
 1. 两个指针指向元素的和等于给定值，那么它们就是我们要的结果。
-2. 两个指针指向元素的和小于给定值，把左边的指针右移一位，使得当前的和增加一点。
-3. 两个指针指向元素的和大于给定值，把右边的指针左移一位，使得当前的和减少一点。
+1. 两个指针指向元素的和小于给定值，把左边的指针右移一位，使得当前的和增加一点。
+1. 两个指针指向元素的和大于给定值，把右边的指针左移一位，使得当前的和减少一点。
 
 **补充：**
 
 1. 双指针
-2. 时间复杂度 `O(n)`
-3. 对于排好序且有解的数组，双指针一定能遍历到最优解
+1. 时间复杂度 `O(n)`
+1. 对于排好序且有解的数组，双指针一定能遍历到最优解
 
     假设最优解的两个数的位置分别是 `l` 和 `r`。
     
@@ -84,14 +84,12 @@ class Solution {
         
         while(idx_head < idx_tail) {
             int sum_2 = numbers[idx_head] + numbers[idx_tail];
-            // = target，返回结果
-            if(sum_2 == target)
+            
+            if(sum_2 == target)         // = target，返回结果
                 return new int[]{idx_head + 1, idx_tail + 1};
-            // < target，首指针后移一位
-            else if(sum_2 < target)
+            else if(sum_2 < target)     // < target，首指针后移一位
                 ++idx_head;
-            // > target，尾指针前移一位
-            else
+            else                        // > target，尾指针前移一位
                 --idx_tail;
         }
         // 题目保证有解，不可能到这里

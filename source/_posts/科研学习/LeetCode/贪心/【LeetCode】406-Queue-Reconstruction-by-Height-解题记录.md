@@ -53,8 +53,8 @@ It is guaranteed that the queue can be reconstructed.
 ## 思路
 
 1. 首先按照身高从高到低，对队列排序，若身高相同，则 k_i 小的排前面，
-2. 新建一个空的数组 `queue`，保存结果，
-3. 遍历排序的数组，将每一项插入到 `queue` 数组中的第 `k_i` 位置
+1. 新建一个空的数组 `queue`，保存结果，
+1. 遍历排序的数组，将每一项插入到 `queue` 数组中的第 `k_i` 位置
 
     - 相同身高的人会按 `k_i` 从小到大加入
     - 当加入身高为 `h_i` 的人时，由于原队列已经排序，结果队列中已加入的人的身高必然 >= `h_i`，因此，第 `k_i` 位置即为应该加入的位置（前方有 `k_i` 个人的身高 >= `h_i`）
@@ -62,7 +62,7 @@ It is guaranteed that the queue can be reconstructed.
 **补充：**
 
 1. 贪心算法
-2. 时间复杂度 `O(nlogn)`（排序）
+1. 时间复杂度 `O(nlogn)`（排序）
 
 ## 代码
 

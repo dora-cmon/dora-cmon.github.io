@@ -47,7 +47,7 @@ There are no two adjacent flowers in flowerbed.
 **补充：**
 
 1. 注意处理第一个和最后一个位置
-2. 时间复杂度 `O(n)`
+1. 时间复杂度 `O(n)`
 
 ## 代码
 

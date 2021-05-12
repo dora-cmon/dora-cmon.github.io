@@ -56,7 +56,7 @@ intervals[i].length == 2
 **补充：**
 
 1. 贪心算法
-2. 数组自定义排序
+1. 数组自定义排序
     ```java
     Arrays.sort(array, new Comparator<T>() {
         @Override
@@ -66,7 +66,7 @@ intervals[i].length == 2
         }
     })
     ```
-4. 时间复杂度 `O(nlogn)`（排序）
+1. 时间复杂度 `O(nlogn)`（排序）
 
 ## 代码
 

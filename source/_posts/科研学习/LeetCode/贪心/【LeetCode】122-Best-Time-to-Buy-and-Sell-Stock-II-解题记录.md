@@ -58,7 +58,7 @@ Explanation: In this case, no transaction is done, i.e., max profit = 0.
 **补充：**
 
 1. 贪心算法
-2. 时间复杂度 `O(n)`
+1. 时间复杂度 `O(n)`
 
 ## 代码
 
