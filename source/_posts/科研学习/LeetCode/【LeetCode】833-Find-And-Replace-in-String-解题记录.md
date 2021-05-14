@@ -5,7 +5,6 @@ categories:
 tags:
   - LeetCode
   - Middle
-  - String
   - 字符串
 cover: /images/cover/leetcode.jpeg
 abbrlink: 8bc10515
