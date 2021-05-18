@@ -12,8 +12,6 @@ abbrlink: 9648cc77
 date: 2021-05-12 13:55:46
 ---
 
-
-
 # 问题描述
 
 Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
