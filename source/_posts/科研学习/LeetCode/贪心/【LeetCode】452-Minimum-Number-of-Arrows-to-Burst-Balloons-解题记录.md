@@ -41,9 +41,9 @@ Output: 2
 ## 说明
 
 ```
-1 <= points.length <= 104
+1 <= points.length <= 10^4
 points[i].length == 2
--231 <= xstart < xend <= 231 - 1
+-2^31 <= xstart < xend <= 2^31 - 1
 ```
 
 # 解题

@@ -37,8 +37,8 @@ Explanation: You can't get a non-decreasing array by modify at most one element.
 
 ```
 n == nums.length
-1 <= n <= 104
--105 <= nums[i] <= 105
+1 <= n <= 10^4
+-10^5 <= nums[i] <= 10^5
 ```
 
 # 解题

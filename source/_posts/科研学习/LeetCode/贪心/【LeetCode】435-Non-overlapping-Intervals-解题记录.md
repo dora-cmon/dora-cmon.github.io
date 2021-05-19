@@ -39,9 +39,9 @@ Explanation: You don't need to remove any of the intervals since they're already
 ## 说明
 
 ```
-1 <= intervals.length <= 2 * 104
+1 <= intervals.length <= 2 * 10^4
 intervals[i].length == 2
--2 * 104 <= starti < endi <= 2 * 104
+-2 * 10^4 <= starti < endi <= 2 * 10^4
 ```
 
 # 解题

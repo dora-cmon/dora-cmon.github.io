@@ -5,14 +5,13 @@ categories:
 tags:
   - LeetCode
   - Easy
-  - 双指针
+  - 二分法
   - 算法
 cover: /images/cover/leetcode.jpeg
 katex: true
 abbrlink: 340c2b50
 date: 2021-05-18 18:09:54
 ---
-
 
 # 问题描述
 
@@ -49,7 +48,7 @@ Explanation: The square root of 8 is 2.82842..., and since the decimal part is t
 
 **补充：**
 
-1. 双指针
+1. 二分法
 1. 时间复杂度 `O(lg(n))`
 1. 还有一种更快的算法 —— 牛顿迭代法，其公式为 $x_{n+1} = x_n - f(x_n) / f^'(x_n)$。给定 $f(x) = x^2 - a = 0$，这里的迭代公式为 $x_{n+1} = (x_n + a/x_n)/2$，其代码如下。
 
