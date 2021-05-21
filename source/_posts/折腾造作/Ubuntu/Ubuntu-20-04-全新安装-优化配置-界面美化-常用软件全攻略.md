@@ -7,7 +7,9 @@ tags:
   - Linux
 cover: /images/cover/ubuntu2004.png
 abbrlink: bbf09ec7
+date: 2021-05-21 11:38:13
 ---
+
 
 之前将系统从 Ubuntu 18.04 升级到了 Ubuntu 20.04，但是由于升级的方式造成系统不够稳定，Xorg 进程 经常占用 CPU 到 100% 及以上，造成电脑非常卡顿。因此重新进行 Ubuntu 20.04 全盘安装，并进行配置美化。
 
