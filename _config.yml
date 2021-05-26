@@ -103,4 +103,7 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: 
+    gitee: git@gitee.com:dora-cmon/dora-cmon.git,master
+    gitub: git@github.com:dora-cmon/dora-cmon.github.io.git,master
