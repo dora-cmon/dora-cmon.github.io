@@ -8,13 +8,10 @@
 		},
 		{
 			"path": "source/images"
-		},
-		{
-			"path": "."
 		}
 	],
 	"settings": {
 		"pasteImage.path": "images/${fileBasenameNoExtension}",
-    		"pasteImage.defaultName": "Y-MM-DD-HH-mm-ss"
+    	"pasteImage.defaultName": "Y-MM-DD-HH-mm-ss"
 	}
 }
