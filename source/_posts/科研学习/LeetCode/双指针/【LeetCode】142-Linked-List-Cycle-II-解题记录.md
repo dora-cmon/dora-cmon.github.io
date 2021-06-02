@@ -32,7 +32,7 @@ Output: tail connects to node index 1
 Explanation: There is a cycle in the linked list, where tail connects to the second node.
 ```
 
-![](images/【LeetCode】142-Linked-List-Cycle-II-解题记录/2021-05-12-14-37-57.png)
+![](/images/【LeetCode】142-Linked-List-Cycle-II-解题记录/2021-05-12-14-37-57.png)
 
 ```
 Input: head = [1,2], pos = 0
@@ -40,7 +40,7 @@ Output: tail connects to node index 0
 Explanation: There is a cycle in the linked list, where tail connects to the first node.
 ```
 
-![](images/【LeetCode】142-Linked-List-Cycle-II-解题记录/2021-05-12-14-38-21.png)
+![](/images/【LeetCode】142-Linked-List-Cycle-II-解题记录/2021-05-12-14-38-21.png)
 
 ```
 Input: head = [1], pos = -1
@@ -77,7 +77,7 @@ pos is -1 or a valid index in the linked-list.
 1. 时间复杂度 `O(n)`
 
 
-![](images/【LeetCode】142-Linked-List-Cycle-II-解题记录/2021-05-12-14-42-21.png)
+![](/images/【LeetCode】142-Linked-List-Cycle-II-解题记录/2021-05-12-14-42-21.png)
 
 假设：
 - 链表头是 `X`，

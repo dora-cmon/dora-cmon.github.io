@@ -8,10 +8,9 @@ tags:
   - 二分法
   - 算法
 cover: /images/cover/leetcode.jpeg
-abbrlink: 52736
+abbrlink: dc05f3e5
 date: 2021-05-27 19:37:53
 ---
-
 
 # 问题描述
 

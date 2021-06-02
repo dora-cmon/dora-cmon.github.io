@@ -107,3 +107,9 @@ deploy:
   repo: 
     gitee: git@gitee.com:dora-cmon/dora-cmon.git,master
     gitub: git@github.com:dora-cmon/dora-cmon.github.io.git,master
+
+# abbrlink config
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex
+
