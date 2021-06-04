@@ -62,18 +62,16 @@ node -v
 npm -v
 ```
 
-**安装cnpm**
-
-cnpm是淘宝团队做的国内镜像，因为npm的服务器位于国外可能会影响安装。淘宝镜像与官方同步频率目前为 10分钟一次以保证尽量与官方服务同步。
+**设置国内镜像源**
 
 ```bash
-sudo npm install cnpm -g --registry=https://registry.npm.taobao.org
+npm config set registry https://registry.npm.taobao.org
 ```
 
 ## 安装Hexo
 
 ```bash
-sudo cnpm install -g hexo-cli
+sudo npm install -g hexo-cli
 ```
 
 检查是否安装成功：
@@ -91,7 +89,7 @@ hexo -v
 ```bash
 hexo init folder
 cd folder
-sudo cnpm install --save
+sudo npm install --save
 ```
 
 启动服务：
