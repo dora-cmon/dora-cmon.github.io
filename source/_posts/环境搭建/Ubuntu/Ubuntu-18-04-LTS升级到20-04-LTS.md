@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 18.04 LTS升级到20.04 LTS
 categories:
-  - 折腾造作 - Ubuntu
+  - 环境搭建 - Ubuntu
 tags:
   - Ubuntu
   - Linux

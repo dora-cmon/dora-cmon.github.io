@@ -1,13 +1,13 @@
 ---
 title: Ubuntu 18.04 安装中文输入法
-abbrlink: 69aa783c
-date: 2020-03-12 16:08:50
 categories:
-  - 折腾造作 - Ubuntu
+  - 环境搭建 - Ubuntu
 tags:
   - Ubuntu
   - Linux
 cover: /images/cover/ubuntu.jfif
+abbrlink: 69aa783c
+date: 2020-03-12 16:08:50
 ---
 
 # 安装 fcitx 和搜狗拼音输入法

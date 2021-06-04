@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 18.04 使用Komorebi实现动态桌面
 categories:
-  - 折腾造作 - Ubuntu
+  - 环境搭建 - Ubuntu
 tags:
   - Ubuntu
   - Linux

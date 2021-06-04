@@ -1,7 +1,7 @@
 ---
 title: Win10+Ubuntu双系统时钟不一致解决办法
 categories:
-  - 折腾造作 - Ubuntu
+  - 环境搭建 - Ubuntu
 tags:
   - 双系统
   - Ubuntu

@@ -1,7 +1,7 @@
 ---
 title: Ubuntu图形界面换源
 categories:
-  - 折腾造作 - Ubuntu
+  - 环境搭建 - Ubuntu
 tags:
   - Ubuntu
   - Linux

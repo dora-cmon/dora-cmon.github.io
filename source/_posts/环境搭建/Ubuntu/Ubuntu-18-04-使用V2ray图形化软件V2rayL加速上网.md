@@ -1,7 +1,7 @@
 ---
 title: Ubuntu 18.04 使用V2ray图形化软件V2rayL加速上网
 categories:
-  - 折腾造作 - Ubuntu
+  - 环境搭建 - Ubuntu
 tags:
   - Ubuntu
   - Linux
