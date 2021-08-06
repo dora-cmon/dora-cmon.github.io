@@ -19,14 +19,14 @@ Given the head of a singly linked list, reverse the list, and return the reverse
 
 ## 测试样例
 
-![](images/【LeetCode】206-Reverse-Linked-List-解题记录/2021-08-06-21-54-07.png)
+![](/images/【LeetCode】206-Reverse-Linked-List-解题记录/2021-08-06-21-54-07.png)
 
 ```
 Input: head = [1,2,3,4,5]
 Output: [5,4,3,2,1]
 ```
 
-![](images/【LeetCode】206-Reverse-Linked-List-解题记录/2021-08-06-21-54-59.png)
+![](/images/【LeetCode】206-Reverse-Linked-List-解题记录/2021-08-06-21-54-59.png)
 
 ```
 Input: head = [1,2]
