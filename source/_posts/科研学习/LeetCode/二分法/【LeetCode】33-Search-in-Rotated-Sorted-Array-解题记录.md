@@ -1,5 +1,5 @@
 ---
-title: 【LeetCode】33. Search in Rotated Sorted Array 解题报告
+title: 【LeetCode】33. Search in Rotated Sorted Array 解题记录
 categories:
   - 科研学习 - LeetCode
 tags:

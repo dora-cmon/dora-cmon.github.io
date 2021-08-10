@@ -1,5 +1,5 @@
 ---
-title: 【LeetCode】1095. Find in Mountain Array 解题报告
+title: 【LeetCode】1095. Find in Mountain Array 解题记录
 categories:
   - 科研学习 - LeetCode
 tags:

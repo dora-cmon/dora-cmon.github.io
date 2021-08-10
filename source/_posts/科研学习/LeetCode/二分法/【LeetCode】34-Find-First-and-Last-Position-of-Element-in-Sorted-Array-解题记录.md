@@ -8,8 +8,8 @@ tags:
   - 二分法
   - 算法
 cover: /images/cover/leetcode.jpeg
-abbrlink: e40a1822
-date: 2021-05-19 16:03:02
+abbrlink: 39bf3160
+date: 2021-08-08 22:19:00
 ---
 
 # 问题描述
@@ -21,6 +21,11 @@ If target is not found in the array, return [-1, -1].
 You must write an algorithm with O(log n) runtime complexity.
 
 ## 测试样例
+
+```
+Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+```
 
 ```
 Input: nums = [5,7,7,8,8,10], target = 6
@@ -45,72 +50,63 @@ nums is a non-decreasing array.
 
 ## 思路
 
-实现 C++ 里的 `lower_bound` 和 `upper_bound` 函数，
-
-分别使用二分法，寻找 `target` 的边界，
-
-- 寻找左边界时，值 `>= target` 时，向左寻找，最终，`right` 指针必 `< target`，而 `left` 指针 `= right + 1` 且 `>= target` 
-- 寻找右边界时，值 `<= target` 时，向右寻找，最终，`left` 指针必 `> target`，而 `right` 指针 `= left - 1` 且 `<= target`
+根据二分法实现寻找数组中某元素上下界的函数即可，注意处理边界条件。
 
 **补充：**
 
-1. 二分法
-2. 时间复杂度 `O(lg(n))`
+1. 时间复杂度 `O(logn)`
 
 ## 代码
 
 ```java
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        // 首指针
-        int p_head = lower_bound(nums, target);
-        int p_tail = -1;     // 若存在再计算
-        if(p_head < nums.length && nums[p_head] == target) {    // 存在 target
-            p_tail = upper_bound(nums, target);
-        } else {                        // 不存在 target
-            p_head = -1;
-        }
+        int beg = lower_bound(nums, target);
+        int end = upper_bound(nums, target);
         
-        return new int[]{p_head, p_tail};
+        return beg == end ? new int[]{-1, -1} : new int[]{beg, end - 1};
     }
     
-    /*
-       寻找下边界
+    /**
+     * 寻找下界，[beg, end)
      */
-    int lower_bound(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
-        // 二分
-        while(left <= right) {
-            int mid = (left + right) / 2;
-            int val = nums[mid];
+    public int lower_bound(int[] nums, int target) {
+        int l = 0, r = nums.length;
+        
+        while(l < r) {
+            int mid = (l + r) / 2;
             
-            if(val >= target) {     // 大了或相等，取左
-                right = mid - 1;
-            } else {                // 小了，取右
-                left = mid + 1;
+            if(nums[mid] < target) {
+                l = mid + 1;
+            }
+            else {
+                r = mid;
             }
         }
-        // 最终 left 值 >= target， right 值 < target
-        return left;
+        
+        return l;
     }
     
-    /*
-       寻找下边界
+    /**
+     * 寻找上界，[beg, end)
      */
-    int upper_bound(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
-        // 二分
-        while(left <= right) {
-            int mid = (left + right) / 2;
-            int val = nums[mid];
-            if(val <= target) {     // 小了或相等，取右
-                left = mid + 1;
-            } else{                 // 大了，取左
-                right = mid - 1;
-            }  
+    public int upper_bound(int[] nums, int target) {
+        int l = 0, r = nums.length;
+        
+        while(l < r) {
+            int mid = (l + r) / 2;
+            
+            if(nums[mid] <= target) {
+                l = mid + 1;
+            }
+            else {
+                r = mid;
+            }
         }
-        // 最终 right 值 <= target， left 值 > target
-        return right;
+        
+        return l;
     }
 }
 ```
+
+

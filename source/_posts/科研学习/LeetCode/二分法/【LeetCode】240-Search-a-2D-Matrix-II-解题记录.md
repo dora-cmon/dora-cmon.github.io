@@ -1,5 +1,5 @@
 ---
-title: 【LeetCode】240. Search a 2D Matrix II 解题报告
+title: 【LeetCode】240. Search a 2D Matrix II 解题记录
 categories:
   - 科研学习 - LeetCode
 tags:

@@ -1,5 +1,5 @@
 ---
-title: 【LeetCode】215. Kth Largest Element in an Array 解题报告
+title: 【LeetCode】215. Kth Largest Element in an Array 解题记录
 categories:
   - 科研学习 - LeetCode
 tags:
