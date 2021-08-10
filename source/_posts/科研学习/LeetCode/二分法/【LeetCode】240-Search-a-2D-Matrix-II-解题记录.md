@@ -22,14 +22,14 @@ Write an efficient algorithm that searches for a target value in an m x n intege
 
 ## 测试样例
 
-![](/images/【LeetCode】240-Search-a-2D-Matrix-II-解题报告/2021-08-08-22-53-15.png)
+![](/images/【LeetCode】240-Search-a-2D-Matrix-II-解题记录/2021-08-08-22-53-15.png)
 
 ```
 Input: matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5
 Output: true
 ```
 
-![](/images/【LeetCode】240-Search-a-2D-Matrix-II-解题报告/2021-08-08-22-53-31.png)
+![](/images/【LeetCode】240-Search-a-2D-Matrix-II-解题记录/2021-08-08-22-53-31.png)
 
 ```
 Input: matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20

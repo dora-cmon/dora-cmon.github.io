@@ -21,14 +21,14 @@ The first integer of each row is greater than the last integer of the previous r
 
 ## 测试样例
 
-![](/images/【LeetCode】74-Search-a-2D-Matrix-解题报告/2021-08-08-22-48-45.png)
+![](/images/【LeetCode】74-Search-a-2D-Matrix-解题记录/2021-08-08-22-48-45.png)
 
 ```
 Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
 Output: true
 ```
 
-![](/images/【LeetCode】74-Search-a-2D-Matrix-解题报告/2021-08-08-22-49-36.png)
+![](/images/【LeetCode】74-Search-a-2D-Matrix-解题记录/2021-08-08-22-49-36.png)
 
 ```
 Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13

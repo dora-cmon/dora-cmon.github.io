@@ -24,14 +24,14 @@ You must solve the problem in O(1) extra space complexity and O(n) time complexi
 
 ## 测试样例
 
-![](/images/【LeetCode】328-Odd-Even-Linked-List-解题报告/2021-08-08-21-51-45.png)
+![](/images/【LeetCode】328-Odd-Even-Linked-List-解题记录/2021-08-08-21-51-45.png)
 
 ```
 Input: head = [1,2,3,4,5]
 Output: [1,3,5,2,4]
 ```
 
-![](/images/【LeetCode】328-Odd-Even-Linked-List-解题报告/2021-08-08-21-52-08.png)
+![](/images/【LeetCode】328-Odd-Even-Linked-List-解题记录/2021-08-08-21-52-08.png)
 
 ```
 Input: head = [2,1,3,5,6,4,7]
