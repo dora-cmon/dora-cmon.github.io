@@ -8,6 +8,7 @@ tags:
 cover: /images/Ubuntu-18-04-使用Komorebi实现动态桌面/2020-03-18-23-36-23.png
 abbrlink: c3b0ff28
 date: 2020-04-22 16:53:16
+sticky: 9
 ---
 
 
