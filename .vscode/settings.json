@@ -1,4 +1,5 @@
 {
-    "pasteImage.path": "images/${fileBasenameNoExtension}",
-    "pasteImage.defaultName": "Y-MM-DD-HH-mm-ss"
+    "pasteImage.path": "${workspaceRoot}/source/images/${fileBasenameNoExtension}",
+    "pasteImage.basePath": "${workspaceRoot}/source",
+    "pasteImage.prefix": "/"
 }
