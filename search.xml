@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>禁用Win10截屏快捷键Win+Shift+S，改用Snipaste(转载)</title>
+      <link href="posts/aea02211/"/>
+      <url>posts/aea02211/</url>
+      
+        <content type="html"><![CDATA[<p>本文转载自<a href="https://blog.csdn.net/weixin_46201756/article/details/106154786">禁用Win10截屏快捷键Win+Shift+S，改用Snipaste</a></p><h1 id="打开注册表"><a class="markdownIt-Anchor" href="#打开注册表"></a> 打开注册表</h1><p>按下Win+R键，输入regedit，回车即可打开；</p><p><img src="/images/%E7%A6%81%E7%94%A8Win10%E6%88%AA%E5%B1%8F%E5%BF%AB%E6%8D%B7%E9%94%AEWin-Shift-S%EF%BC%8C%E6%94%B9%E7%94%A8Snipaste-%E8%BD%AC%E8%BD%BD/2021-11-24-11-07-43.png" alt="" /></p><h1 id="进入我们要设置的目录"><a class="markdownIt-Anchor" href="#进入我们要设置的目录"></a> 进入我们要设置的目录</h1><p><code>\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced</code></p><p><img src="/images/%E7%A6%81%E7%94%A8Win10%E6%88%AA%E5%B1%8F%E5%BF%AB%E6%8D%B7%E9%94%AEWin-Shift-S%EF%BC%8C%E6%94%B9%E7%94%A8Snipaste-%E8%BD%AC%E8%BD%BD/2021-11-24-11-08-25.png" alt="" /></p><h1 id="设置具体禁用的键"><a class="markdownIt-Anchor" href="#设置具体禁用的键"></a> 设置具体禁用的键</h1><p>新建一个字符串值，数值名称为 <code>DisabledHotkeys</code>，数值数据为 <code>S</code></p><p><img src="/images/%E7%A6%81%E7%94%A8Win10%E6%88%AA%E5%B1%8F%E5%BF%AB%E6%8D%B7%E9%94%AEWin-Shift-S%EF%BC%8C%E6%94%B9%E7%94%A8Snipaste-%E8%BD%AC%E8%BD%BD/2021-11-24-11-09-04.png" alt="" /></p><h1 id="关闭注册表-重启电脑"><a class="markdownIt-Anchor" href="#关闭注册表-重启电脑"></a> 关闭注册表、重启电脑</h1><p>重启后再试试，Win10自带的截图工具快捷键是不是已经失效了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 疑难杂症 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 截图工具 </tag>
+            
+            <tag> Snipaste </tag>
+            
+            <tag> 快捷键 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git 在 Windows 中管理符号链接</title>
       <link href="posts/c866167c/"/>
       <url>posts/c866167c/</url>
@@ -78,9 +107,9 @@
             
             <tag> LeetCode </tag>
             
-            <tag> Easy </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Easy </tag>
             
             <tag> 队列 </tag>
             
@@ -109,9 +138,9 @@
             
             <tag> LeetCode </tag>
             
-            <tag> Easy </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Easy </tag>
             
             <tag> 队列 </tag>
             
@@ -140,11 +169,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 二分法 </tag>
+            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
-            
-            <tag> 二分法 </tag>
             
         </tags>
       
@@ -171,11 +200,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 二分法 </tag>
+            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
-            
-            <tag> 二分法 </tag>
             
         </tags>
       
@@ -202,11 +231,11 @@
             
             <tag> LeetCode </tag>
             
-            <tag> Easy </tag>
+            <tag> 二分法 </tag>
             
             <tag> 算法 </tag>
             
-            <tag> 二分法 </tag>
+            <tag> Easy </tag>
             
         </tags>
       
@@ -233,11 +262,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 二分法 </tag>
+            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
-            
-            <tag> 二分法 </tag>
             
         </tags>
       
@@ -264,11 +293,11 @@
             
             <tag> LeetCode </tag>
             
-            <tag> 算法 </tag>
-            
             <tag> Hard </tag>
             
             <tag> 二分法 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -295,11 +324,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 二分法 </tag>
+            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
-            
-            <tag> 二分法 </tag>
             
         </tags>
       
@@ -326,11 +355,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 二分法 </tag>
+            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
-            
-            <tag> 二分法 </tag>
             
         </tags>
       
@@ -357,11 +386,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 二分法 </tag>
+            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
-            
-            <tag> 二分法 </tag>
             
         </tags>
       
@@ -512,11 +541,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
             <tag> Easy </tag>
             
             <tag> 双指针 </tag>
-            
-            <tag> 算法 </tag>
             
             <tag> 链表 </tag>
             
@@ -547,9 +576,9 @@
             
             <tag> LeetCode </tag>
             
-            <tag> Easy </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Easy </tag>
             
             <tag> 链表 </tag>
             
@@ -578,9 +607,9 @@
             
             <tag> LeetCode </tag>
             
-            <tag> Easy </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Easy </tag>
             
             <tag> 链表 </tag>
             
@@ -611,9 +640,9 @@
             
             <tag> LeetCode </tag>
             
-            <tag> Easy </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Easy </tag>
             
             <tag> 链表 </tag>
             
@@ -704,11 +733,11 @@
             
             <tag> LeetCode </tag>
             
-            <tag> 算法 </tag>
-            
             <tag> Hard </tag>
             
             <tag> 二分法 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -735,11 +764,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 二分法 </tag>
+            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
-            
-            <tag> 二分法 </tag>
             
         </tags>
       
@@ -766,11 +795,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 二分法 </tag>
+            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
-            
-            <tag> 二分法 </tag>
             
         </tags>
       
@@ -824,11 +853,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 二分法 </tag>
+            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
-            
-            <tag> 二分法 </tag>
             
         </tags>
       
@@ -855,11 +884,11 @@
             
             <tag> LeetCode </tag>
             
-            <tag> Easy </tag>
+            <tag> 二分法 </tag>
             
             <tag> 算法 </tag>
             
-            <tag> 二分法 </tag>
+            <tag> Easy </tag>
             
         </tags>
       
@@ -886,11 +915,11 @@
             
             <tag> LeetCode </tag>
             
-            <tag> 双指针 </tag>
-            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
+            
+            <tag> 双指针 </tag>
             
         </tags>
       
@@ -917,11 +946,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
             <tag> Easy </tag>
             
             <tag> 双指针 </tag>
-            
-            <tag> 算法 </tag>
             
         </tags>
       
@@ -948,11 +977,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
             <tag> Easy </tag>
             
             <tag> 双指针 </tag>
-            
-            <tag> 算法 </tag>
             
         </tags>
       
@@ -981,11 +1010,11 @@
             
             <tag> 字符串 </tag>
             
-            <tag> 双指针 </tag>
+            <tag> Hard </tag>
             
             <tag> 算法 </tag>
             
-            <tag> Hard </tag>
+            <tag> 双指针 </tag>
             
             <tag> 滑动窗口 </tag>
             
@@ -1014,11 +1043,11 @@
             
             <tag> LeetCode </tag>
             
-            <tag> 双指针 </tag>
-            
             <tag> 算法 </tag>
             
             <tag> Medium </tag>
+            
+            <tag> 双指针 </tag>
             
             <tag> 链表 </tag>
             
@@ -1049,11 +1078,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
             <tag> Easy </tag>
             
             <tag> 双指针 </tag>
-            
-            <tag> 算法 </tag>
             
         </tags>
       
@@ -1080,11 +1109,11 @@
             
             <tag> LeetCode </tag>
             
+            <tag> 算法 </tag>
+            
             <tag> Easy </tag>
             
             <tag> 双指针 </tag>
-            
-            <tag> 算法 </tag>
             
         </tags>
       
@@ -1204,9 +1233,9 @@
             
             <tag> LeetCode </tag>
             
-            <tag> Easy </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Easy </tag>
             
             <tag> 贪心 </tag>
             
@@ -1324,9 +1353,9 @@
             
             <tag> LeetCode </tag>
             
-            <tag> 算法 </tag>
-            
             <tag> Hard </tag>
+            
+            <tag> 算法 </tag>
             
             <tag> 贪心 </tag>
             
@@ -1386,9 +1415,9 @@
             
             <tag> LeetCode </tag>
             
-            <tag> Easy </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Easy </tag>
             
             <tag> 贪心 </tag>
             
@@ -2295,11 +2324,11 @@
       
         <tags>
             
+            <tag> 刷机 </tag>
+            
             <tag> 斐讯 </tag>
             
             <tag> 盒子 </tag>
-            
-            <tag> 刷机 </tag>
             
         </tags>
       
@@ -2324,9 +2353,9 @@
       
         <tags>
             
-            <tag> Spring Boot </tag>
-            
             <tag> VS Code </tag>
+            
+            <tag> Spring Boot </tag>
             
             <tag> 配置 </tag>
             
@@ -2552,11 +2581,11 @@
       
         <tags>
             
-            <tag> 刷机 </tag>
+            <tag> 小米 </tag>
             
             <tag> 路由器 </tag>
             
-            <tag> 小米 </tag>
+            <tag> 刷机 </tag>
             
         </tags>
       
@@ -2612,11 +2641,11 @@
       
         <tags>
             
-            <tag> 斐讯 </tag>
+            <tag> 路由器 </tag>
             
             <tag> 刷机 </tag>
             
-            <tag> 路由器 </tag>
+            <tag> 斐讯 </tag>
             
         </tags>
       
