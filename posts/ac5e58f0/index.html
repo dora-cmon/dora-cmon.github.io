@@ -1,0 +1,510 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LeetCode 题目分类汇总 | 哆啦 C 梦</title><meta name="keywords" content="LeetCode"><meta name="author" content="dora-cmon"><meta name="copyright" content="dora-cmon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="汇总    题目 解题记录 难度 关键字     4 Median of Two Sorted Arrays 困难 二分   33 Search in Rotated Sorted Array 中等 二分   34 Find First and Last Position of Element in Sorted Array 中等 二分   52 Merge Intervals 中等 排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 题目分类汇总">
+<meta property="og:url" content="http://dora-cmon.github.io/posts/ac5e58f0/index.html">
+<meta property="og:site_name" content="哆啦 C 梦">
+<meta property="og:description" content="汇总    题目 解题记录 难度 关键字     4 Median of Two Sorted Arrays 困难 二分   33 Search in Rotated Sorted Array 中等 二分   34 Find First and Last Position of Element in Sorted Array 中等 二分   52 Merge Intervals 中等 排序">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dora-cmon.github.io/images/cover/leetcode.jpeg">
+<meta property="article:published_time" content="2021-11-24T05:03:04.000Z">
+<meta property="article:modified_time" content="2021-11-24T08:02:03.949Z">
+<meta property="article:author" content="dora-cmon">
+<meta property="article:tag" content="LeetCode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://dora-cmon.github.io/images/cover/leetcode.jpeg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://dora-cmon.github.io/posts/ac5e58f0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="GTb6ciSDhSgwGJb3ScvlBs5fV_cwOtW2bDVz5IRfI1s"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: dora-cmon","link":"链接: ","source":"来源: 哆啦 C 梦","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LeetCode 题目分类汇总',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-24 16:02:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">103</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">70</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/cover/leetcode.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">哆啦 C 梦</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">LeetCode 题目分类汇总</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-24T05:03:04.000Z" title="发表于 2021-11-24 13:03:04">2021-11-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-24T08:02:03.949Z" title="更新于 2021-11-24 16:02:03">2021-11-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0-LeetCode/">科研学习 - LeetCode</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="LeetCode 题目分类汇总"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="汇总"><a class="markdownIt-Anchor" href="#汇总"></a> 汇总</h1>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>解题记录</th>
+<th>难度</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/median-of-two-sorted-arrays/">4</a></td>
+<td><a href="/posts/1f34f97d/" title="Median of Two Sorted Arrays">Median of Two Sorted Arrays</a></td>
+<td>困难</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-in-rotated-sorted-array/">33</a></td>
+<td><a href="/posts/84c602fe/" title="Search in Rotated Sorted Array">Search in Rotated Sorted Array</a></td>
+<td>中等</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">34</a></td>
+<td><a href="/posts/39bf3160/" title="Find First and Last Position of Element in Sorted Array">Find First and Last Position of Element in Sorted Array</a></td>
+<td>中等</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-intervals">52</a></td>
+<td><a href="/posts/7cb44be5/" title="Merge Intervals">Merge Intervals</a></td>
+<td>中等</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/sqrtx/">69</a></td>
+<td><a href="/posts/340c2b50/" title="Sqrt(x)">Sqrt(x)</a></td>
+<td>简单</td>
+<td>二分，牛顿迭代法</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-a-2d-matrix/">74</a></td>
+<td><a href="/posts/90d1a8b3/" title="Search a 2D Matrix">Search a 2D Matrix</a></td>
+<td>中等</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-window-substring">76</a></td>
+<td><a href="/posts/4a667ae0/" title="Minimum Window Substring">Minimum Window Substring</a></td>
+<td>困难</td>
+<td>双指针</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-in-rotated-sorted-array-ii/">81</a></td>
+<td><a href="/posts/f66a2f54/" title="Search in Rotated Sorted Array II">Search in Rotated Sorted Array II</a></td>
+<td>中等</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-sorted-array">88</a></td>
+<td><a href="/posts/9648cc77/" title="Merge Sorted Array">Merge Sorted Array</a></td>
+<td>简单</td>
+<td>双指针</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-linked-list-ii">92</a></td>
+<td><a href="/posts/aee51397/" title="Reverse Linked List II">Reverse Linked List II</a></td>
+<td>中等</td>
+<td>链表</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii">122</a></td>
+<td><a href="/posts/e513e7dc/" title="Best Time to Buy and Sell Stock II">Best Time to Buy and Sell Stock II</a></td>
+<td>简单</td>
+<td>贪心</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/candy">135</a></td>
+<td><a href="/posts/86fcf368/" title="Candy">Candy</a></td>
+<td>困难</td>
+<td>贪心</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/linked-list-cycle">141</a></td>
+<td><a href="/posts/7bfc535b/" title="Linked List Cycle">Linked List Cycle</a></td>
+<td>简单</td>
+<td>链表</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/linked-list-cycle-ii">142</a></td>
+<td><a href="/posts/cc8b51d9/" title="Linked List Cycle II">Linked List Cycle II</a></td>
+<td>中等</td>
+<td>链表</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/insertion-sort-list">147</a></td>
+<td><a href="/posts/6a9dec7e/" title="Insertion Sort List">Insertion Sort List</a></td>
+<td>中等</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii">154</a></td>
+<td><a href="/posts/dc05f3e5/" title="Find Minimum in Rotated Sorted Array II">Find Minimum in Rotated Sorted Array II</a></td>
+<td>困难</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/intersection-of-two-linked-lists">160</a></td>
+<td><a href="/posts/50f23bee/" title="Intersection of Two Linked Lists">Intersection of Two Linked Lists</a></td>
+<td>简单</td>
+<td>链表</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-peak-element">162</a></td>
+<td><a href="/posts/46ffc75b/" title="Find Peak Element">Find Peak Element</a></td>
+<td>中等</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted">167</a></td>
+<td><a href="/posts/92ab2227/" title="Two Sum II - Input array is sorted">Two Sum II - Input array is sorted</a></td>
+<td>简单</td>
+<td>双指针</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/largest-number">179</a></td>
+<td><a href="/posts/bf39723/" title="Largest Number">Largest Number</a></td>
+<td>中等</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-linked-list">206</a></td>
+<td><a href="/posts/c7fc6e60/" title="Reverse Linked List">Reverse Linked List</a></td>
+<td>简单</td>
+<td>链表</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/kth-largest-element-in-an-array">215</a></td>
+<td><a href="/posts/9a60758/" title="Kth Largest Element in an Array">Kth Largest Element in an Array</a></td>
+<td>中等</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/implement-stack-using-queues">225</a></td>
+<td><a href="/posts/c93a51f1/" title="Implement Stack using Queues">Implement Stack using Queues</a></td>
+<td>简单</td>
+<td>队列</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-a-2d-matrix-ii">240</a></td>
+<td><a href="/posts/c7bcd071/" title="Search a 2D Matrix II">Search a 2D Matrix II</a></td>
+<td>中等</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/first-bad-version">278</a></td>
+<td><a href="/posts/d2fc0325/" title="First Bad Version">First Bad Version</a></td>
+<td>简单</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/odd-even-linked-list">328</a></td>
+<td><a href="/posts/86356f80/" title="Odd Even Linked List">Odd Even Linked List</a></td>
+<td>中等</td>
+<td>链表</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/moving-average-from-data-stream/">346</a></td>
+<td><a href="/posts/f4a86a0d/" title="Moving Average from Data Stream">Moving Average from Data Stream</a></td>
+<td>简单</td>
+<td>队列，滑动窗口</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/queue-reconstruction-by-height">406</a></td>
+<td><a href="/posts/1d2ecea5/" title="Queue Reconstruction by Height">Queue Reconstruction by Height</a></td>
+<td>中等</td>
+<td>贪心</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/non-overlapping-intervals">435</a></td>
+<td><a href="/posts/1ab92857/" title="Non-overlapping Intervals">Non-overlapping Intervals</a></td>
+<td>中等</td>
+<td>贪心</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/">452</a></td>
+<td><a href="/posts/71cefafc/" title="Minimum Number of Arrows to Burst Balloons">Minimum Number of Arrows to Burst Balloons</a></td>
+<td>中等</td>
+<td>贪心</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/assign-cookies">455</a></td>
+<td><a href="/posts/19a161a/" title="Assign Cookies">Assign Cookies</a></td>
+<td>简单</td>
+<td>贪心</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/">524</a></td>
+<td><a href="/posts/f46d7949/" title="Longest Word in Dictionary through Deleting">Longest Word in Dictionary through Deleting</a></td>
+<td>中等</td>
+<td>双指针</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/single-element-in-a-sorted-array">540</a></td>
+<td><a href="/posts/d78f4506/" title="Single Element in a Sorted Array">Single Element in a Sorted Array</a></td>
+<td>中等</td>
+<td>二分</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/can-place-flowers">605</a></td>
+<td><a href="/posts/ef5a23d/" title="Can Place Flowers">Can Place Flowers</a></td>
+<td>简单</td>
+<td>贪心</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/sum-of-square-numbers">633</a></td>
+<td><a href="/posts/66d12b72/" title="Sum of Square Numbers">Sum of Square Numbers</a></td>
+<td>简单</td>
+<td>双指针</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/non-decreasing-array">665</a></td>
+<td><a href="/posts/a460efb0/" title="Non-decreasing Array">Non-decreasing Array</a></td>
+<td>中等</td>
+<td>贪心</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-palindrome-ii">680</a></td>
+<td><a href="/posts/6a28d588/" title="Valid Palindrome II">Valid Palindrome II</a></td>
+<td>简单</td>
+<td>双指针</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/partition-labels">763</a></td>
+<td><a href="/posts/c336fcb2/" title="Partition Labels">Partition Labels</a></td>
+<td>中等</td>
+<td>贪心</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-and-replace-in-string">833</a></td>
+<td><a href="/posts/8bc10515/" title="Find And Replace in String">Find And Replace in String</a></td>
+<td>中等</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/middle-of-the-linked-list">876</a></td>
+<td><a href="/posts/a52b91a6/" title="Middle of the Linked List">Middle of the Linked List</a></td>
+<td>简单</td>
+<td>链表</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/sort-an-array">912</a></td>
+<td><a href="/posts/6854315/" title="Sort an Array">Sort an Array</a></td>
+<td>中等</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-in-mountain-array">1095</a></td>
+<td><a href="/posts/24e5a86/" title="Find in Mountain Array">Find in Mountain Array</a></td>
+<td>困难</td>
+<td>二分</td>
+</tr>
+</tbody>
+</table>
+<h1 id="知识类型"><a class="markdownIt-Anchor" href="#知识类型"></a> 知识类型</h1>
+<h2 id="排序类"><a class="markdownIt-Anchor" href="#排序类"></a> 排序类</h2>
+<a href="/posts/7cb44be5/" title="【LeetCode】56. Merge Intervals 解题记录">【LeetCode】56. Merge Intervals 解题记录</a> <br/>
+<a href="/posts/6a9dec7e/" title="【LeetCode】147. Insertion Sort List 解题记录">【LeetCode】147. Insertion Sort List 解题记录</a> <br/>
+<a href="/posts/bf39723/" title="【LeetCode】179. Largest Number 解题记录">【LeetCode】179. Largest Number 解题记录</a> <br/>
+<a href="/posts/6854315/" title="【LeetCode】912. Sort an Array 解题记录">【LeetCode】912. Sort an Array 解题记录</a> <br/>
+<h2 id="链表类"><a class="markdownIt-Anchor" href="#链表类"></a> 链表类</h2>
+<a href="/posts/aee51397/" title="【LeetCode】92. Reverse Linked List II 解题记录">【LeetCode】92. Reverse Linked List II 解题记录</a> <br/>
+<a href="/posts/7bfc535b/" title="【LeetCode】141. Linked List Cycle 解题记录">【LeetCode】141. Linked List Cycle 解题记录</a> <br/>
+<a href="/posts/cc8b51d9/" title="【LeetCode】142. Linked List Cycle II 解题记录">【LeetCode】142. Linked List Cycle II 解题记录</a> <br/>
+<a href="/posts/50f23bee/" title="【LeetCode】160. Intersection of Two Linked Lists 解题记录">【LeetCode】160. Intersection of Two Linked Lists 解题记录</a> <br/>
+<a href="/posts/c7fc6e60/" title="【LeetCode】206. Reverse Linked List 解题记录">【LeetCode】206. Reverse Linked List 解题记录</a> <br/>
+<a href="/posts/86356f80/" title="【LeetCode】328. Odd Even Linked List 解题记录">【LeetCode】328. Odd Even Linked List 解题记录</a> <br/>
+<a href="/posts/a52b91a6/" title="【LeetCode】876. Middle of the Linked List 解题记录">【LeetCode】876. Middle of the Linked List 解题记录</a> <br/>
+<h2 id="二分法"><a class="markdownIt-Anchor" href="#二分法"></a> 二分法</h2>
+<a href="/posts/1f34f97d/" title="【LeetCode】4. Median of Two Sorted Arrays 解题记录">【LeetCode】4. Median of Two Sorted Arrays 解题记录</a> <br/>
+<a href="/posts/84c602fe/" title="【LeetCode】33. Search in Rotated Sorted Array 解题记录">【LeetCode】33. Search in Rotated Sorted Array 解题记录</a> <br/>
+<a href="/posts/39bf3160/" title="【LeetCode】34. Find First and Last Position of Element in Sorted Array 解题记录">【LeetCode】34. Find First and Last Position of Element in Sorted Array 解题记录</a> <br/>
+<a href="/posts/340c2b50/" title="【LeetCode】69. Sqrt(x) 解题记录">【LeetCode】69. Sqrt(x) 解题记录</a> <br/>
+<a href="/posts/90d1a8b3/" title="【LeetCode】74. Search a 2D Matrix 解题记录">【LeetCode】74. Search a 2D Matrix 解题记录</a> <br/>
+<a href="/posts/f66a2f54/" title="【LeetCode】81. Search in Rotated Sorted Array II 解题记录">【LeetCode】81. Search in Rotated Sorted Array II 解题记录</a> <br/>
+<a href="/posts/dc05f3e5/" title="【LeetCode】154. Find Minimum in Rotated Sorted Array II 解题记录">【LeetCode】154. Find Minimum in Rotated Sorted Array II 解题记录</a> <br/>
+<a href="/posts/46ffc75b/" title="【LeetCode】162. Find Peak Element 解题记录">【LeetCode】162. Find Peak Element 解题记录</a> <br/>
+<a href="/posts/9a60758/" title="【LeetCode】215. Kth Largest Element in an Array 解题记录">【LeetCode】215. Kth Largest Element in an Array 解题记录</a> <br/>
+<a href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录">【LeetCode】240. Search a 2D Matrix II 解题记录</a> <br/>
+<a href="/posts/d2fc0325/" title="【LeetCode】278. First Bad Version 解题记录">【LeetCode】278. First Bad Version 解题记录</a> <br/>
+<a href="/posts/d78f4506/" title="【LeetCode】540. Single Element in a Sorted Array 解题记录">【LeetCode】540. Single Element in a Sorted Array 解题记录</a> <br/>
+<a href="/posts/24e5a86/" title="【LeetCode】1095. Find in Mountain Array 解题记录">【LeetCode】1095. Find in Mountain Array 解题记录</a> <br/>
+<h2 id="双指针"><a class="markdownIt-Anchor" href="#双指针"></a> 双指针</h2>
+<a href="/posts/4a667ae0/" title="【LeetCode】76. Minimum Window Substring 解题记录">【LeetCode】76. Minimum Window Substring 解题记录</a> <br/>
+<a href="/posts/9648cc77/" title="【LeetCode】88. Merge Sorted Array 解题记录">【LeetCode】88. Merge Sorted Array 解题记录</a> <br/>
+<a href="/posts/92ab2227/" title="【LeetCode】167. Two Sum II - Input array is sorted 解题记录">【LeetCode】167. Two Sum II - Input array is sorted 解题记录</a> <br/>
+<a href="/posts/f46d7949/" title="【LeetCode】524. Longest Word in Dictionary through Deleting 解题记录">【LeetCode】524. Longest Word in Dictionary through Deleting 解题记录</a> <br/>
+<a href="/posts/66d12b72/" title="【LeetCode】633. Sum of Square Numbers 解题记录">【LeetCode】633. Sum of Square Numbers 解题记录</a> <br/>
+<a href="/posts/6a28d588/" title="【LeetCode】680. Valid Palindrome II 解题记录">【LeetCode】680. Valid Palindrome II 解题记录</a> <br/>
+<h2 id="贪心"><a class="markdownIt-Anchor" href="#贪心"></a> 贪心</h2>
+<a href="/posts/e513e7dc/" title="【LeetCode】122. Best Time to Buy and Sell Stock II 解题记录">【LeetCode】122. Best Time to Buy and Sell Stock II 解题记录</a> <br/>
+<a href="/posts/86fcf368/" title="【LeetCode】135. Candy 解题记录">【LeetCode】135. Candy 解题记录</a> <br/>
+<a href="/posts/1d2ecea5/" title="【LeetCode】406. Queue Reconstruction by Height 解题记录">【LeetCode】406. Queue Reconstruction by Height 解题记录</a> <br/>
+<a href="/posts/1ab92857/" title="【LeetCode】435. Non-overlapping Intervals 解题记录">【LeetCode】435. Non-overlapping Intervals 解题记录</a> <br/>
+<a href="/posts/71cefafc/" title="【LeetCode】452. Minimum Number of Arrows to Burst Balloons 解题记录">【LeetCode】452. Minimum Number of Arrows to Burst Balloons 解题记录</a> <br/>
+<a href="/posts/19a161a/" title="【LeetCode】455. Assign Cookies 解题记录">【LeetCode】455. Assign Cookies 解题记录</a> <br/>
+<a href="/posts/a460efb0/" title="【LeetCode】665. Non-decreasing Array 解题记录">【LeetCode】665. Non-decreasing Array 解题记录</a> <br/>
+<a href="/posts/c336fcb2/" title="【LeetCode】763. Partition Labels 解题记录">【LeetCode】763. Partition Labels 解题记录</a> <br/>
+<h2 id="堆-栈-队列-哈希表"><a class="markdownIt-Anchor" href="#堆-栈-队列-哈希表"></a> 堆、栈、队列、哈希表</h2>
+<h3 id="队列"><a class="markdownIt-Anchor" href="#队列"></a> 队列</h3>
+<a href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录">【LeetCode】225. Implement Stack using Queues 解题记录</a> <br/>
+<a href="/posts/f4a86a0d/" title="【LeetCode】346. Moving Average from Data Stream 解题记录">【LeetCode】346. Moving Average from Data Stream 解题记录</a> <br/></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dora-cmon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://dora-cmon.github.io/posts/ac5e58f0/">http://dora-cmon.github.io/posts/ac5e58f0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://dora-cmon.github.io" target="_blank">哆啦 C 梦</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/LeetCode/">LeetCode</a></div><div class="post_share"><div class="social-share" data-image="/images/cover/leetcode.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/aea02211/"><img class="next-cover" src="/images/cover/snipaste.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">禁用Win10截屏快捷键Win+Shift+S，改用Snipaste(转载)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/8bc10515/" title="【LeetCode】833. Find And Replace in String 解题记录"><img class="cover" src="/images/cover/leetcode.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-23</div><div class="title">【LeetCode】833. Find And Replace in String 解题记录</div></div></a></div><div><a href="/posts/24e5a86/" title="【LeetCode】1095. Find in Mountain Array 解题记录"><img class="cover" src="/images/cover/leetcode.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-08</div><div class="title">【LeetCode】1095. Find in Mountain Array 解题记录</div></div></a></div><div><a href="/posts/dc05f3e5/" title="【LeetCode】154. Find Minimum in Rotated Sorted Array II 解题记录"><img class="cover" src="/images/cover/leetcode.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-27</div><div class="title">【LeetCode】154. Find Minimum in Rotated Sorted Array II 解题记录</div></div></a></div><div><a href="/posts/46ffc75b/" title="【LeetCode】162. Find Peak Element 解题记录"><img class="cover" src="/images/cover/leetcode.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-08</div><div class="title">【LeetCode】162. Find Peak Element 解题记录</div></div></a></div><div><a href="/posts/9a60758/" title="【LeetCode】215. Kth Largest Element in an Array 解题记录"><img class="cover" src="/images/cover/leetcode.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-08</div><div class="title">【LeetCode】215. Kth Largest Element in an Array 解题记录</div></div></a></div><div><a href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录"><img class="cover" src="/images/cover/leetcode.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-08</div><div class="title">【LeetCode】240. Search a 2D Matrix II 解题记录</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">dora-cmon</div><div class="author-info__description">一条有梦想的咸鱼</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">103</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">70</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dora-cmon"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dora-cmon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dora-cmon@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E6%80%BB"><span class="toc-number">1.</span> <span class="toc-text"> 汇总</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text"> 知识类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text"> 排序类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text"> 链表类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text"> 二分法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-number">2.4.</span> <span class="toc-text"> 双指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83"><span class="toc-number">2.5.</span> <span class="toc-text"> 贪心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86-%E6%A0%88-%E9%98%9F%E5%88%97-%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-number">2.6.</span> <span class="toc-text"> 堆、栈、队列、哈希表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-number">2.6.1.</span> <span class="toc-text"> 队列</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/ac5e58f0/" title="LeetCode 题目分类汇总"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode 题目分类汇总"/></a><div class="content"><a class="title" href="/posts/ac5e58f0/" title="LeetCode 题目分类汇总">LeetCode 题目分类汇总</a><time datetime="2021-11-24T05:03:04.000Z" title="发表于 2021-11-24 13:03:04">2021-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/aea02211/" title="禁用Win10截屏快捷键Win+Shift+S，改用Snipaste(转载)"><img src="/images/cover/snipaste.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="禁用Win10截屏快捷键Win+Shift+S，改用Snipaste(转载)"/></a><div class="content"><a class="title" href="/posts/aea02211/" title="禁用Win10截屏快捷键Win+Shift+S，改用Snipaste(转载)">禁用Win10截屏快捷键Win+Shift+S，改用Snipaste(转载)</a><time datetime="2021-11-24T03:06:19.000Z" title="发表于 2021-11-24 11:06:19">2021-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接"><img src="/images/cover/git.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git 在 Windows 中管理符号链接"/></a><div class="content"><a class="title" href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接">Git 在 Windows 中管理符号链接</a><time datetime="2021-11-24T02:54:27.000Z" title="发表于 2021-11-24 10:54:27">2021-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器"><img src="/images/cover/VSCode.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VS Code Remote 配置 Windows 为服务器"/></a><div class="content"><a class="title" href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器">VS Code Remote 配置 Windows 为服务器</a><time datetime="2021-10-19T09:19:45.000Z" title="发表于 2021-10-19 17:19:45">2021-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】225. Implement Stack using Queues 解题记录"/></a><div class="content"><a class="title" href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录">【LeetCode】225. Implement Stack using Queues 解题记录</a><time datetime="2021-08-10T05:47:50.000Z" title="发表于 2021-08-10 13:47:50">2021-08-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By dora-cmon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '5063efef254786df5ea3',
+      clientSecret: 'e1cd8c9039e6fe8ad9db774a4c54c1523c6fb3d1',
+      repo: 'dora-cmon.github.io',
+      owner: 'dora-cmon',
+      admin: ['dora-cmon'],
+      id: '93c5396696cb003690d3816324c8c107',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
