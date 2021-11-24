@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>哆啦 C 梦 - 技术博客小站</title><meta name="author" content="dora-cmon"><meta name="copyright" content="dora-cmon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="一条有梦想的咸鱼">
+<meta property="og:type" content="website">
+<meta property="og:title" content="哆啦 C 梦">
+<meta property="og:url" content="http://dora-cmon.github.io/index.html">
+<meta property="og:site_name" content="哆啦 C 梦">
+<meta property="og:description" content="一条有梦想的咸鱼">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dora-cmon.github.io/img/avatar.jpeg">
+<meta property="article:author" content="dora-cmon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://dora-cmon.github.io/img/avatar.jpeg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://dora-cmon.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="GTb6ciSDhSgwGJb3ScvlBs5fV_cwOtW2bDVz5IRfI1s"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: dora-cmon","link":"链接: ","source":"来源: 哆啦 C 梦","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '哆啦 C 梦',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-11-24 10:58:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">101</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/top_img/index.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">哆啦 C 梦</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">哆啦 C 梦</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/dora-cmon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dora-cmon@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/bbf09ec7/" title="Ubuntu 20.04 全新安装 优化配置 界面美化 常用软件全攻略">     <img class="post_bg" src="/images/cover/ubuntu2004.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu 20.04 全新安装 优化配置 界面美化 常用软件全攻略"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/bbf09ec7/" title="Ubuntu 20.04 全新安装 优化配置 界面美化 常用软件全攻略">Ubuntu 20.04 全新安装 优化配置 界面美化 常用软件全攻略</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-05-21T03:38:13.000Z" title="发表于 2021-05-21 11:38:13">2021-05-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-Ubuntu/">环境搭建 - Ubuntu</a></span></div><div class="content">之前将系统从 Ubuntu 18.04 升级到了 Ubuntu 20.04，但是由于升级的方式造成系统不够稳定，Xorg 进程 经常占用 CPU 到 100% 及以上，造成电脑非常卡顿。因此重新进行 Ubuntu 20.04 全盘安装，并进行配置美化。
+ 制作 Ubuntu 20.04 镜像 U盘
+
+
+下载镜像文件
+从 ubuntu 官方网站 下载 ubuntu-20.04.desktop-amd64.iso ISO 镜像文件。
+
+
+下载 Rufus 镜像制作工具
+从 Rufus 官方网站 下载并安装 rufus-3.11exe。
+
+
+制作 Ubuntu 20.04 系统启动 U盘
+使用 Rufus 制作系统启动U盘，注意 分区类型 选择 GPT，目标系统类型 选择 `UEFI(非 CSM)。制作系统启动 U盘会清除 U盘数据，注意备份。
+
+点击开始，选择 以 DD 镜像 模式写入。
+
+注意： 不要使用 ISO镜像 模式 或 Ultra ISO 软件制作 U盘，否则安装过程中可能会出现以下报错：
+ 1234# EnglishThe &#x27;grub-efi-amd64-signne ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/c3b0ff28/" title="Ubuntu 18.04 使用Komorebi实现动态桌面">     <img class="post_bg" src="/images/Ubuntu-18-04-%E4%BD%BF%E7%94%A8Komorebi%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E6%A1%8C%E9%9D%A2/2020-03-18-23-36-23.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu 18.04 使用Komorebi实现动态桌面"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/c3b0ff28/" title="Ubuntu 18.04 使用Komorebi实现动态桌面">Ubuntu 18.04 使用Komorebi实现动态桌面</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-22T08:53:16.000Z" title="发表于 2020-04-22 16:53:16">2020-04-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-Ubuntu/">环境搭建 - Ubuntu</a></span></div><div class="content">
+
+
+ 安装 Komorebi
+从 github 项目 release 页面 下载 Komorebi 的 deb 文件，并双击安装即可。
+若不成功则使用命令安装：
+12345678sudo add-apt-repository ppa:gnome3-team/gnome3 -ysudo add-apt-repository ppa:vala-team -ysudo add-apt-repository ppa:gnome3-team/gnome3-staging -ysudo apt install cmake valac libgtk-3-dev libgee-0.8-dev libclutter-gtk-1.0-dev libclutter-1.0-dev libwebkit2gtk-4.0-dev libclutter-gst-3.0-devgit clone https://github.com/cheesecakeufo/komorebi.gitcd komorebimkdir build &amp;&amp; cd buildcmake .. &amp;&amp; sudo ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器">     <img class="post_bg" src="/images/cover/VSCode.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VS Code Remote 配置 Windows 为服务器"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器">VS Code Remote 配置 Windows 为服务器</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-10-19T09:19:45.000Z" title="发表于 2021-10-19 17:19:45">2021-10-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-VS-Code/">环境搭建 - VS Code</a></span></div><div class="content">VS Code 远程开发非常方便实用，以下介绍将 Windows 作为 VS Code 远程服务器的方法，完成配置后可以使用其他机器连接到该 Windows 机器进行远程开发。
+ 在 Windows 服务器上安装 SSH Server
+ 安装 OpenSSH Server
+以管理员身份运行 Power Shell，执行命令：
+12Get-WindowsCapability -Online -Name Open*Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+第一条命令查询可安装的 OpenSSH 组件，输出为：
+12345678910111213Name         : OpenSSH.Client~~~~0.0.1.0State        : InstalledDisplayName  : OpenSSH 客户端Description  : 基于 OpenSSH 的安全外壳(SSH)客户端，可用于安全密钥管理和远程计算机访问。DownloadSize : 1314377InstallSize  : 1 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/37c9dfc0/" title="斐讯K2路由器硬刷救砖">     <img class="post_bg" src="/images/cover/%E7%94%B5%E8%B7%AF%E6%9D%BF.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="斐讯K2路由器硬刷救砖"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/37c9dfc0/" title="斐讯K2路由器硬刷救砖">斐讯K2路由器硬刷救砖</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-19T11:52:05.000Z" title="发表于 2020-02-19 19:52:05">2020-02-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%98%E8%85%BE%E9%80%A0%E4%BD%9C-%E5%88%B7%E6%9C%BA/">折腾造作 - 刷机</a></span></div><div class="content">由于刷错Breed导致路由器变砖，通过编程器救回来了，总成本约30元。
+ 准备工作
+硬件：淘宝购买即可
+
+变砖的K2路由器（变砖前备份过eeprom，我提供了自己的eeprom但不保证适用于其他设备）
+CH341A编程器（15元左右）
+SOP8夹子线（15元左右）
+
+软件：百度网盘, 提取码：pwbv
+
+编程器驱动
+CH341A编程器软件
+K2路由器breed
+PandoraBox K2固件
+
+ 硬操作
+ 路由拆顶盖
+后盖封条处两侧有两颗螺丝，拆掉：
+
+然后用卡片沿顶盖缝隙撬开取下顶盖：
+
+flash芯片就是图中的小不点。
+ 连接CH341编程器
+编程器背面可以看到24，25两个区域，我们要使用25区域：
+
+按照下图连接板子，USB口朝左，1 引脚在右上角：
+
+然后用SOP8夹子将编程器和路由器flash芯片连接起来，芯片有很小的4，5标注，顺着线将4，5一侧和编程器板子上的4，5一侧对应：
+
+将编程器插入电脑，编程器和路由器均会亮红灯（注意亮灯不一定接触良好，还需要再软件中检测）：
+
+ 软件操作
+ 安装驱动
+插入编程器并安装驱动，若安装失败尝试禁用驱动程序强制签名，具体方法参考Win ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接">     <img class="post_bg" src="/images/cover/git.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git 在 Windows 中管理符号链接"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接">Git 在 Windows 中管理符号链接</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-24T02:54:27.000Z" title="发表于 2021-11-24 10:54:27">2021-11-24</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">环境搭建</a></span></div><div class="content"> 流程
+
+下载最新 Git for windows
+安装时选中 Enable symbolic links
+
+启用符号链接（需要SeCreateSymbolicLink权限）。注意，现有仓库不受此设置的影响。
+克隆仓库并启用符号链接支持 1git clone -c core.symlinks=true &lt;URL&gt;
+
+创建符号链接
+符号链接支持指向绝对/相对路径 12mklink /d this-link-points-to c:\that-directorymklink this-link-points-to c:\that-file
+目录联结只支持指向绝对路径（命令中的相对路径会被转为绝对路径） 1mklink /j this-link-points-to c:\that-directory
+
+赋予相关权限
+若使用符号链接，需要添加权限，详见允许非管理员创建符号链接
+完成后重启计算机
+
+ 官方说明
+ 符号链接
+概述：Windows 上没有完全等效的 POSIX 符号链接，默认情况下，非管理员无法使用类似的链接，除非启用开发人员模式并使用相对较新的 Windows 10 版 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录">     <img class="post_bg" src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】225. Implement Stack using Queues 解题记录"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录">【LeetCode】225. Implement Stack using Queues 解题记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-10T05:47:50.000Z" title="发表于 2021-08-10 13:47:50">2021-08-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0-LeetCode/">科研学习 - LeetCode</a></span></div><div class="content"> 问题描述
+Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
+Implement the MyStack class:
+
+void push(int x) Pushes element x to the top of the stack.
+int pop() Removes the element on the top of the stack and returns it.
+int top() Returns the element on the top of the stack.
+boolean empty() Returns true if the stack is empty, false otherwise.
+
+Notes:
+
+You must use only standard operati ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/f4a86a0d/" title="【LeetCode】346. Moving Average from Data Stream 解题记录">     <img class="post_bg" src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】346. Moving Average from Data Stream 解题记录"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f4a86a0d/" title="【LeetCode】346. Moving Average from Data Stream 解题记录">【LeetCode】346. Moving Average from Data Stream 解题记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-10T04:51:30.000Z" title="发表于 2021-08-10 12:51:30">2021-08-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0-LeetCode/">科研学习 - LeetCode</a></span></div><div class="content"> 问题描述
+Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
+ 测试样例
+12345MovingAverage m = new MovingAverage(3);m.next(1) = 1m.next(10) = (1 + 10) / 2m.next(3) = (1 + 10 + 3) / 3m.next(5) = (10 + 3 + 5) / 3
+ 解题
+ 思路
+使用队列来保存窗口数据，保持队列小于等于窗口大小，并记录窗口元素值方便计算平均值。
+补充：
+
+队列
+时间复杂度 O(n)
+
+ 代码
+12345678910111213141516171819202122232425262728293031323334import java.util.Queue;public class MovingAverage &#123;    private Queue&lt;Integer&gt; queue;    pri ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录">     <img class="post_bg" src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】240. Search a 2D Matrix II 解题记录"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录">【LeetCode】240. Search a 2D Matrix II 解题记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-08T14:52:27.000Z" title="发表于 2021-08-08 22:52:27">2021-08-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0-LeetCode/">科研学习 - LeetCode</a></span></div><div class="content"> 问题描述
+Write an efficient algorithm that searches for a target value in an m x n integer matrix. The matrix has the following properties:
+
+
+Integers in each row are sorted in ascending from left to right.
+
+
+Integers in each column are sorted in ascending from top to bottom.
+
+
+ 测试样例
+
+12Input: matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5Output: true
+
+12Input: matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/posts/90d1a8b3/" title="【LeetCode】74. Search a 2D Matrix 解题记录">     <img class="post_bg" src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】74. Search a 2D Matrix 解题记录"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/90d1a8b3/" title="【LeetCode】74. Search a 2D Matrix 解题记录">【LeetCode】74. Search a 2D Matrix 解题记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-08T14:47:55.000Z" title="发表于 2021-08-08 22:47:55">2021-08-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0-LeetCode/">科研学习 - LeetCode</a></span></div><div class="content"> 问题描述
+Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row.
+ 测试样例
+
+12Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3Output: true
+
+12Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13Output: false
+ 说明
+1234m == matrix.lengthn == matrix[i].length1 &lt;= m, n &lt;= 1 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/posts/d2fc0325/" title="【LeetCode】278. First Bad Version 解题记录">     <img class="post_bg" src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】278. First Bad Version 解题记录"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/d2fc0325/" title="【LeetCode】278. First Bad Version 解题记录">【LeetCode】278. First Bad Version 解题记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-08T14:44:00.000Z" title="发表于 2021-08-08 22:44:00">2021-08-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0-LeetCode/">科研学习 - LeetCode</a></span></div><div class="content"> 问题描述
+You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
+Suppose you have n versions [1, 2, …, n] and you want to find out the first bad one, which causes all the following ones to be bad.
+You are given an API bool isBadVersion(version) which returns whether version is bad. Implem ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#content-inner">11</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">dora-cmon</div><div class="author-info__description">一条有梦想的咸鱼</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">101</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dora-cmon"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dora-cmon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dora-cmon@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接"><img src="/images/cover/git.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git 在 Windows 中管理符号链接"/></a><div class="content"><a class="title" href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接">Git 在 Windows 中管理符号链接</a><time datetime="2021-11-24T02:54:27.000Z" title="发表于 2021-11-24 10:54:27">2021-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器"><img src="/images/cover/VSCode.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VS Code Remote 配置 Windows 为服务器"/></a><div class="content"><a class="title" href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器">VS Code Remote 配置 Windows 为服务器</a><time datetime="2021-10-19T09:19:45.000Z" title="发表于 2021-10-19 17:19:45">2021-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】225. Implement Stack using Queues 解题记录"/></a><div class="content"><a class="title" href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录">【LeetCode】225. Implement Stack using Queues 解题记录</a><time datetime="2021-08-10T05:47:50.000Z" title="发表于 2021-08-10 13:47:50">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f4a86a0d/" title="【LeetCode】346. Moving Average from Data Stream 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】346. Moving Average from Data Stream 解题记录"/></a><div class="content"><a class="title" href="/posts/f4a86a0d/" title="【LeetCode】346. Moving Average from Data Stream 解题记录">【LeetCode】346. Moving Average from Data Stream 解题记录</a><time datetime="2021-08-10T04:51:30.000Z" title="发表于 2021-08-10 12:51:30">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】240. Search a 2D Matrix II 解题记录"/></a><div class="content"><a class="title" href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录">【LeetCode】240. Search a 2D Matrix II 解题记录</a><time datetime="2021-08-08T14:52:27.000Z" title="发表于 2021-08-08 22:52:27">2021-08-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91-Pytorch/"><span class="card-category-list-name">代码开发 - Pytorch</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91-Spring-Boot/"><span class="card-category-list-name">代码开发 - Spring Boot</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%98%E8%85%BE%E9%80%A0%E4%BD%9C-%E5%88%B7%E6%9C%BA/"><span class="card-category-list-name">折腾造作 - 刷机</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><span class="card-category-list-name">环境搭建</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-Docker/"><span class="card-category-list-name">环境搭建 - Docker</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-Hexo/"><span class="card-category-list-name">环境搭建 - Hexo</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-Ubuntu/"><span class="card-category-list-name">环境搭建 - Ubuntu</span><span class="card-category-list-count">14</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-VS-Code/"><span class="card-category-list-name">环境搭建 - VS Code</span><span class="card-category-list-count">8</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Anaconda/" style="font-size: 1.1em; color: #999">Anaconda</a> <a href="/tags/C-C/" style="font-size: 1.1em; color: #999">C/C++</a> <a href="/tags/Docker/" style="font-size: 1.14em; color: #999a9c">Docker</a> <a href="/tags/Easy/" style="font-size: 1.43em; color: #99a6b8">Easy</a> <a href="/tags/Everything/" style="font-size: 1.1em; color: #999">Everything</a> <a href="/tags/FreeFileSync/" style="font-size: 1.1em; color: #999">FreeFileSync</a> <a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/Hard/" style="font-size: 1.21em; color: #999da3">Hard</a> <a href="/tags/Hexo/" style="font-size: 1.35em; color: #99a3b1">Hexo</a> <a href="/tags/JAVA/" style="font-size: 1.14em; color: #999a9c">JAVA</a> <a href="/tags/LAEO/" style="font-size: 1.1em; color: #999">LAEO</a> <a href="/tags/Latex/" style="font-size: 1.1em; color: #999">Latex</a> <a href="/tags/LeetCode/" style="font-size: 1.5em; color: #99a9bf">LeetCode</a> <a href="/tags/Linux/" style="font-size: 1.43em; color: #99a6b8">Linux</a> <a href="/tags/MarkDown/" style="font-size: 1.1em; color: #999">MarkDown</a> <a href="/tags/Medium/" style="font-size: 1.46em; color: #99a8bc">Medium</a> <a href="/tags/Meta-learning/" style="font-size: 1.1em; color: #999">Meta learning</a> <a href="/tags/Middle/" style="font-size: 1.1em; color: #999">Middle</a> <a href="/tags/MobaXterm/" style="font-size: 1.17em; color: #999ca0">MobaXterm</a> <a href="/tags/Multi-task-learning/" style="font-size: 1.25em; color: #999fa7">Multi task learning</a> <a href="/tags/Notepad/" style="font-size: 1.1em; color: #999">Notepad++</a> <a href="/tags/Python/" style="font-size: 1.1em; color: #999">Python</a> <a href="/tags/Pytorch/" style="font-size: 1.1em; color: #999">Pytorch</a> <a href="/tags/Remote-Developement/" style="font-size: 1.1em; color: #999">Remote Developement</a> <a href="/tags/Spring-Boot/" style="font-size: 1.28em; color: #99a0aa">Spring Boot</a> <a href="/tags/Symbol-link/" style="font-size: 1.1em; color: #999">Symbol link</a> <a href="/tags/Ubuntu/" style="font-size: 1.43em; color: #99a6b8">Ubuntu</a> <a href="/tags/Url%E6%A0%BC%E5%BC%8F/" style="font-size: 1.1em; color: #999">Url格式</a> <a href="/tags/VS-Code/" style="font-size: 1.35em; color: #99a3b1">VS Code</a> <a href="/tags/katex%E5%85%AC%E5%BC%8F/" style="font-size: 1.1em; color: #999">katex公式</a> <a href="/tags/opencv/" style="font-size: 1.1em; color: #999">opencv</a> <a href="/tags/python/" style="font-size: 1.1em; color: #999">python</a> <a href="/tags/ssh%E5%AF%86%E9%92%A5/" style="font-size: 1.17em; color: #999ca0">ssh密钥</a> <a href="/tags/surface/" style="font-size: 1.1em; color: #999">surface</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 1.39em; color: #99a5b5">二分法</a> <a href="/tags/%E4%BB%A3%E7%90%86/" style="font-size: 1.1em; color: #999">代理</a> <a href="/tags/%E5%85%83%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">元学习</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 1.17em; color: #999ca0">刷机</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.25em; color: #999fa7">博客</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 1.32em; color: #99a2ae">双指针</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">101</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-11-24T02:58:03.749Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By dora-cmon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "好好向上&#44; 天天学习,Good Good Up&#; Day Day Study".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '好好向上&#44; 天天学习'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

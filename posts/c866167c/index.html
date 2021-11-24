@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Git 在 Windows 中管理符号链接 | 哆啦 C 梦</title><meta name="keywords" content="Git,Symbol link,符号链接"><meta name="author" content="dora-cmon"><meta name="copyright" content="dora-cmon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="流程  下载最新 Git for windows 安装时选中 Enable symbolic links  启用符号链接（需要SeCreateSymbolicLink权限）。注意，现有仓库不受此设置的影响。 克隆仓库并启用符号链接支持 1git clone -c core.symlinks&#x3D;true &lt;URL&gt;  创建符号链接 符号链接支持指向绝对&#x2F;相对路径 12mklink &#x2F;d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 在 Windows 中管理符号链接">
+<meta property="og:url" content="http://dora-cmon.github.io/posts/c866167c/index.html">
+<meta property="og:site_name" content="哆啦 C 梦">
+<meta property="og:description" content="流程  下载最新 Git for windows 安装时选中 Enable symbolic links  启用符号链接（需要SeCreateSymbolicLink权限）。注意，现有仓库不受此设置的影响。 克隆仓库并启用符号链接支持 1git clone -c core.symlinks&#x3D;true &lt;URL&gt;  创建符号链接 符号链接支持指向绝对&#x2F;相对路径 12mklink &#x2F;d">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dora-cmon.github.io/images/cover/git.jpg">
+<meta property="article:published_time" content="2021-11-24T02:54:27.000Z">
+<meta property="article:modified_time" content="2021-11-24T02:57:03.841Z">
+<meta property="article:author" content="dora-cmon">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Symbol link">
+<meta property="article:tag" content="符号链接">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://dora-cmon.github.io/images/cover/git.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://dora-cmon.github.io/posts/c866167c/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="GTb6ciSDhSgwGJb3ScvlBs5fV_cwOtW2bDVz5IRfI1s"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: dora-cmon","link":"链接: ","source":"来源: 哆啦 C 梦","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Git 在 Windows 中管理符号链接',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-24 10:57:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">101</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/cover/git.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">哆啦 C 梦</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Git 在 Windows 中管理符号链接</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-24T02:54:27.000Z" title="发表于 2021-11-24 10:54:27">2021-11-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-24T02:57:03.841Z" title="更新于 2021-11-24 10:57:03">2021-11-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">环境搭建</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Git 在 Windows 中管理符号链接"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="流程"><a class="markdownIt-Anchor" href="#流程"></a> 流程</h1>
+<ol>
+<li>下载最新 <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git for windows</a></li>
+<li>安装时选中 <code>Enable symbolic links</code><br />
+<img src="/images/Git-%E5%9C%A8-Windows-%E4%B8%AD%E7%AE%A1%E7%90%86%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5/2021-11-24-10-43-00.png" alt="" /><br />
+启用符号链接（需要SeCreateSymbolicLink权限）。注意，现有仓库不受此设置的影响。</li>
+<li>克隆仓库并启用符号链接支持 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -c core.symlinks=<span class="literal">true</span> &lt;URL&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>创建符号链接<br />
+符号链接支持指向绝对/相对路径 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mklink /d this-link-points-to c:\that-directory</span><br><span class="line">mklink this-link-points-to c:\that-file</span><br></pre></td></tr></table></figure>
+目录联结只支持指向绝对路径（命令中的相对路径会被转为绝对路径） <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /j this-link-points-to c:\that-directory</span><br></pre></td></tr></table></figure>
+</li>
+<li>赋予相关权限<br />
+若使用符号链接，需要添加权限，详见<a href="##%E5%85%81%E8%AE%B8%E9%9D%9E%E7%AE%A1%E7%90%86%E5%91%98%E5%88%9B%E5%BB%BA%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5">允许非管理员创建符号链接</a><br />
+完成后重启计算机</li>
+</ol>
+<h1 id="官方说明"><a class="markdownIt-Anchor" href="#官方说明"></a> 官方说明</h1>
+<h2 id="符号链接"><a class="markdownIt-Anchor" href="#符号链接"></a> 符号链接</h2>
+<p>概述：Windows 上没有完全等效的 POSIX 符号链接，默认情况下，非管理员无法使用类似的链接，除非启用开发人员模式并使用相对较新的 Windows 10 版本。 因此，仅在检测到场景能够支持时，符号链接功能才会默认开启。 用户可以通过 <code>core.symlinks=true</code> 配置手动启用。</p>
+<h2 id="背景"><a class="markdownIt-Anchor" href="#背景"></a> 背景</h2>
+<p>从 Windows Vista 开始，添加了对符号链接的支持。但其并不是 Unix 符号链接，它们在很多方面有所不同：</p>
+<ul>
+<li>符号链接仅在 Windows Vista 及更高版本上可用，尤其是在 XP 上不可用</li>
+<li>需要 <code>SeCreateSymbolicLinkPrivilege</code> 权限，默认情况下仅分配给管理员并由 <code>UAC</code> 保护，但可以分配给其他用户或用户组（见下文）。</li>
+<li>默认情况下禁用远程文件系统上的符号链接（调用 fsutil 行为查询 SymlinkEvaluation 查找）</li>
+<li>符号链接仅适用于 NTFS，不适用于 FAT 或 exFAT</li>
+<li>Windows 的符号链接是分类型的：它们需要知道是指向目录还是​​指向文件（因此，Git 发现错误时会更新类型）</li>
+<li>许多程序不支持符号链接<br />
+由于这些原因，Git for Windows 默认禁用对符号链接的支持（当遇到符号链接时它仍会读取它们）。可以通过 <code>core.symlinks</code> 配置变量启用支持，例如克隆时：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -c core.symlinks=<span class="literal">true</span> &lt;URL&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="创建符号链接"><a class="markdownIt-Anchor" href="#创建符号链接"></a> 创建符号链接</h2>
+<p>默认情况下，Git Bash 中的 <code>ln -s</code> 命令不会创建符号链接。 相反，它会创建副本。</p>
+<p>要创建符号链接（前提是您的帐户有相应权限），使用内置的 mklink 命令，如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mklink /d this-link-points-to c:\that-directory</span><br><span class="line">mklink this-link-points-to c:\that-file</span><br></pre></td></tr></table></figure>
+<h2 id="允许非管理员创建符号链接"><a class="markdownIt-Anchor" href="#允许非管理员创建符号链接"></a> 允许非管理员创建符号链接</h2>
+<p>可以使用本地策略编辑器（或在域帐户的情况下通过 Active Directory 策略）分配创建符号链接的权限。 Windows 家庭版不支持策略编辑器，但可以使用免费的 Polsedit。</p>
+<ul>
+<li>
+<p>本地组策略编辑器：启动 <code>gpedit.msc</code>，导航到 <code>计算机配置 - Windows 设置 - 安全设置 - 本地策略 - 用户权限分配</code> 并将帐户添加到 <code>创建符号链接</code> 选项中。</p>
+</li>
+<li>
+<p>本地安全策略：启动 <code>secpol.msc</code>，导航到 <code>本地策略 - 用户权限分配</code> 并将帐户添加到 <code>创建符号链接</code> 选项中。</p>
+</li>
+<li>
+<p>Polsedit：启动 <code>polseditx32.exe</code> 或 <code>polseditx64.exe</code>（取决于您的 Windows 版本），导航到 <code>安全设置 - 用户权限分配</code> 并将帐户添加到 <code>创建符号链接</code> 选项中。</p>
+</li>
+</ul>
+<p>请注意，无论权限分配如何，管理员组的成员也将需要 UAC 提升。从 Windows 10 版本 1703（创作者更新）开始，启用开发者模式将禁用此限制，并允许在没有 UAC 提升的情况下创建符号链接（尽管 Git for Windows 仍然需要 UAC 提升直到 v2.13.0）。</p>
+<h2 id="创建目录联结"><a class="markdownIt-Anchor" href="#创建目录联结"></a> 创建目录联结</h2>
+<p>默认情况下，非管理员用户可以创建目录联结。可以作为符号链接的替代品。要创建目录连接，请使用带有 <code>/j</code> 参数的 <code>mklink</code> 命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /j this-link-points-to c:\that-directory</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h1>
+<p><a target="_blank" rel="noopener" href="https://github.com/git-for-windows/git/wiki/Symbolic-Links">Symbolic Links</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dora-cmon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://dora-cmon.github.io/posts/c866167c/">http://dora-cmon.github.io/posts/c866167c/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://dora-cmon.github.io" target="_blank">哆啦 C 梦</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Git/">Git</a><a class="post-meta__tags" href="/tags/Symbol-link/">Symbol link</a><a class="post-meta__tags" href="/tags/%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5/">符号链接</a></div><div class="post_share"><div class="social-share" data-image="/images/cover/git.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/695abada/"><img class="next-cover" src="/images/cover/VSCode.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">VS Code Remote 配置 Windows 为服务器</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">dora-cmon</div><div class="author-info__description">一条有梦想的咸鱼</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">101</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dora-cmon"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dora-cmon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dora-cmon@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text"> 流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E8%AF%B4%E6%98%8E"><span class="toc-number">2.</span> <span class="toc-text"> 官方说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5"><span class="toc-number">2.1.</span> <span class="toc-text"> 符号链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">2.2.</span> <span class="toc-text"> 背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5"><span class="toc-number">2.3.</span> <span class="toc-text"> 创建符号链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%81%E8%AE%B8%E9%9D%9E%E7%AE%A1%E7%90%86%E5%91%98%E5%88%9B%E5%BB%BA%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5"><span class="toc-number">2.4.</span> <span class="toc-text"> 允许非管理员创建符号链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E8%81%94%E7%BB%93"><span class="toc-number">2.5.</span> <span class="toc-text"> 创建目录联结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">3.</span> <span class="toc-text"> 参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接"><img src="/images/cover/git.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git 在 Windows 中管理符号链接"/></a><div class="content"><a class="title" href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接">Git 在 Windows 中管理符号链接</a><time datetime="2021-11-24T02:54:27.000Z" title="发表于 2021-11-24 10:54:27">2021-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器"><img src="/images/cover/VSCode.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VS Code Remote 配置 Windows 为服务器"/></a><div class="content"><a class="title" href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器">VS Code Remote 配置 Windows 为服务器</a><time datetime="2021-10-19T09:19:45.000Z" title="发表于 2021-10-19 17:19:45">2021-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】225. Implement Stack using Queues 解题记录"/></a><div class="content"><a class="title" href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录">【LeetCode】225. Implement Stack using Queues 解题记录</a><time datetime="2021-08-10T05:47:50.000Z" title="发表于 2021-08-10 13:47:50">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f4a86a0d/" title="【LeetCode】346. Moving Average from Data Stream 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】346. Moving Average from Data Stream 解题记录"/></a><div class="content"><a class="title" href="/posts/f4a86a0d/" title="【LeetCode】346. Moving Average from Data Stream 解题记录">【LeetCode】346. Moving Average from Data Stream 解题记录</a><time datetime="2021-08-10T04:51:30.000Z" title="发表于 2021-08-10 12:51:30">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】240. Search a 2D Matrix II 解题记录"/></a><div class="content"><a class="title" href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录">【LeetCode】240. Search a 2D Matrix II 解题记录</a><time datetime="2021-08-08T14:52:27.000Z" title="发表于 2021-08-08 22:52:27">2021-08-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By dora-cmon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '5063efef254786df5ea3',
+      clientSecret: 'e1cd8c9039e6fe8ad9db774a4c54c1523c6fb3d1',
+      repo: 'dora-cmon.github.io',
+      owner: 'dora-cmon',
+      admin: ['dora-cmon'],
+      id: 'c0dc560273c164baed3c9732c9ec5448',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

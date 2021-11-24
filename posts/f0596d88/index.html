@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1997(Caruana) Multitask Learning | 哆啦 C 梦</title><meta name="keywords" content="多任务学习,Multi task learning"><meta name="author" content="dora-cmon"><meta name="copyright" content="dora-cmon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="多任务学习是归纳传递的一种方法，它将相关联任务的训练集中包含的域信息作为归纳偏差来提高泛化能力。通过使用共享表示进行并行学习，每个任务学习的内容都可以帮助其他任务进行更好的学习。  主要内容  介绍多任务学习，归纳传递的重要性； 比较单任务学习和多任务学习的性能； 反向传播网络中 MTL 的工作方式； 针对 k-nearest neighbor 和 决策树的 MTL 算法；   反向传播网络中的多">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1997(Caruana) Multitask Learning">
+<meta property="og:url" content="http://dora-cmon.github.io/posts/f0596d88/index.html">
+<meta property="og:site_name" content="哆啦 C 梦">
+<meta property="og:description" content="多任务学习是归纳传递的一种方法，它将相关联任务的训练集中包含的域信息作为归纳偏差来提高泛化能力。通过使用共享表示进行并行学习，每个任务学习的内容都可以帮助其他任务进行更好的学习。  主要内容  介绍多任务学习，归纳传递的重要性； 比较单任务学习和多任务学习的性能； 反向传播网络中 MTL 的工作方式； 针对 k-nearest neighbor 和 决策树的 MTL 算法；   反向传播网络中的多">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dora-cmon.github.io/images/cover/scholar_logo.png">
+<meta property="article:published_time" content="2020-10-15T08:48:18.000Z">
+<meta property="article:modified_time" content="2021-11-23T13:22:44.184Z">
+<meta property="article:author" content="dora-cmon">
+<meta property="article:tag" content="多任务学习">
+<meta property="article:tag" content="Multi task learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://dora-cmon.github.io/images/cover/scholar_logo.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://dora-cmon.github.io/posts/f0596d88/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="GTb6ciSDhSgwGJb3ScvlBs5fV_cwOtW2bDVz5IRfI1s"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: dora-cmon","link":"链接: ","source":"来源: 哆啦 C 梦","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '1997(Caruana) Multitask Learning',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-23 21:22:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">101</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/cover/scholar_logo.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">哆啦 C 梦</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">1997(Caruana) Multitask Learning</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-15T08:48:18.000Z" title="发表于 2020-10-15 16:48:18">2020-10-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-23T13:22:44.184Z" title="更新于 2021-11-23 21:22:44">2021-11-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%AD%A6%E4%B9%A0/">科研学习 - 多任务学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="1997(Caruana) Multitask Learning"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>多任务学习是归纳传递的一种方法，它将相关联任务的训练集中包含的域信息作为归纳偏差来提高泛化能力。通过使用共享表示进行并行学习，每个任务学习的内容都可以帮助其他任务进行更好的学习。</p>
+<h1 id="主要内容"><a class="markdownIt-Anchor" href="#主要内容"></a> 主要内容</h1>
+<ol>
+<li>介绍多任务学习，归纳传递的重要性；</li>
+<li>比较单任务学习和多任务学习的性能；</li>
+<li>反向传播网络中 MTL 的工作方式；</li>
+<li>针对 k-nearest neighbor 和 决策树的 MTL 算法；</li>
+</ol>
+<h1 id="反向传播网络中的多任务学习"><a class="markdownIt-Anchor" href="#反向传播网络中的多任务学习"></a> 反向传播网络中的多任务学习</h1>
+<p><img src="/images/mtl-Multitask-Learning-caruana/2020-10-14-15-08-25.png" alt="多任务反向传播-4个具有相同输入的任务" /></p>
+<p>输入相同，但是具有四个连接到共享隐藏层的输出。</p>
+<p>在 MTL 网络中，四个输出并行进行反向传播。 因为共享一个隐藏层，所以在隐藏层中出现的内部表示形式可能会使一个任务的信息被其他任务使用。</p>
+<p>在并行训练任务时，共享不同任务所学内容是多任务学习的中心思想。</p>
+<h1 id="训练信号作为归纳偏置"><a class="markdownIt-Anchor" href="#训练信号作为归纳偏置"></a> 训练信号作为归纳偏置</h1>
+<p>归纳传递的目的是利用其他信息源来提高当前任务学习的性能。归纳传递可用于提高泛化精度，学习速度和学习模型的精确度。</p>
+<h1 id="多任务学习在反向传播中的三种应用"><a class="markdownIt-Anchor" href="#多任务学习在反向传播中的三种应用"></a> 多任务学习在反向传播中的三种应用</h1>
+<h2 id="1d-alvinn"><a class="markdownIt-Anchor" href="#1d-alvinn"></a> 1D-ALVINN</h2>
+<p>1D-ALVINN 用来快速测试有关道路跟踪领域的道路图像模拟器，文章生成由单个32像素水平扫描线组成的一维道路图像。这样生成的一维 ALVINN 保留了原始二维域的大部分复杂性，主要的复杂性损失是道路弯度不再可见。</p>
+<p>1D-ALVINN 和 2D-ALVINN 的主要任务是预测转向方向。对于的MTL实验，使用了八个附加任务：</p>
+<ul>
+<li>道路是一车道还是两条车道</li>
+<li>道路左边缘的位置</li>
+<li>道路右边缘的位置</li>
+<li>道路中心的位置</li>
+<li>路面强度</li>
+<li>道路边缘的强度</li>
+<li>中心线的位置（仅2车道道路）</li>
+<li>中心线的强度（仅2车道道路）</li>
+</ul>
+<p>MTL 网络具有32个输入，16个隐藏单元和9个输出，MTL网络的大小未优化。</p>
+<p>STL 网络具有32个输入，2、4、8或16个隐藏单元，每个都有1个输出。</p>
+<p><img src="/images/mtl-Multitask-Learning-caruana/2020-10-14-15-31-33.png" alt="stl vs mtl" /></p>
+<p>最后两列比较 STL 和 MTL。</p>
+<ul>
+<li>
+<p>倒数第二列是与最佳 STL 运行相比 MTL 的错误减少的百分比。负百分比表示MTL性能更好。</p>
+</li>
+<li>
+<p>最后一列是 MTL 比平均 STL 性能提高的百分比。 标有 “*” 的在统计学上显著差异为0.05或更高。</p>
+</li>
+</ul>
+<p>在最重要的转向任务上，MTL 的性能优于 STL 15–30％。STL 和 MTL 使用完全相同的训练模式，即无需使用任何额外的训练模式。唯一的区别是，MTL 训练模式具有针对所有九项任务的训练信号，而 STL 训练模式一次仅具有针对一项任务的训练信号。</p>
+<h2 id="1d-doors"><a class="markdownIt-Anchor" href="#1d-doors"></a> 1D-DOORS</h2>
+<p>1D-DOORS 中，主要任务是定位门把手并识别门类型（单门或双门）。</p>
+<p>MTL 使用了十个任务：</p>
+<ul>
+<li>门把手的水平位置</li>
+<li>门中央的水平位置</li>
+<li>左侧门板的水平位置</li>
+<li>左侧门板的宽度</li>
+<li>门左边缘的水平位置</li>
+<li>单门或双门</li>
+<li>门口的宽度</li>
+<li>右侧门板的水平位置</li>
+<li>右侧门板宽度</li>
+<li>门右边缘的水平位置</li>
+</ul>
+<p>对最重要的两个任务进行比较：门把手的位置和门的类型。STL 使用 6、24 和 96 个隐藏单元。MTL 在具有 120 个隐藏单元的网络上进行测试。</p>
+<p><img src="/images/mtl-Multitask-Learning-caruana/2020-10-14-15-46-18.png" alt="stl vs mtl" /></p>
+<p>与三种不同的 STL 中的最佳结果相比，MTL 在这些任务上的结果也要好 20–30％。</p>
+<h2 id="pneumonia-prediction"><a class="markdownIt-Anchor" href="#pneumonia-prediction"></a> Pneumonia Prediction</h2>
+<p>pass</p>
+<h1 id="多任务学习工作机理"><a class="markdownIt-Anchor" href="#多任务学习工作机理"></a> 多任务学习工作机理</h1>
+<p>相关联任务的训练信号中，所具有的额外信息导致了 MTL 的性能提高。</p>
+<p>文章总结了几种有助于 MTL 反向传播网络更好地进行泛化的机制。这些机制都基于不同任务在隐藏层的误差梯度项之和。</p>
+<p>考虑两个任务 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">T&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span>，它们共享隐藏层特征 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span>。</p>
+<h2 id="统计数据增强"><a class="markdownIt-Anchor" href="#统计数据增强"></a> 统计数据增强</h2>
+<p>相关联任务的训练信号中具有的额外信息，有效增加了样本量。</p>
+<h2 id="属性选择"><a class="markdownIt-Anchor" href="#属性选择"></a> 属性选择</h2>
+<p>属性选择是数据放大的结果。</p>
+<p>同时学习 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">T&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 网络将更好地选择与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span> 相关的属性，因为数据放大为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span> 提供了更好的训练信号，从而使其能够更好地确定用于计算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span> 的输入属性。</p>
+<h2 id="窃听"><a class="markdownIt-Anchor" href="#窃听"></a> 窃听</h2>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">T&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 可以窃听为 $T $学习的隐藏层，从而更好地学习。</p>
+<p>一旦在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">T&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span> 的演化表示之间建立了联系，来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">T&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 的有关 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span> 的额外信息将帮助 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 网络通过其他机制更好地学习 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span>。</p>
+<h2 id="搜索偏向"><a class="markdownIt-Anchor" href="#搜索偏向"></a> 搜索偏向</h2>
+<p>因为网络是用随机权重初始化的，所以反向传播是一种随机的搜索过程。 多次运行很少产生相同的网络。</p>
+<p>假设任务 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 有两个局部最小值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>；任务 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">T&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 也有两个最小值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>。两者在A处共享最小值（即，如果网络进入权重空间区域，两者都将表现良好），但在B和C处不重叠。</p>
+<p><img src="/images/mtl-Multitask-Learning-caruana/2020-10-14-16-18-31.png" alt="搜索表示区域" /></p>
+<ul>
+<li>仅在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 上训练的网络可能找到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>;</li>
+<li>仅在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">T&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 上训练的网络可能找到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>;</li>
+<li>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">T&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 上训练的网络则会找到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>;</li>
+</ul>
+<p>表明 MTL 任务的搜索偏向于仅针对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>T</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">T&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 的交集中的表示形式。</p>
+<h1 id="反向传播-mtl-发现任务之间的关系"><a class="markdownIt-Anchor" href="#反向传播-mtl-发现任务之间的关系"></a> 反向传播 MTL 发现任务之间的关系</h1>
+<p>文章设计了一组“峰函数”进行测试，发现任务相关性与隐藏单元共享呈正相关。 这表明，至少对于峰函数而言，使用共享隐藏层的反向传播，能够发现任务与隐藏层特征之间的关系，而无需提供明确的有关任务相关性的训练信号。</p>
+<h1 id="mtl-应用"><a class="markdownIt-Anchor" href="#mtl-应用"></a> MTL 应用</h1>
+<h2 id="多表示和多指标"><a class="markdownIt-Anchor" href="#多表示和多指标"></a> 多表示和多指标</h2>
+<p>有时，一种表示/指标不能完全体现所有的重要内容，而备用表示/指标能够体现不同的方面时，将两种表示/指标结合并使用 MTL 可以获得更好的效果。</p>
+<p>哪种输出编码效果最好并非总是显而易见的，可以将主要任务的备用编码用作额外的输出。</p>
+<h2 id="时间序列预测"><a class="markdownIt-Anchor" href="#时间序列预测"></a> 时间序列预测</h2>
+<p>pass</p>
+<h2 id="使用免操作的特征"><a class="markdownIt-Anchor" href="#使用免操作的特征"></a> 使用免操作的特征</h2>
+<p>可以计算一些免操作的特征，用作额外的 MTL 输出。</p>
+<h2 id="使用额外的任务调整注意力"><a class="markdownIt-Anchor" href="#使用额外的任务调整注意力"></a> 使用额外的任务调整注意力</h2>
+<p>网络可能会使用较大、较明显的模式，而忽略较小但非常有用的模式。MTL 可以在训练时强制注意这些模式。</p>
+<p>例如本文中的道路转向跟踪。STL 网络在学习转向时通常会忽略车道标记、道路线等，因为车道标记、道路线通常只是图像的一小部分，并不总是存在，并且经常改变。</p>
+<p>MTL 将道路条纹识别作为一项额外的输出任务，则该网络将学会关注出现条纹的图像部分。 由于网络也使用相同的隐藏层学习转向，因此转向任务可以使用条纹表示形式中对转向有用的部分表示。</p>
+<h2 id="sequential-transfer"><a class="markdownIt-Anchor" href="#sequential-transfer"></a> Sequential Transfer</h2>
+<p>pass</p>
+<h2 id="multiple-task-arise-naturally"><a class="markdownIt-Anchor" href="#multiple-task-arise-naturally"></a> Multiple Task Arise Naturally</h2>
+<p>pass</p>
+<h2 id="量化平滑"><a class="markdownIt-Anchor" href="#量化平滑"></a> 量化平滑</h2>
+<p>每个任务都可以用来填补其他任务量化带来的空白。尽管一个量化任务与其相关的，量化程度较低的任务之间的潜在复杂关系可能使受益更加困难，但通常会产生一些收益。</p>
+<h1 id="mtl-in-knn-and-kernel-regression"><a class="markdownIt-Anchor" href="#mtl-in-knn-and-kernel-regression"></a> MTL in KNN and Kernel Regression</h1>
+<p>pass</p>
+<h1 id="mtl-decision-tree-induction"><a class="markdownIt-Anchor" href="#mtl-decision-tree-induction"></a> MTL Decision Tree Induction</h1>
+<p>pass</p>
+<h1 id="讨论及未来"><a class="markdownIt-Anchor" href="#讨论及未来"></a> 讨论及未来</h1>
+<h2 id="使用多任务进行预测"><a class="markdownIt-Anchor" href="#使用多任务进行预测"></a> 使用多任务进行预测</h2>
+<p>MTL 可以并行地训练许多任务，但这并不应该使用一个模型对许多任务进行预测。</p>
+<p>在所有任务的平均性能与某项任务的最佳性能之间进行权衡，最好一次优化一个任务的性能，并允许额外任务的性能降低。学习者甚至可以忽略某些任务以在主要任务上获得更好的表现。</p>
+<h2 id="反向传播mtl中的学习率"><a class="markdownIt-Anchor" href="#反向传播mtl中的学习率"></a> 反向传播MTL中的学习率</h2>
+<p>通常，当所有任务以相似的速率学习并且大致同时达到最佳性能时，在反向传播 MTL 中可以获得更好的性能。</p>
+<p>控制不同任务学习速度的最简单方法是调整每个输出任务的学习速度。</p>
+<p>对所有任务使用相等的学习率训练网络，训练一次后，降低学习最快的任务的学习率。 通常，对该过程进行几次迭代就足以使大多数任务在大约同一时间达到最高性能。 然后使用每个任务的 early stopping 来确定每个任务的最佳停止点。</p>
+<h2 id="并行传输与顺序传输"><a class="markdownIt-Anchor" href="#并行传输与顺序传输"></a> 并行传输与顺序传输</h2>
+<p>pass</p>
+<h2 id="架构"><a class="markdownIt-Anchor" href="#架构"></a> 架构</h2>
+<p>可以尝试对主任务使用较小的私有隐藏层，而对主任务和其他任务共享较大的隐藏层，这种操作通常可能带来正收益。但是太多的私有隐藏层（例如，每个任务都使用私有隐藏层）会减少共享和 MTL 带来的的好处。</p>
+<p>MTL 可以使用正则化方法（例如权重衰减）。通过减少模型中有效自由参数的数量，并通过正则化促进共享。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dora-cmon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://dora-cmon.github.io/posts/f0596d88/">http://dora-cmon.github.io/posts/f0596d88/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://dora-cmon.github.io" target="_blank">哆啦 C 梦</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%AD%A6%E4%B9%A0/">多任务学习</a><a class="post-meta__tags" href="/tags/Multi-task-learning/">Multi task learning</a></div><div class="post_share"><div class="social-share" data-image="/images/cover/scholar_logo.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/f2fd094e/"><img class="prev-cover" src="/images/cover/docker.jfif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Docker 安装指南(Win10)</div></div></a></div><div class="next-post pull-right"><a href="/posts/ca8f1afe/"><img class="next-cover" src="/images/cover/ubuntu2004.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Ubuntu 20.04系统Lenovo T470主机138a:0097硬件使用指纹识别器登陆</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/a478f58d/" title="2017(YuZhang) An Overview of Multi-task Learning"><img class="cover" src="/images/cover/scholar_logo.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-15</div><div class="title">2017(YuZhang) An Overview of Multi-task Learning</div></div></a></div><div><a href="/posts/5bba0c0d/" title="2018(Thung) A brief review on multi-task learning"><img class="cover" src="/images/cover/scholar_logo.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-21</div><div class="title">2018(Thung) A brief review on multi-task learning</div></div></a></div><div><a href="/posts/1d726a1c/" title="Lecture 2: 有监督的多任务学习和迁移学习"><img class="cover" src="/images/cover/CS330.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-26</div><div class="title">Lecture 2: 有监督的多任务学习和迁移学习</div></div></a></div><div><a href="/posts/bb424e94/" title="Lecture 1: 课程介绍"><img class="cover" src="/images/cover/CS330.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-23</div><div class="title">Lecture 1: 课程介绍</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">dora-cmon</div><div class="author-info__description">一条有梦想的咸鱼</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">101</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dora-cmon"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dora-cmon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dora-cmon@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text"> 主要内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text"> 反向传播网络中的多任务学习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E4%BF%A1%E5%8F%B7%E4%BD%9C%E4%B8%BA%E5%BD%92%E7%BA%B3%E5%81%8F%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text"> 训练信号作为归纳偏置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%AD%A6%E4%B9%A0%E5%9C%A8%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E4%B8%AD%E7%9A%84%E4%B8%89%E7%A7%8D%E5%BA%94%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text"> 多任务学习在反向传播中的三种应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1d-alvinn"><span class="toc-number">4.1.</span> <span class="toc-text"> 1D-ALVINN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1d-doors"><span class="toc-number">4.2.</span> <span class="toc-text"> 1D-DOORS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pneumonia-prediction"><span class="toc-number">4.3.</span> <span class="toc-text"> Pneumonia Prediction</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E6%9C%BA%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text"> 多任务学习工作机理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA"><span class="toc-number">5.1.</span> <span class="toc-text"> 统计数据增强</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9"><span class="toc-number">5.2.</span> <span class="toc-text"> 属性选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AA%83%E5%90%AC"><span class="toc-number">5.3.</span> <span class="toc-text"> 窃听</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%81%8F%E5%90%91"><span class="toc-number">5.4.</span> <span class="toc-text"> 搜索偏向</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD-mtl-%E5%8F%91%E7%8E%B0%E4%BB%BB%E5%8A%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">6.</span> <span class="toc-text"> 反向传播 MTL 发现任务之间的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mtl-%E5%BA%94%E7%94%A8"><span class="toc-number">7.</span> <span class="toc-text"> MTL 应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%9A%E6%8C%87%E6%A0%87"><span class="toc-number">7.1.</span> <span class="toc-text"> 多表示和多指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B"><span class="toc-number">7.2.</span> <span class="toc-text"> 时间序列预测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%85%8D%E6%93%8D%E4%BD%9C%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-number">7.3.</span> <span class="toc-text"> 使用免操作的特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%A2%9D%E5%A4%96%E7%9A%84%E4%BB%BB%E5%8A%A1%E8%B0%83%E6%95%B4%E6%B3%A8%E6%84%8F%E5%8A%9B"><span class="toc-number">7.4.</span> <span class="toc-text"> 使用额外的任务调整注意力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sequential-transfer"><span class="toc-number">7.5.</span> <span class="toc-text"> Sequential Transfer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#multiple-task-arise-naturally"><span class="toc-number">7.6.</span> <span class="toc-text"> Multiple Task Arise Naturally</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E5%B9%B3%E6%BB%91"><span class="toc-number">7.7.</span> <span class="toc-text"> 量化平滑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mtl-in-knn-and-kernel-regression"><span class="toc-number">8.</span> <span class="toc-text"> MTL in KNN and Kernel Regression</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mtl-decision-tree-induction"><span class="toc-number">9.</span> <span class="toc-text"> MTL Decision Tree Induction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA%E5%8F%8A%E6%9C%AA%E6%9D%A5"><span class="toc-number">10.</span> <span class="toc-text"> 讨论及未来</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%9B%E8%A1%8C%E9%A2%84%E6%B5%8B"><span class="toc-number">10.1.</span> <span class="toc-text"> 使用多任务进行预测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%ADmtl%E4%B8%AD%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%8E%87"><span class="toc-number">10.2.</span> <span class="toc-text"> 反向传播MTL中的学习率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E4%BC%A0%E8%BE%93%E4%B8%8E%E9%A1%BA%E5%BA%8F%E4%BC%A0%E8%BE%93"><span class="toc-number">10.3.</span> <span class="toc-text"> 并行传输与顺序传输</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-number">10.4.</span> <span class="toc-text"> 架构</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接"><img src="/images/cover/git.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git 在 Windows 中管理符号链接"/></a><div class="content"><a class="title" href="/posts/c866167c/" title="Git 在 Windows 中管理符号链接">Git 在 Windows 中管理符号链接</a><time datetime="2021-11-24T02:54:27.000Z" title="发表于 2021-11-24 10:54:27">2021-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器"><img src="/images/cover/VSCode.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VS Code Remote 配置 Windows 为服务器"/></a><div class="content"><a class="title" href="/posts/695abada/" title="VS Code Remote 配置 Windows 为服务器">VS Code Remote 配置 Windows 为服务器</a><time datetime="2021-10-19T09:19:45.000Z" title="发表于 2021-10-19 17:19:45">2021-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】225. Implement Stack using Queues 解题记录"/></a><div class="content"><a class="title" href="/posts/c93a51f1/" title="【LeetCode】225. Implement Stack using Queues 解题记录">【LeetCode】225. Implement Stack using Queues 解题记录</a><time datetime="2021-08-10T05:47:50.000Z" title="发表于 2021-08-10 13:47:50">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f4a86a0d/" title="【LeetCode】346. Moving Average from Data Stream 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】346. Moving Average from Data Stream 解题记录"/></a><div class="content"><a class="title" href="/posts/f4a86a0d/" title="【LeetCode】346. Moving Average from Data Stream 解题记录">【LeetCode】346. Moving Average from Data Stream 解题记录</a><time datetime="2021-08-10T04:51:30.000Z" title="发表于 2021-08-10 12:51:30">2021-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录"><img src="/images/cover/leetcode.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【LeetCode】240. Search a 2D Matrix II 解题记录"/></a><div class="content"><a class="title" href="/posts/c7bcd071/" title="【LeetCode】240. Search a 2D Matrix II 解题记录">【LeetCode】240. Search a 2D Matrix II 解题记录</a><time datetime="2021-08-08T14:52:27.000Z" title="发表于 2021-08-08 22:52:27">2021-08-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By dora-cmon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '5063efef254786df5ea3',
+      clientSecret: 'e1cd8c9039e6fe8ad9db774a4c54c1523c6fb3d1',
+      repo: 'dora-cmon.github.io',
+      owner: 'dora-cmon',
+      admin: ['dora-cmon'],
+      id: '8679412fb8760b49df642034765522b3',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
