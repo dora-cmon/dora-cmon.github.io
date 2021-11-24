@@ -1,7 +1,7 @@
 ---
 title: git命令如何指定秘钥
 categories:
-  - 疑难杂症
+  - 环境搭建
 tags:
   - MobaXterm
   - ssh密钥
