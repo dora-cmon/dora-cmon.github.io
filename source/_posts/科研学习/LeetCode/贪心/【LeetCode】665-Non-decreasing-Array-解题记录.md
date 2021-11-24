@@ -7,7 +7,7 @@ tags:
   - Medium
   - 贪心
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: a460efb0
 date: 2021-05-08 17:41:19
 ---

@@ -7,7 +7,7 @@ tags:
   - Medium
   - 链表
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: aee51397
 date: 2021-08-07 00:10:42
 ---

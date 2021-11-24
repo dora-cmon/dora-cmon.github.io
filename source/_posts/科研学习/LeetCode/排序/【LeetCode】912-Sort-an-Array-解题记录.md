@@ -7,7 +7,7 @@ tags:
   - Medium
   - 排序
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: '6854315'
 date: 2021-07-03 17:36:36
 ---

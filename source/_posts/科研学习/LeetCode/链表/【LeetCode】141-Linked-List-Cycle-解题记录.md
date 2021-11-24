@@ -9,7 +9,7 @@ tags:
   - 双指针
   - 快慢指针
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: 7bfc535b
 date: 2021-08-07 00:04:55
 ---

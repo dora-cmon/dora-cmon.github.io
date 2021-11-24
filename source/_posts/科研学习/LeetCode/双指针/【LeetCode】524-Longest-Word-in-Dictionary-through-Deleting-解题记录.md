@@ -7,7 +7,7 @@ tags:
   - Medium
   - 双指针
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: f46d7949
 date: 2021-05-14 16:10:47
 ---

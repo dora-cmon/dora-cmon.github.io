@@ -9,7 +9,7 @@ tags:
   - 滑动窗口
   - 字符串
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: 4a667ae0
 date: 2021-05-12 16:03:33
 ---

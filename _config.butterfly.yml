@@ -631,7 +631,7 @@ subtitle:
   # 如果關閉打字效果，subtitle只會顯示sub的第一行文字
   sub:
     - 好好向上&#44; 天天学习
-    - Good Good Up&#; Day Day Study
+    - Good Good Up&#44; Day Day Study
 
 # Loading Animation (加載動畫)
 preloader: false

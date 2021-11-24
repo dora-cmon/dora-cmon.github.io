@@ -7,7 +7,7 @@ tags:
   - Hard
   - 二分法
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: 24e5a86
 date: 2021-08-08 22:31:39
 ---

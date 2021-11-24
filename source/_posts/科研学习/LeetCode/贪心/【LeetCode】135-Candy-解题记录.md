@@ -7,7 +7,7 @@ tags:
   - Hard
   - 贪心
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: 86fcf368
 date: 2021-04-23 17:54:22
 ---

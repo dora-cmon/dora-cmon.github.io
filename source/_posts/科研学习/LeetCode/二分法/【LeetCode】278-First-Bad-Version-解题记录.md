@@ -7,7 +7,7 @@ tags:
   - Easy
   - 二分法
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: d2fc0325
 date: 2021-08-08 22:44:00
 ---

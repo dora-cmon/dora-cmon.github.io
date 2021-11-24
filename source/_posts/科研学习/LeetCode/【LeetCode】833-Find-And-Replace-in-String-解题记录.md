@@ -6,7 +6,7 @@ tags:
   - LeetCode
   - Medium
   - 字符串
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: 8bc10515
 date: 2021-04-23 17:54:45
 ---

@@ -7,7 +7,7 @@ tags:
   - Easy
   - 链表
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: c7fc6e60
 date: 2021-08-06 22:00:43
 ---

@@ -6,7 +6,7 @@ tags:
   - LeetCode
   - Easy
   - 贪心
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: ef5a23d
 date: 2021-04-23 17:54:45
 ---

@@ -7,7 +7,7 @@ tags:
   - Easy
   - 双指针
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: 6a28d588
 date: 2021-05-14 13:20:39
 ---

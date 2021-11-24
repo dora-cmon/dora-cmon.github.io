@@ -4,7 +4,7 @@ categories:
   - 科研学习 - LeetCode
 tags:
   - LeetCode
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: ac5e58f0
 date: 2021-11-24 13:03:04
 sticky: 8

@@ -8,7 +8,7 @@ tags:
   - 链表
   - 快慢指针
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: a52b91a6
 date: 2021-08-06 23:25:44
 ---

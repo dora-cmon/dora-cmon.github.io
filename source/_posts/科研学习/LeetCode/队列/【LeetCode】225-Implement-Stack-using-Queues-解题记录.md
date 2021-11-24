@@ -7,7 +7,7 @@ tags:
   - Easy
   - 队列
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: c93a51f1
 date: 2021-08-10 13:47:50
 ---

@@ -7,7 +7,7 @@ tags:
   - Medium
   - 二分法
   - 算法
-cover: /images/cover/leetcode.jpeg
+cover: /images/cover/leetcode.jpg
 abbrlink: c7bcd071
 date: 2021-08-08 22:52:27
 ---
