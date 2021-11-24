@@ -5,11 +5,17 @@ categories:
 tags:
   - Ubuntu
   - Linux
-cover: /images/cover/ubuntu2004.png
+cover: /images/Ubuntu-18-04-美化完全攻略/screenshot.png
 abbrlink: bbf09ec7
 date: 2021-05-21 11:38:13
 sticky: 10
 ---
+
+![](/images/Ubuntu-18-04-美化完全攻略/screenshot.png)
+
+![](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-19-16-18.png)
+
+![](/images/Ubuntu-18-04-美化完全攻略/2020-03-19-19-16-41.png)
 
 之前将系统从 Ubuntu 18.04 升级到了 Ubuntu 20.04，但是由于升级的方式造成系统不够稳定，Xorg 进程 经常占用 CPU 到 100% 及以上，造成电脑非常卡顿。因此重新进行 Ubuntu 20.04 全盘安装，并进行配置美化。
 
@@ -305,6 +311,17 @@ GNOME 显示管理器（GDM）是一个管理图形显示服务和处理图形�
 5. [Status Area Horizontal Spacing](https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/) 调整顶栏右上角图标间距
 
 6. [Workspace Wraparound](https://extensions.gnome.org/extension/971/workspace-wraparound/) 工作区循环切换(第一个工作区向上切换至最后一个工作区)
+
+## 动态/静态 桌面设置
+
+### 静态桌面
+
+在 [WallPaperSite](https://wallpapersite.com) 中下载心仪的壁纸，保存到 `~/Pictures/WallPapers` 中，右键选择 `Scripts -> SetAsWallpaper` 即可。
+
+![](/images/Ubuntu-18-04-美化完全攻略/2020-03-18-23-33-05.png)
+
+### 动态桌面
+参考文章 {% post_link 环境搭建/Ubuntu/Ubuntu-18-04-使用Komorebi实现动态桌面 %}
 
 # 软件安装推荐
 
