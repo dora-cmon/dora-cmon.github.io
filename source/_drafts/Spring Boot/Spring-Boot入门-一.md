@@ -212,7 +212,7 @@ sudo gedit /usr/local/apache-maven-3.6.3/conf/settings.xml
 
 ![加载](/images/Spring-Boot入门-一/2020-02-26-20-26-49.png)
 
-**注意**：此时可能下载地址并不是阿里云镜像，依旧极其缓慢，原因参考{% post_link 配置了maven的国内镜像后，项目未通过镜像下载 %}。按照该文章修改 `pom.xml` 后速度起飞。
+**注意**：此时可能下载地址并不是阿里云镜像，依旧极其缓慢，原因参考{% post_link 疑难杂症/配置了maven的国内镜像后，项目未通过镜像下载 %}。按照该文章修改 `pom.xml` 后速度起飞。
 
 ```xml
 <!-- pom.xml 添加内容如下 -->

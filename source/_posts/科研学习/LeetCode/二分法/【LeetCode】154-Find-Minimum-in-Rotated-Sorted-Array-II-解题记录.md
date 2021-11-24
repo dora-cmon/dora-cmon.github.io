@@ -4,7 +4,7 @@ categories:
   - 科研学习 - LeetCode
 tags:
   - LeetCode
-  - Medium
+  - Hard
   - 二分法
   - 算法
 cover: /images/cover/leetcode.jpeg

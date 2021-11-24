@@ -4,7 +4,7 @@ categories:
   - 科研学习 - LeetCode
 tags:
   - LeetCode
-  - Middle
+  - Medium
   - 字符串
 cover: /images/cover/leetcode.jpeg
 abbrlink: 8bc10515

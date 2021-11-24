@@ -18,7 +18,7 @@ JPA 的目标之一是制定一个可以由很多供应商实现的API，并且�
 
 # 数据库安装、创建
 
-参考 {% post_link Spring-Boot使用JDBC访问MySQL-五 %}
+参考 {% post_link 代码开发/Spring-Boot/Spring-Boot使用JDBC访问MySQL-五 %}
 
 # 代码编写
 

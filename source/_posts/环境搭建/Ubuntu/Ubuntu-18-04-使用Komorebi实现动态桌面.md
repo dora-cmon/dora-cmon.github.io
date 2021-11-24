@@ -91,7 +91,7 @@ sudo mv /home/dora_cmon/daughter_of_the_flame /System/Resources/Komorebi
 
 打开设置中的 `Background`，将 `Background` 和 `Lock Screen` 都设置为之前保存的封面。
 
-若要实现密码输入界面雾化效果，请参考文章 {% post_link Ubuntu-18-04-美化完全攻略 %} 中的 **GDM主题设置(登录/锁定界面)** 小节。
+若要实现密码输入界面雾化效果，请参考文章 {% post_link 环境搭建/Ubuntu/Ubuntu-18-04-美化完全攻略 %} 中的 **GDM主题设置(登录/锁定界面)** 小节。
 
 # 更多
 

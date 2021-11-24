@@ -136,7 +136,7 @@ sudo apt-get install gnome-shell-extensions
 ![](/images/Ubuntu-18-04-美化完全攻略/2020-03-18-23-33-05.png)
 
 ### 动态桌面
-参考文章 {% post_link Ubuntu-18-04-使用Komorebi实现动态桌面 %}
+参考文章 {% post_link 环境搭建/Ubuntu/Ubuntu-18-04-使用Komorebi实现动态桌面 %}
 
 ## GDM主题设置(登录/锁定界面)
 
@@ -223,7 +223,7 @@ Plymouth 主题也就是开机动画，可以在 [Plymouth Themes](https://www.g
 
 # Ubuntu 18.04 软件推荐
 
-参考文章 {% post_link Ubuntu软件推荐 %}
+参考文章 {% post_link 环境搭建/Ubuntu/Ubuntu软件推荐 %}
 
 # 更多
 

@@ -40,7 +40,7 @@ date: 2020-03-12 17:31:54
 
 ### 搜狗拼音输入法 Linux 版
 
-参考文章 {% post_link Ubuntu-18-04-安装中文输入法 %}
+参考文章 {% post_link 环境搭建/Ubuntu/Ubuntu-18-04-安装中文输入法 %}
 
 ### 百度网盘 Linux 版
 
@@ -131,13 +131,13 @@ WPS 对 Linux 的支持很好，[官网下载](https://wps.cn/product/wpslinux/)
 
 postman是一款功能强大的网页调试和模拟发送HTTP请求的Chrome插件，支持几乎所有类型的HTTP请求，操作简单且方便。
 
-安装方式参考 {% post_link Ubuntu-18-04-安装Postman %}
+安装方式参考 {% post_link 环境搭建/Ubuntu/Ubuntu-18-04-安装Postman %}
 
 # Linux 软件
 
 ## 截图编辑软件 flameshot
 
-参考文章 {% post_link Ubuntu-18-04-截图工具-flameshot-转载 %}
+参考文章 {% post_link 环境搭建/Ubuntu/Ubuntu-18-04-截图工具-flameshot-转载 %}
 
 ![](/images/Ubuntu-18-04-截图工具-flameshot-转载/2020-03-12-15-49-30.png)
 

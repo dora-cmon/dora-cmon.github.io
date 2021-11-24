@@ -1,5 +1,5 @@
 ---
-title: 【LeetCode】763. Partition Labels 解题记录 - 科研学习 - LeetCode
+title: 【LeetCode】763. Partition Labels 解题记录
 categories:
   - 科研学习 - LeetCode
 tags:

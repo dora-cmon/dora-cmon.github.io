@@ -11,7 +11,7 @@ date: 2020-02-15 19:20:12
 
 # 准备工作
 
-完成Hexo环境搭建，参考{% post_link Hexo博客搭建 %}。
+完成Hexo环境搭建，参考{% post_link 环境搭建/Hexo/Hexo博客搭建 %}。
 
 # 安装NexT主题
 
